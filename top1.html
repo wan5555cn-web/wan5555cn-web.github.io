@@ -63,65 +63,49 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            background: white;
             font-family: 'Segoe UI', system-ui, sans-serif;
             margin: 0;
             padding: 30px;
             min-height: 100vh;
         }
         
-        /* 返回按钮样式 */
         .return-btn {
             display: block;
-            width: 120px;
-            margin: 0 auto 30px;
-            padding: 10px 15px;
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(5px);
-            border-radius: 25px;
-            border: none;
-            border-top: 3px solid var(--return-btn);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            color: #333;
+            width: 150px;
+            margin: 0 auto 40px;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.92);
+            border: 2px solid #eee;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            color: #555;
             font-weight: 600;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
         
-        .return-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-            background: rgba(255,255,255,0.9);
-        }
-        
-        .return-btn::before {
-            content: "←";
-            margin-right: 5px;
-        }
-        
-        /* 分类卡片网格系统 */
         .music-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
+            gap: 25px;
             max-width: 1800px;
             margin: 0 auto;
         }
         
         .music-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.82);
             border-radius: 12px;
-            padding: 18px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-top: 4px solid;
+            padding: 20px;
+            box-shadow: 
+                0 2px 8px rgba(0,0,0,0.05),
+                0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.35s ease;
+            border-top: 5px solid;
+            backdrop-filter: blur(6px);
         }
         
-        /* 分类颜色系统 */
         .pop { border-color: var(--pop); }
         .electronic { border-color: var(--electronic); }
         .rock { border-color: var(--rock); }
@@ -129,23 +113,14 @@
         .hiphop { border-color: var(--hiphop); }
         .jazz { border-color: var(--jazz); }
         
-        /* 悬停效果 */
-        .music-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-            background: rgba(255, 255, 255, 0.85);
-        }
-        
-        /* 标题样式 */
         h3 {
-            margin: 0 0 15px 0;
-            font-size: 1.3rem;
+            margin: 0 0 18px 0;
+            font-size: 1.4rem;
             font-weight: 600;
+            color: #444;
             text-align: center;
-            color: #333;
         }
         
-        /* 歌曲列表 */
         .song-list {
             margin: 0;
             padding: 0;
@@ -153,33 +128,26 @@
         }
         
         .song-item {
-            padding: 8px 0;
-            color: #555;
+            padding: 10px 0;
+            color: #666;
             position: relative;
-            padding-left: 22px;
-            border-bottom: 1px dashed rgba(0,0,0,0.08);
-        }
-        
-        .song-item:last-child {
-            border-bottom: none;
+            padding-left: 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         
         .song-item::before {
-            content: "♪";
+            content: "♫";
             position: absolute;
             left: 0;
-            color: inherit;
             opacity: 0.7;
         }
         
-        /* 响应式设计 */
         @media (max-width: 1400px) {
             .music-grid { grid-template-columns: repeat(4, 1fr); }
         }
         
         @media (max-width: 900px) {
             .music-grid { grid-template-columns: repeat(3, 1fr); }
-            .return-btn { margin-bottom: 20px; }
         }
         
         @media (max-width: 600px) {
@@ -189,17 +157,14 @@
     </style>
 </head>
 <body>
-    <!-- 返回按钮 -->
-    <button class="return-btn">返回视频</button>
+    <button class="return-btn">← 返回视频页</button>
     
-    <!-- 音乐分类网格 -->
     <div class="music-grid">
         <div class="music-card pop">
             <h3>流行音乐</h3>
             <ul class="song-list">
                 <li class="song-item">星辰大海 - 张杰</li>
                 <li class="song-item">光的方向 - 周深</li>
-                <li class="song-item">少年 - 梦然</li>
             </ul>
         </div>
         
@@ -207,7 +172,7 @@
             <h3>电子音乐</h3>
             <ul class="song-list">
                 <li class="song-item">Faded - Alan Walker</li>
-                <li class="song-item">The Spectre - Alan Walker</li>
+                <li class="song-item">The Spectre</li>
             </ul>
         </div>
         
