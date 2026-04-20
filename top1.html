@@ -64,13 +64,36 @@
 			padding: 20px;
 			box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 			border-top: 5px solid;
-			}        
+			position: relative;
+			background-color: rgba(0,0,0,0.01); /* 极低透明度底色解决JPG边缘锯齿 */
+			}  
+.music-card::before {
+    content: '';
+    position: absolute;
+    top: 2px;  /* 微调位置避免边框遮挡 */
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: 
+        linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0)), 
+        var(--category-bg) center/cover;
+    border-radius: 10px; /* 略小于父元素圆角 */
+    z-index: -1;
+    filter: brightness(1.1) contrast(0.9); /* 提升JPG明暗层次 */
+}			
 		.pop { border-color: var(--pop); }
         .electronic { border-color: var(--electronic); }
         .rock { border-color: var(--rock); }
         .classical { border-color: var(--classical); }
         .hiphop { border-color: var(--hiphop); }
         .jazz { border-color: var(--jazz); }
+		/* 分类图片定义 - 需准备6张浅色系JPG */
+.pop     { --category-bg: url('eracover0206.jpg'); }
+.electronic { --category-bg: url('dr2026.jpg'); }
+.rock    { --category-bg: url('kfkf417.jpg'); }
+.classical { --category-bg: url('shi.jpg'); }
+.hiphop  { --category-bg: url('syqsh.jpg'); }
+.jazz    { --category-bg: url('wmdxq.jpg'); }
         .song-list {
             margin: 0;
             padding: 0;
