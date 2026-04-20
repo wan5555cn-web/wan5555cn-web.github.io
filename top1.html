@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>音乐分类导航</title>
     <style>
+	    .music-player {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+        }
+        .progress-container {
+            height: 5px;
+            background: #ddd;
+            margin: 15px 0;
+            cursor: pointer;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #ff6b6b;
+        }
 	body {
 		margin: 0;
 		min-height: 100vh;
@@ -26,12 +45,10 @@
             50% { background-position: 100% 80%; }
             100% { background-position: 0% 20%; }
         }
-
         @keyframes scan {
             from { background-position: 0 -30px; }
             to { background-position: 0 110vh; }
         }
-
         .content {
             position: relative;
             max-width: 1200px;
@@ -42,7 +59,6 @@
             border-radius: 16px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
-
         .tech-image {
             width: 100%;
             max-width: 600px;
@@ -59,106 +75,100 @@
             --classical: #D8BFD8;
             --hiphop: #FF6B6B;
             --jazz: #BA55D3;
-            --return-btn: #6C757D;
         }
-        
         body {
-            background: white;
+            background: transparent;
             font-family: 'Segoe UI', system-ui, sans-serif;
             margin: 0;
             padding: 30px;
-            min-height: 100vh;
         }
-        
         .return-btn {
-            display: block;
-            width: 150px;
-            margin: 0 auto 40px;
-            padding: 12px 20px;
-            background: rgba(255,255,255,0.92);
-            border: 2px solid #eee;
+            display: inline-block;
+            padding: 12px 24px;
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.9);
+            border: none;
             border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            color: #555;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            color: #333;
             font-weight: 600;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            text-decoration: none;
+            transition: all 0.3s;
         }
-        
+        .return-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
         .music-grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 25px;
-            max-width: 1800px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1400px;
             margin: 0 auto;
         }
-        
         .music-card {
-            background: rgba(255,255,255,0.82);
+            background: rgba(255,255,255,0.85);
             border-radius: 12px;
             padding: 20px;
-            box-shadow: 
-                0 2px 8px rgba(0,0,0,0.05),
-                0 4px 16px rgba(0,0,0,0.08);
-            transition: all 0.35s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             border-top: 5px solid;
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s;
         }
-        
         .pop { border-color: var(--pop); }
         .electronic { border-color: var(--electronic); }
         .rock { border-color: var(--rock); }
         .classical { border-color: var(--classical); }
         .hiphop { border-color: var(--hiphop); }
         .jazz { border-color: var(--jazz); }
-        
         h3 {
-            margin: 0 0 18px 0;
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #444;
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+            color: #333;
             text-align: center;
         }
-        
         .song-list {
             margin: 0;
             padding: 0;
             list-style: none;
         }
-        
         .song-item {
-            padding: 10px 0;
-            color: #666;
+            padding: 8px 0;
+            color: #555;
             position: relative;
-            padding-left: 25px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-left: 22px;
         }
-        
         .song-item::before {
             content: "♫";
             position: absolute;
             left: 0;
             opacity: 0.7;
         }
-        
-        @media (max-width: 1400px) {
-            .music-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-        
-        @media (max-width: 900px) {
-            .music-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        
-        @media (max-width: 600px) {
-            .music-grid { grid-template-columns: repeat(2, 1fr); }
-            body { padding: 20px 15px; }
-        }
+		.progress-container {
+			height: 6px;
+			background: rgba(0,0,0,0.1);
+			margin: 15px 0;
+			}
+		.progress-bar {
+			height: 100%;
+			width: 0%;
+			background: #FF9E7D;
+			}
+		const playerReturnUrl = 'top1.html';
+		document.querySelector('.music-player .return-btn').href = playerReturnUrl;
     </style>
 </head>
+<!-- 播放器模块 -->
 <body>
-    <button class="return-btn">← 返回视频页</button>
-    
+    <a href="index.html" class="return-btn">← 返回视频页</a>
+	<div class="music-player">
+        <div id="now-playing">等待播放...</div>
+        <audio id="audio-player"></audio>
+        <div class="progress-container" onclick="seek(event)">
+            <div class="progress-bar"></div>
+        </div>
+        <button onclick="togglePlay()">播放/暂停</button>
+    </div>
     <div class="music-grid">
         <div class="music-card pop">
             <h3>流行音乐</h3>
@@ -167,7 +177,6 @@
                 <li class="song-item">光的方向 - 周深</li>
             </ul>
         </div>
-        
         <div class="music-card electronic">
             <h3>电子音乐</h3>
             <ul class="song-list">
@@ -175,7 +184,6 @@
                 <li class="song-item">The Spectre</li>
             </ul>
         </div>
-        
         <div class="music-card rock">
             <h3>摇滚音乐</h3>
             <ul class="song-list">
@@ -183,7 +191,6 @@
                 <li class="song-item">Bohemian Rhapsody</li>
             </ul>
         </div>
-        
         <div class="music-card classical">
             <h3>古典音乐</h3>
             <ul class="song-list">
@@ -191,7 +198,6 @@
                 <li class="song-item">四季·春</li>
             </ul>
         </div>
-        
         <div class="music-card hiphop">
             <h3>嘻哈音乐</h3>
             <ul class="song-list">
@@ -199,7 +205,6 @@
                 <li class="song-item">God's Plan</li>
             </ul>
         </div>
-        
         <div class="music-card jazz">
             <h3>爵士音乐</h3>
             <ul class="song-list">
@@ -208,5 +213,20 @@
             </ul>
         </div>
     </div>
+	<script>
+        const audio = document.getElementById('audio-player');
+        function playSong(src, title) {
+            audio.src = src;
+            audio.play();
+            document.getElementById('now-playing').textContent = title;
+        }
+        function togglePlay() {
+            audio.paused ? audio.play() : audio.pause();
+        }
+        function seek(e) {
+            const percent = e.offsetX / e.target.offsetWidth;
+            audio.currentTime = percent * audio.duration;
+        }
+    </script>
 </body>
 </html>
