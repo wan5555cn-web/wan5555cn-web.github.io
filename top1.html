@@ -66,7 +66,11 @@
 			box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 			border-top: 5px solid;
 			position: relative;
-			background-color: rgba(0,0,0,0.01); /* 极低透明度底色解决JPG边缘锯齿 */
+			background-color: rgba(0,0,0,0.01); /* 极低透明度底色解决JPG边缘锯齿 */			
+			width: 100%; /* 宽度自适应容器 */
+			aspect-ratio: 9/16; /* 竖图推荐比例(如1080x1920) */
+			max-height: 100vh; /* 限制最大高度 */
+			overflow: hidden; /* 隐藏超出部分 */
 			}  
 		.music-card::before {
 			content: '';
@@ -96,12 +100,26 @@
 		.hiphop  { --category-bg: url('png5.png'); }
 		.jazz    { --category-bg: url('png6.png'); }
         .song-list {
+			position: relative;
+			height: calc(100% - 60px); /* 留出边距 */
+			margin: 30px 20px;
+			padding: 0;
+			z-index: 2;
+			scrollbar-width: thin; /* 火狐滚动条优化 */
+			scrollbar-color: rgba(255,215,0,0.5) transparent; /* 金色滚动条 */
             margin: 0;
-            padding: 0;
             list-style: none;
-			height: 100vh; / 和图片高度一致 /
 			overflow-y: auto; / 允许滚动查看完整内容 /
         }
+		/* Chrome滚动条美化 */
+		.song-list::-webkit-scrollbar {
+			width: 6px;
+			background: transparent;
+		}
+		.song-list::-webkit-scrollbar-thumb {
+			background: rgba(255,215,0,0.5);
+			border-radius: 3px;
+		}
         .song-item {
             padding: 8px 0;
             color: #555;
@@ -128,11 +146,13 @@
         1px 1px 0 hsl(40,100%,30%); /* 暖色偏移阴影 */
 		font-weight: 600;
 		transition: all 0.3s ease;
-		background: 
-        linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(255,215,0,0.15) 50%, 
-            transparent 100%); /* 横向光晕效果 */
+		background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.15) 50%, transparent 100%); 
+		/* 横向光晕效果 */
+		content: '';
+		position: absolute;
+		inset: 0; /* 四边贴合 */
+		mix-blend-mode: multiply;
+		z-index: 1;
 		}
 /* 暗色背景下的增强方案 */
 	.dark-background .song-title {
