@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>科技感动态背景</title>
+    <title>音乐分类导航</title>
     <style>
-body {
+	body {
 		margin: 0;
 		min-height: 100vh;
 		background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);
@@ -52,13 +52,196 @@ body {
             box-shadow: 0 4px 20px rgba(0, 150, 255, 0.3);
             border: 1px solid rgba(0, 191, 255, 0.2);
         }
+        :root {
+            --pop: #FF9E7D;
+            --electronic: #FFB347;
+            --rock: #7FC7D9;
+            --classical: #D8BFD8;
+            --hiphop: #FF6B6B;
+            --jazz: #BA55D3;
+            --return-btn: #6C757D;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 30px;
+            min-height: 100vh;
+        }
+        
+        /* 返回按钮样式 */
+        .return-btn {
+            display: block;
+            width: 120px;
+            margin: 0 auto 30px;
+            padding: 10px 15px;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(5px);
+            border-radius: 25px;
+            border: none;
+            border-top: 3px solid var(--return-btn);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            color: #333;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .return-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            background: rgba(255,255,255,0.9);
+        }
+        
+        .return-btn::before {
+            content: "←";
+            margin-right: 5px;
+        }
+        
+        /* 分类卡片网格系统 */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        .music-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-top: 4px solid;
+        }
+        
+        /* 分类颜色系统 */
+        .pop { border-color: var(--pop); }
+        .electronic { border-color: var(--electronic); }
+        .rock { border-color: var(--rock); }
+        .classical { border-color: var(--classical); }
+        .hiphop { border-color: var(--hiphop); }
+        .jazz { border-color: var(--jazz); }
+        
+        /* 悬停效果 */
+        .music-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        /* 标题样式 */
+        h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+        }
+        
+        /* 歌曲列表 */
+        .song-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .song-item {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 22px;
+            border-bottom: 1px dashed rgba(0,0,0,0.08);
+        }
+        
+        .song-item:last-child {
+            border-bottom: none;
+        }
+        
+        .song-item::before {
+            content: "♪";
+            position: absolute;
+            left: 0;
+            color: inherit;
+            opacity: 0.7;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1400px) {
+            .music-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        
+        @media (max-width: 900px) {
+            .music-grid { grid-template-columns: repeat(3, 1fr); }
+            .return-btn { margin-bottom: 20px; }
+        }
+        
+        @media (max-width: 600px) {
+            .music-grid { grid-template-columns: repeat(2, 1fr); }
+            body { padding: 20px 15px; }
+        }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>龙视界空间</h1>
-        <p>深色动态背景与未来科技元素的完美融合</p>
-        <img src="gsyzbs.jpg" alt="科技感图像" class="tech-image">
+    <!-- 返回按钮 -->
+    <button class="return-btn">返回视频</button>
+    
+    <!-- 音乐分类网格 -->
+    <div class="music-grid">
+        <div class="music-card pop">
+            <h3>流行音乐</h3>
+            <ul class="song-list">
+                <li class="song-item">星辰大海 - 张杰</li>
+                <li class="song-item">光的方向 - 周深</li>
+                <li class="song-item">少年 - 梦然</li>
+            </ul>
+        </div>
+        
+        <div class="music-card electronic">
+            <h3>电子音乐</h3>
+            <ul class="song-list">
+                <li class="song-item">Faded - Alan Walker</li>
+                <li class="song-item">The Spectre - Alan Walker</li>
+            </ul>
+        </div>
+        
+        <div class="music-card rock">
+            <h3>摇滚音乐</h3>
+            <ul class="song-list">
+                <li class="song-item">Sweet Child O'Mine</li>
+                <li class="song-item">Bohemian Rhapsody</li>
+            </ul>
+        </div>
+        
+        <div class="music-card classical">
+            <h3>古典音乐</h3>
+            <ul class="song-list">
+                <li class="song-item">月光奏鸣曲</li>
+                <li class="song-item">四季·春</li>
+            </ul>
+        </div>
+        
+        <div class="music-card hiphop">
+            <h3>嘻哈音乐</h3>
+            <ul class="song-list">
+                <li class="song-item">Lose Yourself</li>
+                <li class="song-item">God's Plan</li>
+            </ul>
+        </div>
+        
+        <div class="music-card jazz">
+            <h3>爵士音乐</h3>
+            <ul class="song-list">
+                <li class="song-item">Take Five</li>
+                <li class="song-item">Fly Me To The Moon</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
