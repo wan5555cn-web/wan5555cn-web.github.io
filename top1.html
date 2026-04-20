@@ -66,11 +66,7 @@
 			box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 			border-top: 5px solid;
 			position: relative;
-			background-color: rgba(0,0,0,0.01); /* 极低透明度底色解决JPG边缘锯齿 */			
-			width: 100%; /* 宽度自适应容器 */
-			aspect-ratio: 9/16; /* 竖图推荐比例(如1080x1920) */
-			max-height: 100vh; /* 限制最大高度 */
-			overflow: hidden; /* 隐藏超出部分 */
+			background-color: rgba(0,0,0,0.01); /* 极低透明度底色解决JPG边缘锯齿 */
 			}  
 		.music-card::before {
 			content: '';
@@ -100,16 +96,10 @@
 		.hiphop  { --category-bg: url('png5.png'); }
 		.jazz    { --category-bg: url('png6.png'); }
         .song-list {
-			position: relative;
-			height: calc(100% - 60px); /* 留出边距 */
-			margin: 30px 20px;
-			padding: 0;
-			overflow-y: auto;
-			z-index: 2;
-			scrollbar-width: thin; /* 火狐滚动条优化 */
-			scrollbar-color: rgba(255,215,0,0.5) transparent; /* 金色滚动条 */
+            margin: 0;
+            padding: 0;
             list-style: none;
-			height: 100vh; / 和图片高度一致 /
+			height: 800px; / 和图片高度一致 /
 			overflow-y: auto; / 允许滚动查看完整内容 /
         }
         .song-item {
@@ -127,7 +117,7 @@
 	.music-card::after {
 		background: transparent;
 		background-image: var(--category-bg);
-		background-size: cover;
+		background-size: contain;
 		background-position: center;
 		mix-blend-mode: multiply;
 		}
@@ -138,14 +128,11 @@
         1px 1px 0 hsl(40,100%,30%); /* 暖色偏移阴影 */
 		font-weight: 600;
 		transition: all 0.3s ease;
-		background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.15) 50%, transparent 100%); 
-		/* 横向光晕效果 */
-		content: '';
-		position: absolute;
-		inset: 0; /* 四边贴合 */
-		background: transparent url('your-image.png') center/cover no-repeat;
-		mix-blend-mode: multiply;
-		z-index: 1;
+		background: 
+        linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255,215,0,0.15) 50%, 
+            transparent 100%); /* 横向光晕效果 */
 		}
 /* 暗色背景下的增强方案 */
 	.dark-background .song-title {
@@ -159,42 +146,42 @@
 <body>
     <a href="index.html" class="return-btn">← 返回视频页</a>
     <div class="music-grid">
-        <div class="song-title">
+        <div class="music-card pop">
             <h3>流行音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
                 <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
             </ul>
         </div>
-        <div class="song-title">
+        <div class="music-card electronic">
             <h3>电子音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="Faded.mp3" download>Faded - Alan Walker</a></li>
                 <li class="song-item"><a href="TheSpectre.mp3" download>The Spectre</a></li>
             </ul>
         </div>
-        <div class="song-title">
+        <div class="music-card rock">
             <h3>摇滚音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
                 <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
             </ul>
         </div>
-        <div class="song-title">
+        <div class="music-card classical">
             <h3>古典音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="MoonlightSonata.mp3" download>月光奏鸣曲</a></li>
                 <li class="song-item"><a href="FourSeasonsSpring.mp3" download>四季·春</a></li>
             </ul>
         </div>
-        <div class="song-title">
+        <div class="music-card hiphop">
             <h3>嘻哈音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="LoseYourself.mp3" download>Lose Yourself</a></li>
                 <li class="song-item"><a href="GodsPlan.mp3" download>God's Plan</a></li>
             </ul>
         </div>
-        <div class="song-title">
+        <div class="music-card jazz">
             <h3>爵士音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="TakeFive.mp3" download>Take Five</a></li>
