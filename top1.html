@@ -67,20 +67,20 @@
 			position: relative;
 			background-color: rgba(0,0,0,0.01); /* 极低透明度底色解决JPG边缘锯齿 */
 			}  
-.music-card::before {
-    content: '';
-    position: absolute;
-    top: 2px;  /* 微调位置避免边框遮挡 */
-    left: 2px;
-    right: 2px;
-    bottom: 2px;
-    background: 
-        linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0)), 
-        var(--category-bg) center/cover;
-    border-radius: 10px; /* 略小于父元素圆角 */
-    z-index: -1;
-    filter: brightness(1.1) contrast(0.9); /* 提升JPG明暗层次 */
-}			
+		.music-card::before {
+			content: '';
+			position: absolute;
+			top: 2px;  /* 微调位置避免边框遮挡 */
+			left: 2px;
+			right: 2px;
+			bottom: 2px;
+			background: 
+			linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0)), 
+			var(--category-bg) center/cover;
+			border-radius: 10px; /* 略小于父元素圆角 */
+			z-index: -1;
+			filter: brightness(1.1) contrast(0.9); /* 提升JPG明暗层次 */
+		}			
 		.pop { border-color: var(--pop); }
         .electronic { border-color: var(--electronic); }
         .rock { border-color: var(--rock); }
@@ -88,12 +88,12 @@
         .hiphop { border-color: var(--hiphop); }
         .jazz { border-color: var(--jazz); }
 		/* 分类图片定义 - 需准备6张浅色系JPG */
-.pop     { --category-bg: url('eracover0206.jpg'); }
-.electronic { --category-bg: url('dr2026.jpg'); }
-.rock    { --category-bg: url('kfkf417.jpg'); }
-.classical { --category-bg: url('shi.jpg'); }
-.hiphop  { --category-bg: url('syqsh.jpg'); }
-.jazz    { --category-bg: url('wmdxq.jpg'); }
+		.pop     { --category-bg: url('png1.png'); }
+		.electronic { --category-bg: url('png2.png'); }
+		.rock    { --category-bg: url('png3.png'); }
+		.classical { --category-bg: url('png4.png'); }
+		.hiphop  { --category-bg: url('png5.png'); }
+		.jazz    { --category-bg: url('png6.png'); }
         .song-list {
             margin: 0;
             padding: 0;
@@ -111,6 +111,26 @@
         .song-item a:hover {
             text-decoration: underline;
         }
+	.song-title {
+		color: #FFD700; /* 使用高饱和金色 */
+		text-shadow: 
+        0 1px 3px rgba(0,0,0,0.3), /* 深色投影增强对比 */
+        1px 1px 0 hsl(40,100%,30%); /* 暖色偏移阴影 */
+		font-weight: 600;
+		transition: all 0.3s ease;
+		background: 
+        linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255,215,0,0.15) 50%, 
+            transparent 100%); /* 横向光晕效果 */
+		}
+/* 暗色背景下的增强方案 */
+	.dark-background .song-title {
+		color: #FFEE99; /* 提亮色调 */
+		text-shadow: 
+        0 0 8px rgba(255,238,153,0.7),
+        0 2px 4px rgba(0,0,0,0.5);
+		}
     </style>
 </head>
 <body>
