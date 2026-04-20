@@ -59,7 +59,8 @@
             backdrop-filter: blur(10px);
         }
         .music-card {
-			background: transparent;
+			background: transparent !important;
+			isolation: isolate; /* 防止混合模式污染其他元素 */
 			border-radius: 12px;
 			padding: 20px;
 			box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -113,6 +114,13 @@
         .song-item a:hover {
             text-decoration: underline;
         }
+	.music-card::after {
+		background: transparent;
+		background-image: var(--category-bg);
+		background-size: contain;
+		background-position: center;
+		mix-blend-mode: multiply;
+		}
 	.song-title {
 		color: #FFD700; /* 使用高饱和金色 */
 		text-shadow: 
