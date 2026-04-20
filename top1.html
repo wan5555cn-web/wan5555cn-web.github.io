@@ -18,7 +18,7 @@
             padding: 30px;
             font-family: 'Segoe UI', system-ui, sans-serif;
             background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);
-            background-size: 200% 200%;
+            background-size: 100% 100%;
             animation: gradient 8s ease infinite;
             text-align: center;
         }
@@ -28,8 +28,17 @@
             100% { background-position: 0% 50%; }
         }
 		.return-btn {
+			display: inline-block;
+			padding: 12px 24px;
+			margin-bottom: 40px;
 			background: transparent;
+			border: none;
+			border-radius: 30px;
 			box-shadow: none;
+			color: #bbb;
+			font-weight: 600;
+			text-decoration: none;
+			transition: all 0.3s;
 			}
         .music-grid {
             display: grid;
@@ -73,7 +82,7 @@
     </style>
 </head>
 <body>
-    <a href="#" class="return-btn">← 返回视频页</a>
+    <a href="index.html" class="return-btn">← 返回视频页</a>
     <div class="music-grid">
         <div class="music-card pop">
             <h3>流行音乐</h3>
