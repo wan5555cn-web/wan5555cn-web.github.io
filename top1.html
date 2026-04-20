@@ -27,17 +27,10 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        .return-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            margin-bottom: 30px;
-            background: rgba(255,255,255,0.9);
-            border-radius: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            color: #333;
-            font-weight: 600;
-            text-decoration: none;
-        }
+		.return-btn {
+			background: transparent;
+			box-shadow: none;
+			}
         .music-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -48,13 +41,13 @@
             backdrop-filter: blur(10px);
         }
         .music-card {
-            background: transparent;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-top: 5px solid;
-        }
-        .pop { border-color: var(--pop); }
+			background: transparent;
+			border-radius: 12px;
+			padding: 20px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+			border-top: 5px solid;
+			}        
+		.pop { border-color: var(--pop); }
         .electronic { border-color: var(--electronic); }
         .rock { border-color: var(--rock); }
         .classical { border-color: var(--classical); }
