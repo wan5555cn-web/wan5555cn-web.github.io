@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技感动态背景</title>
+    <style>
+body {
+		margin: 0;
+		min-height: 100vh;
+		background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);
+		background-size: 200% 200%;
+		animation: gradient 8s ease infinite;
+		padding-top: 20px;
+		background-color: #bbbbbb;
+		font-family: 'Microsoft YaHei', Arial, sans-serif;
+		text-align: center;
+		}
+	@keyframes gradient {
+		0% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+		100% { background-position: 0% 50%; }
+		}
+        @keyframes pulse {
+            0% { background-position: 0% 20%; }
+            50% { background-position: 100% 80%; }
+            100% { background-position: 0% 20%; }
+        }
+
+        @keyframes scan {
+            from { background-position: 0 -30px; }
+            to { background-position: 0 110vh; }
+        }
+
+        .content {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .tech-image {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 150, 255, 0.3);
+            border: 1px solid rgba(0, 191, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>龙视界空间</h1>
+        <p>深色动态背景与未来科技元素的完美融合</p>
+        <img src="gsyzbs.jpg" alt="科技感图像" class="tech-image">
+    </div>
+</body>
+</html>
