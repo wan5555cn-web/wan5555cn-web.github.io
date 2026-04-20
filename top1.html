@@ -13,6 +13,12 @@
             --hiphop: #FF6B6B;
             --jazz: #BA55D3;
         }
+		.pop { border-color: var(--pop); }
+        .electronic { border-color: var(--electronic); }
+        .rock { border-color: var(--rock); }
+        .classical { border-color: var(--classical); }
+        .hiphop { border-color: var(--hiphop); }
+        .jazz { border-color: var(--jazz); }
         body {
             margin: 0;
             padding: 30px;
@@ -30,17 +36,26 @@
 		.return-btn {
 			display: inline-block;
 			padding: 12px 24px;
-			margin-bottom: 40px;
+			margin-bottom: 40px;  /* 与下方内容间距 */
 			background: transparent;
-			border: none;
+			border: 1px solid rgba(var(--text-dark), var(--border-alpha));
 			border-radius: 30px;
-			box-shadow: none;
-			color: #bbb;
+			color: var(--text-dark);
 			font-weight: 600;
 			text-decoration: none;
-			transition: all 0.3s;
-			}
-        .music-grid {
+			transition: all 0.3s ease;
+			cursor: pointer;
+		}
+	/* 交互效果 */
+		.return-btn:hover {
+			border-color: rgba(var(--text-dark), 0.6);
+			background: rgba(255, 255, 255, 0.1);
+			transform: translateY(-2px);
+		}
+		.return-btn:active {
+			transform: translateY(1px);
+		}
+       .music-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
@@ -56,12 +71,6 @@
 			box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 			border-top: 5px solid;
 			}        
-		.pop { border-color: var(--pop); }
-        .electronic { border-color: var(--electronic); }
-        .rock { border-color: var(--rock); }
-        .classical { border-color: var(--classical); }
-        .hiphop { border-color: var(--hiphop); }
-        .jazz { border-color: var(--jazz); }
         .song-list {
             margin: 0;
             padding: 0;
