@@ -5,25 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>音乐分类导航</title>
     <style>
-	    .music-player {
-            background: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            width: 90%;
-            max-width: 500px;
-        }
-        .progress-container {
-            height: 5px;
-            background: #ddd;
-            margin: 15px 0;
-            cursor: pointer;
-        }
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: #ff6b6b;
-        }
 	body {
 		margin: 0;
 		min-height: 100vh;
@@ -35,7 +16,7 @@
 		font-family: 'Microsoft YaHei', Arial, sans-serif;
 		text-align: center;
 		}
-	@keyframes gradient {
+		@keyframes gradient {
 		0% { background-position: 0% 50%; }
 		50% { background-position: 100% 50%; }
 		100% { background-position: 0% 50%; }
@@ -68,6 +49,15 @@
             box-shadow: 0 4px 20px rgba(0, 150, 255, 0.3);
             border: 1px solid rgba(0, 191, 255, 0.2);
         }
+		margin: 0;
+				min-height: 100vh;
+				background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);
+				background-size: 200% 200%;
+				animation: gradient 8s ease infinite;
+				padding-top: 20px;
+				font-family: 'Microsoft YaHei', Arial, sans-serif;
+				text-align: center;
+				}
         :root {
             --pop: #FF9E7D;
             --electronic: #FFB347;
@@ -105,6 +95,8 @@
             gap: 20px;
             max-width: 1400px;
             margin: 0 auto;
+			background: rgba(255, 255, 255, 0.5);
+			backdrop-filter: blur(10px);
         }
         .music-card {
             background: rgba(255,255,255,0.85);
@@ -144,6 +136,14 @@
             left: 0;
             opacity: 0.7;
         }
+		.music-player {
+			background: rgba(255,255,255,0.92);
+			border-radius: 16px;
+			padding: 20px;
+			margin: 0 auto 30px;
+			max-width: 550px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+			}
 		.progress-container {
 			height: 6px;
 			background: rgba(0,0,0,0.1);
@@ -154,27 +154,16 @@
 			width: 0%;
 			background: #FF9E7D;
 			}
-		const playerReturnUrl = 'top1.html';
-		document.querySelector('.music-player .return-btn').href = playerReturnUrl;
     </style>
 </head>
-<!-- 播放器模块 -->
 <body>
     <a href="index.html" class="return-btn">← 返回视频页</a>
-	<div class="music-player">
-        <div id="now-playing">等待播放...</div>
-        <audio id="audio-player"></audio>
-        <div class="progress-container" onclick="seek(event)">
-            <div class="progress-bar"></div>
-        </div>
-        <button onclick="togglePlay()">播放/暂停</button>
-    </div>
     <div class="music-grid">
         <div class="music-card pop">
             <h3>流行音乐</h3>
             <ul class="song-list">
-                <li class="song-item">星辰大海 - 张杰</li>
-                <li class="song-item">光的方向 - 周深</li>
+                <li class="song-item"><a href="https://example.com/music/星辰大海.mp3" target="_blank">星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="https://example.com/music/光的方向.mp3" target="_blank">光的方向 - 周深</a></li>
             </ul>
         </div>
         <div class="music-card electronic">
@@ -213,20 +202,5 @@
             </ul>
         </div>
     </div>
-	<script>
-        const audio = document.getElementById('audio-player');
-        function playSong(src, title) {
-            audio.src = src;
-            audio.play();
-            document.getElementById('now-playing').textContent = title;
-        }
-        function togglePlay() {
-            audio.paused ? audio.play() : audio.pause();
-        }
-        function seek(e) {
-            const percent = e.offsetX / e.target.offsetWidth;
-            audio.currentTime = percent * audio.duration;
-        }
-    </script>
 </body>
 </html>
