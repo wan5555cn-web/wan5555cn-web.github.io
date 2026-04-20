@@ -140,19 +140,11 @@
 		mix-blend-mode: multiply;
 		}
 	.song-title {
-		color: #FFD700; /* 使用高饱和金色 */
-		text-shadow: 
-        0 1px 3px rgba(0,0,0,0.3), /* 深色投影增强对比 */
-        1px 1px 0 hsl(40,100%,30%); /* 暖色偏移阴影 */
-		font-weight: 600;
-		transition: all 0.3s ease;
-		background: linear-gradient(90deg, transparent 0%, rgba(255,215,0,0.15) 50%, transparent 100%); 
-		/* 横向光晕效果 */
-		content: '';
-		position: absolute;
-		inset: 0; /* 四边贴合 */
-		mix-blend-mode: multiply;
-		z-index: 1;
+		color: #FFD700; / 金色文字 /
+		text-shadow: 0 1px 3px rgba(0,0,0,0.3), / 深色投影增强对比 /
+        1px 1px 0 hsl(40,100%,30%); / 暖色偏移阴影 /
+		font-weight: 600; / 加粗字体 /
+		transition: all 0.3s ease; / 平滑过渡效果 /
 		}
 /* 暗色背景下的增强方案 */
 	.dark-background .song-title {
@@ -166,42 +158,42 @@
 <body>
     <a href="index.html" class="return-btn">← 返回视频页</a>
     <div class="music-grid">
-        <div class="music-card pop">
+        <div class="song-title">
             <h3>流行音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
                 <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
             </ul>
         </div>
-        <div class="music-card electronic">
+        <div class="song-title">
             <h3>电子音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="Faded.mp3" download>Faded - Alan Walker</a></li>
                 <li class="song-item"><a href="TheSpectre.mp3" download>The Spectre</a></li>
             </ul>
         </div>
-        <div class="music-card rock">
+        <div class="song-title">
             <h3>摇滚音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
                 <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
             </ul>
         </div>
-        <div class="music-card classical">
+        <div class="song-title">
             <h3>古典音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="MoonlightSonata.mp3" download>月光奏鸣曲</a></li>
                 <li class="song-item"><a href="FourSeasonsSpring.mp3" download>四季·春</a></li>
             </ul>
         </div>
-        <div class="music-card hiphop">
+        <div class="song-title">
             <h3>嘻哈音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="LoseYourself.mp3" download>Lose Yourself</a></li>
                 <li class="song-item"><a href="GodsPlan.mp3" download>God's Plan</a></li>
             </ul>
         </div>
-        <div class="music-card jazz">
+        <div class="song-title">
             <h3>爵士音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="TakeFive.mp3" download>Take Five</a></li>
