@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐跳转播放系统</title>
+    <style>
+	    body {
+            margin: 0;
+			min-height: 100dvh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+            text-align: center;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 列表页样式 */
+        .song-list {
+			width: 80%;
+			height: auto;
+        }
+        .song-item {
+            padding: 12px;
+            border-bottom: 6px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }       
+        /* 播放页样式 */
+        .player-page {
+			width: 22%;
+            text-align: center;
+            padding: 2rem;
+        }
+        audio {
+            width: 80%;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 列表页 -->
+    <div class="song-list" id="listPage">
+        <h2>歌曲列表</h2>
+        <div class="song-item">
+            <a href="player.html?song=我们的星球-Muse.mp3&title=我们的星球&artist=Muse">我们的星球 - Muse</a>
+        </div>
+   </div>
+
+    <!-- 播放页（实际应单独为player.html文件） -->
+    <div class="player-page" id="playerPage" style="display:none;">
+        <h2 id="nowPlaying">正在播放</h2>
+        <audio id="audioPlayer" controls autoplay></audio>
+        <p id="songInfo"></p>
+        <a href="top1.html" onclick="history.back()">返回列表</a>
+    </div>
+
+    <script>
+        // URL参数解析（实际应用中应拆分为两个HTML文件）
+        const urlParams = new URLSearchParams(window.location.search);
+        if(urlParams.has('song')) {
+            document.getElementById('listPage').style.display = 'none';
+            document.getElementById('playerPage').style.display = 'block';
+            
+            const player = document.getElementById('audioPlayer');
+            player.src = decodeURIComponent(urlParams.get('song'));
+            document.getElementById('songInfo').textContent = 
+                `${decodeURIComponent(urlParams.get('title'))} - ${decodeURIComponent(urlParams.get('artist'))}`;
+            player.play().catch(e => console.log("自动播放受限:", e));
+        }
+
+        // 实际部署时应：
+        // 1. 将播放器页面单独保存为player.html
+        // 2. 列表页链接改为：<a href="player.html?song=我们的星球.mp3&title=我们的星球&artist=Muse">
+        // 3. 删除本示例中的display切换逻辑
+    </script>
+</body>
+</html>

@@ -19,168 +19,224 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        :root {
-            --pop: #FF9E7D;
-            --electronic: #FFB347;
-            --rock: #7FC7D9;
-            --classical: #D8BFD8;
-            --hiphop: #FF6B6B;
-            --jazz: #BA55D3;
-        }
-		.return-btn {
-			display: inline-block;
-			padding: 12px 24px;
-			margin-bottom: 20px;  /* 与下方内容间距 */
+/* 基础网格布局 */
+		.music-grid {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			gap: 18px;
+			padding: 15px;
 			background: transparent;
-			border: 1px solid rgba(var(--text-dark), var(--border-alpha));
-			border-radius: 30px;
-			color: var(--text-dark);
-			font-weight: 600;
-			text-decoration: none;
-			transition: all 0.3s ease;
-			cursor: pointer;
-		}
-	/* 交互效果 */
-		.return-btn:hover {
-			border-color: rgba(var(--text-dark), 0.6);
-			background: rgba(255, 255, 255, 0.1);
-			transform: translateY(-2px);
-		}
-		.return-btn:active {
-			transform: translateY(1px);
-		}
-       .music-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-            background: transparent;
-            backdrop-filter: blur(10px);
-        }
-        .music-card {
-			background: transparent;
-			border-radius: 12px;
-			padding: 20px;
-			box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-			border-top: 5px solid;
 			position: relative;
-			background-color: rgba(0,0,0,0.01); /* 极低透明度底色解决JPG边缘锯齿 */
-			}  
-		.music-card::before {
-			content: '';
-			position: absolute;
-			top: 2px;  /* 微调位置避免边框遮挡 */
-			left: 2px;
-			right: 2px;
-			bottom: 2px;
-			background: 
-			linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0)), 
-			var(--category-bg) center/cover;
-			border-radius: 10px; /* 略小于父元素圆角 */
-			z-index: -1;
-			filter: brightness(1.1) contrast(0.9); /* 提升JPG明暗层次 */
-		}			
-		.pop { border-color: var(--pop); }
-        .electronic { border-color: var(--electronic); }
-        .rock { border-color: var(--rock); }
-        .classical { border-color: var(--classical); }
-        .hiphop { border-color: var(--hiphop); }
-        .jazz { border-color: var(--jazz); }
-		/* 分类图片定义 - 需准备6张浅色系JPG */
-		.pop     { --category-bg: url('png1.png'); }
-		.electronic { --category-bg: url('png2.png'); }
-		.rock    { --category-bg: url('png3.png'); }
-		.classical { --category-bg: url('png4.png'); }
-		.hiphop  { --category-bg: url('png5.png'); }
-		.jazz    { --category-bg: url('png6.png'); }
-        .song-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-			height: 800px; / 和图片高度一致 /
-			overflow-y: auto; / 允许滚动查看完整内容 /
-        }
-        .song-item {
-            padding: 8px 0;
-            color: #555;
-            text-align: left;
-        }
-        .song-item a {
-            color: inherit;
-            text-decoration: none;
-        }
-        .song-item a:hover {
-            text-decoration: underline;
-        }
-	.music-card::after {
-		background: transparent;
-		background-image: var(--category-bg);
-		background-size: contain;
-		background-position: center;
-		mix-blend-mode: multiply;
+			z-index: 35;
+			min-height: 100vh;
 		}
-	.song-title {
-		color: #FFD700; /* 使用高饱和金色 */
-		text-shadow: 
-        0 1px 3px rgba(0,0,0,0.3), /* 深色投影增强对比 */
-        1px 1px 0 hsl(40,100%,30%); /* 暖色偏移阴影 */
-		font-weight: 600;
-		transition: all 0.3s ease;
-		background: 
-        linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(255,215,0,0.15) 50%, 
-            transparent 100%); /* 横向光晕效果 */
+/* 通用卡片样式 */
+		[class^="music-"] {
+			height: 260px;
+			border-radius: 14px;
+			position: relative;
+			isolation: isolate;
+			overflow: hidden;
+			transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+			background:
+			linear-gradient(145deg, rgba(0,0,0,0.22), transparent 72%),
+			var(--bg-image) center/cover no-repeat;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 		}
-/* 暗色背景下的增强方案 */
-	.dark-background .song-title {
-		color: #FFEE99; /* 提亮色调 */
-		text-shadow: 
-        0 0 8px rgba(255,238,153,0.7),
-        0 2px 4px rgba(0,0,0,0.5);
+/* 独立背景配置 */
+		.music-pop { --bg-image: url('png1.png'); 
+			min-height: 850px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
 		}
+		.music-electronic { --bg-image: url('png2.png'); 
+			min-height: 850px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-rock { --bg-image: url('png3.png'); 
+			min-height: 850px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-classical { --bg-image: url('png4.png'); 
+			min-height: 850px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-hiphop { --bg-image: url('png5.png'); 
+			min-height: 850px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-jazz { --bg-image: url('png6.png'); 
+			min-height: 850px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+			}
+/* 内容区域 */
+		.music-card {
+			position: relative;
+			background: var(--bg-color);
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+			}
+	h3 { 
+		color: #FFD700; /* 金黄色 */
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.8), /* 基础阴影 */
+			0 0 10px rgba(255,215,0,0.5); /* 发光效果 */
+			font-weight: bold;
+			letter-spacing: 1px;
+			transition: all 0.3s ease; /* 悬停动画 */
+			font-size: 1.4rem; margin-bottom: 8px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+		.song-list { 
+			max-height: 780px;
+			overflow-y: auto;
+			padding: 0 15px;
+			scrollbar-width: thin;
+			scrollbar-color: #FFA500 rgba(0,0,0,0.1);
+			}
+		/* 滚动条美化（Webkit浏览器） */
+		.song-list::-webkit-scrollbar {
+			width: 3px;
+			}
+		.song-list::-webkit-scrollbar-thumb {
+			background: #FFA500;
+			border-radius: 4px;
+			max-height: 200px;
+			overflow-y: auto;
+			}
+		/* 歌名项样式 */
+		.song-item a {
+			display: block;
+			color: #FFA500;
+			padding: 6px 0;
+			transition: all 0.3s;
+			border-bottom: 1px dashed rgba(255,165,0,0.3);
+			}
+		.song-item a:hover {
+			color: #FF8C00;
+			transform: translateX(5px);
+			text-shadow: 0 0 5px rgba(255,140,0,0.5);
+			}
+		.song-item.repeat::after {
+			content: " × " attr(data-count);
+			color: #999;
+			}
+/* 响应式设计 */
+@media (max-width: 1280px) { .music-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 960px) { .music-grid { grid-template-columns: repeat(3, 1fr); }
+[class^="music-"] { height: 220px; }
+}
+@media (max-width: 640px) { .music-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) { .music-grid { grid-template-columns: 1fr; }
+[class^="music-"] { height: 200px; }
+}
+/* 交互效果 */
+[class^="music-"]:hover {
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+background-blend-mode: overlay;
+}
+.song-item a {
+  color: #000; / 替换成你想要的流行色 /
+  transition: all 0.3s ease;
+}
+.song-item a:hover {
+color: #00FF00;
+text-decoration: underline;
+text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
     </style>
 </head>
 <body>
     <a href="index.html" class="return-btn">← 返回视频页</a>
     <div class="music-grid">
-        <div class="music-card pop">
+        <div class="music-pop">
             <h3>流行音乐</h3>
             <ul class="song-list">
+                <li class="song-item"><a href="player.html?song=我们的星球-Muse.mp3&title=我们的星球&artist=Muse">我们的星球 - Muse</a></li>
+                <li class="song-item"><a href="player.html?song=锚点与沙盒-Muse.mp3&title=锚点与沙盒&artist=Muse">锚点与沙盒 - Muse</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
+                <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
+                <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
                 <li class="song-item"><a href="星辰大海.mp3" download>星辰大海 - 张杰</a></li>
                 <li class="song-item"><a href="光的方向.mp3" download>光的方向 - 周深</a></li>
             </ul>
         </div>
-        <div class="music-card electronic">
+        <div class="music-electronic">
             <h3>电子音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="Faded.mp3" download>Faded - Alan Walker</a></li>
                 <li class="song-item"><a href="TheSpectre.mp3" download>The Spectre</a></li>
             </ul>
         </div>
-        <div class="music-card rock">
+        <div class="music-rock">
             <h3>摇滚音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
                 <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
+                <li class="song-item"><a href="SweetChildOMine.mp3" download>Sweet Child O'Mine</a></li>
+                <li class="song-item"><a href="BohemianRhapsody.mp3" download>Bohemian Rhapsody</a></li>
             </ul>
         </div>
-        <div class="music-card classical">
+        <div class="music-classical">
             <h3>古典音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="MoonlightSonata.mp3" download>月光奏鸣曲</a></li>
                 <li class="song-item"><a href="FourSeasonsSpring.mp3" download>四季·春</a></li>
             </ul>
         </div>
-        <div class="music-card hiphop">
+        <div class="music-hiphop">
             <h3>嘻哈音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="LoseYourself.mp3" download>Lose Yourself</a></li>
                 <li class="song-item"><a href="GodsPlan.mp3" download>God's Plan</a></li>
             </ul>
         </div>
-        <div class="music-card jazz">
+        <div class="music-jazz">
             <h3>爵士音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="TakeFive.mp3" download>Take Five</a></li>
