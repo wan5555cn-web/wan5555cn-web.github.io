@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龙视界留言板</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .comment-container {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            resize: vertical;
+            font-family: inherit;
+            margin-bottom: 1rem;
+        }
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto 2rem;
+        }
+        .comment-list {
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+        .comment-item {
+            background: white;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="comment-container">
+        <h2>龙视界留言墙</h2>
+        <textarea placeholder="分享你的感受，与千万网友共鸣..."></textarea>
+        <button class="submit-btn">发送留言</button>
+        
+        <div class="comment-list">
+            <div class="comment-item">
+                <strong>用户A：</strong> 特别喜欢《时代之光》的编曲！
+            </div>
+            <div class="comment-item">
+                <strong>旅行者：</strong> 贵州织金的风景和音乐完美融合
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.submit-btn').addEventListener('click', function() {
+            const textarea = document.querySelector('textarea');
+            if (textarea.value.trim()) {
+                const commentList = document.querySelector('.comment-list');
+                const newComment = document.createElement('div');
+                newComment.className = 'comment-item';
+                newComment.innerHTML = `<strong>新用户：</strong> ${textarea.value}`;
+                commentList.prepend(newComment);
+                textarea.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
