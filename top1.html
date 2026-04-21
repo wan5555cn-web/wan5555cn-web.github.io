@@ -6,8 +6,9 @@
     <title>音乐分类导航</title>
     <style>
         body {
+		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
             margin: 0;
-            padding: 30px;
+			overflow-y: auto;
             font-family: 'Segoe UI', system-ui, sans-serif;
             background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);
             background-size: 200% 200%;
@@ -28,11 +29,11 @@
 			background: transparent;
 			position: relative;
 			z-index: 35;
-			min-height: 100vh;
+			min-height: 100dvh;
 		}
 /* 通用卡片样式 */
 		[class^="music-"] {
-			height: 260px;
+			height: auto;
 			border-radius: 14px;
 			position: relative;
 			isolation: isolate;
@@ -45,27 +46,27 @@
 		}
 /* 独立背景配置 */
 		.music-pop { --bg-image: url('png1.png'); 
-			min-height: 850px; / 设置最小高度 /
+			min-height: 380px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-electronic { --bg-image: url('png2.png'); 
-			min-height: 850px; / 设置最小高度 /
+			min-height: 380px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-rock { --bg-image: url('png3.png'); 
-			min-height: 850px; / 设置最小高度 /
+			min-height: 380px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-classical { --bg-image: url('png4.png'); 
-			min-height: 850px; / 设置最小高度 /
+			min-height: 380px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-hiphop { --bg-image: url('png5.png'); 
-			min-height: 850px; / 设置最小高度 /
+			min-height: 380px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-jazz { --bg-image: url('png6.png'); 
-			min-height: 850px; / 设置最小高度 /
+			min-height: 380px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 			}
 /* 内容区域 */
@@ -85,7 +86,7 @@
 			transition: all 0.3s ease; /* 悬停动画 */
 			font-size: 1.4rem; margin-bottom: 8px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
 		.song-list { 
-			max-height: 780px;
+			max-height: 700px;
 			overflow-y: auto;
 			padding: 0 15px;
 			scrollbar-width: thin;
@@ -147,7 +148,7 @@ text-shadow: 0 0 8px rgba(255,255,255,0.3);
     </style>
 </head>
 <body>
-    <a href="index.html" class="return-btn">← 返回视频页</a>
+    <a href="index.html" onclick="history.back()">← 返回视频页</a>
     <div class="music-grid">
         <div class="music-pop">
             <h3>流行音乐</h3>
