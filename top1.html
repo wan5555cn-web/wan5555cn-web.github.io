@@ -127,8 +127,17 @@
 }
 @media (max-width: 640px) { .music-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 480px) { .music-grid { grid-template-columns: 1fr; }
-[class^="music-"] { height: 200px; }
+@media (max-width: 480px) { .music-grid { grid-template-columns: none;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 0 16px 16px;
+    -webkit-overflow-scrolling: touch; }
+[class^="music-"] { scroll-snap-align: start;
+    flex: 0 0 85vw;
+    height: 240px;
+    margin-bottom: 0; }
 }
 /* 交互效果 */
 [class^="music-"]:hover {
