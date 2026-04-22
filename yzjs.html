@@ -118,55 +118,67 @@
                 this.postMessage(textarea.value.trim());
                 });
             }
-            escapeHtml(str) {
-                return str.replace(/[&<>'"\/]/g, tag => ({
-                '&': '&amp;', '>': '&gt;',
-                "'": '&#39;', '"': '&quot;', '/': '&#x2F;'
-                    })[tag]);
-                }
+        // XSS防护方法
+        escapeHtml(str) {
+            return str.replace(/[&<>'"\/]/g, tag => ({
+                '&': '&amp;', 
+                '<': '&lt;', 
+                '>': '&gt;',
+                "'": '&#39;', 
+                '"': '&quot;', 
+                '/': '&#x2F;'
+                })[tag]);
             }
+       // 留言提交方法（含离线存储）
         async postMessage(text) {
             try {
                 const res = await fetch(this.SERVER_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ content: text, timestamp: new Date() })
-                });
-                if (!res.ok) throw new Error();
-                this.saveToLocal('pending', []);
+                body: JSON.stringify({ 
+                content: text, 
+                timestamp: new Date() 
+                })
+            });
+            if (!res.ok) throw new Error();
+            this.saveToLocal('pending', []);
                 } catch (err) {
                 this.saveToLocal('pending', [...this.getLocal('pending'), text]);
+                }
+                this.loadMessages();
             }
-            this.loadMessages();
-        }
 
+        // 双通道数据加载
         async loadMessages() {
-        // 加载服务器数据 + 本地待同步数据
-        try {
-            const [serverData, pendingData] = await Promise.all([
-            fetch(this.SERVER_URL).then(r => r.json()),
-            Promise.resolve(this.getLocal('pending'))
-            ]);
-        this.render([...serverData, ...pendingData.map(t => ({ content: t }))]);
-            } catch (err) {
-            this.render(this.getLocal('fallback'));
+            try {
+                const [serverData, pendingData] = await Promise.all([
+                    fetch(this.SERVER_URL).then(r => r.json()),
+                    Promise.resolve(this.getLocal('pending'))
+                ]);
+            this.render([...serverData, ...pendingData.map(t => ({ content: t }))]);
+                } catch (err) {
+                this.render(this.getLocal('fallback'));
+                }
             }
-        }
 
-        // 辅助方法
+       // 本地存储操作
         saveToLocal(key, data) {
             localStorage.setItem(`msg_${key}`, JSON.stringify(data));
-            }
+                }
+
         getLocal(key) {
             return JSON.parse(localStorage.getItem(`msg_${key}`) || '[]');
-            }
+                }
+
+          // 渲染方法（自动转义）
         render(messages) {
-        document.querySelector('.comment-list').innerHTML = messages
+            document.querySelector('.comment-list').innerHTML = messages
         .map(m => `
-        <div class="comment-item">
-            <strong>用户：</strong> ${escapeHtml(m.content)}
+            <div class="comment-item">
+                <strong>用户：</strong> ${this.escapeHtml(m.content)}
             </div>
             `).join('');
+            }
         }
 
         // 初始化
