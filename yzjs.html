@@ -126,17 +126,16 @@
                 }
             }
         async postMessage(text) {
-        try {
-        // 优先提交服务器
-        const res = await fetch(this.SERVER_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ content: text, timestamp: new Date() })
-        });
-            if (!res.ok) throw new Error();
-            this.saveToLocal('pending', []); // 清空待同步数据
-            } catch (err) {
-            this.saveToLocal('pending', [...this.getLocal('pending'), text]); // 本地暂存
+            try {
+                const res = await fetch(this.SERVER_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ content: text, timestamp: new Date() })
+                });
+                if (!res.ok) throw new Error();
+                this.saveToLocal('pending', []);
+                } catch (err) {
+                this.saveToLocal('pending', [...this.getLocal('pending'), text]);
             }
             this.loadMessages();
         }
