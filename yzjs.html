@@ -86,15 +86,96 @@
     <script>
         document.querySelector('.submit-btn').addEventListener('click', function() {
             const textarea = document.querySelector('textarea');
-            if (textarea.value.trim()) {
-                const commentList = document.querySelector('.comment-list');
-                const newComment = document.createElement('div');
-                newComment.className = 'comment-item';
-                newComment.innerHTML = `<strong>新用户：</strong> ${textarea.value}`;
-                commentList.prepend(newComment);
-                textarea.value = '';
+            const content = textarea.value.trim();
+  
+            if (content) {
+            fetch('/api/messages', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ content: content })
+                })
+            .then(response => {
+            if (!response.ok) throw new Error('HTTP错误');
+            return response.json();
+                })
+            .then(data => {
+            textarea.value = '';
+            manager.loadMessages();
+                })
+            .catch(error => {
+                console.error('Error:', error);
+                alert(`发送失败: ${error.message || '服务器异常'}`);
+                });
             }
         });
+        // 混合存储控制器
+        class MessageManager {
+            constructor() {
+              this.SERVER_URL = '/api/messages';
+                document.querySelector('.submit-btn')
+                .addEventListener('click', () => {
+                const textarea = document.querySelector('textarea');
+                this.postMessage(textarea.value.trim());
+                });
+            }
+            escapeHtml(str) {
+                return str.replace(/[&<>'"\/]/g, tag => ({
+                '&': '&amp;', '>': '&gt;',
+                "'": '&#39;', '"': '&quot;', '/': '&#x2F;'
+                    })[tag]);
+                }
+            }
+        async postMessage(text) {
+        try {
+        // 优先提交服务器
+        const res = await fetch(this.SERVER_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ content: text, timestamp: new Date() })
+        });
+            if (!res.ok) throw new Error();
+            this.saveToLocal('pending', []); // 清空待同步数据
+            } catch (err) {
+            this.saveToLocal('pending', [...this.getLocal('pending'), text]); // 本地暂存
+            }
+            this.loadMessages();
+        }
+
+        async loadMessages() {
+        // 加载服务器数据 + 本地待同步数据
+        try {
+            const [serverData, pendingData] = await Promise.all([
+            fetch(this.SERVER_URL).then(r => r.json()),
+            Promise.resolve(this.getLocal('pending'))
+            ]);
+        this.render([...serverData, ...pendingData.map(t => ({ content: t }))]);
+            } catch (err) {
+            this.render(this.getLocal('fallback'));
+            }
+        }
+
+        // 辅助方法
+        saveToLocal(key, data) {
+            localStorage.setItem(`msg_${key}`, JSON.stringify(data));
+            }
+        getLocal(key) {
+            return JSON.parse(localStorage.getItem(`msg_${key}`) || '[]');
+            }
+        render(messages) {
+        document.querySelector('.comment-list').innerHTML = messages
+        .map(m => `
+        <div class="comment-item">
+            <strong>用户：</strong> ${escapeHtml(m.content)}
+            </div>
+            `).join('');
+        }
+
+        // 初始化
+        const manager = new MessageManager();
+        function handleSubmit() {
+        const text = document.getElementById('msgInput').value.trim();
+            if (text) manager.postMessage(text);
+        }
     </script>
 </body>
 </html>
