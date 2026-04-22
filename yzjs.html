@@ -84,30 +84,17 @@
     </div>
 
     <script>
-        document.querySelector('.submit-btn').addEventListener('click', function() {
-            const textarea = document.querySelector('textarea');
-            const content = textarea.value.trim();
-  
-            if (content) {
-            fetch('/api/messages', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ content: content })
-                })
-            .then(response => {
-            if (!response.ok) throw new Error('HTTP错误');
-            return response.json();
-                })
-            .then(data => {
-            textarea.value = '';
-            manager.loadMessages();
-                })
-            .catch(error => {
-                console.error('Error:', error);
-                alert(`发送失败: ${error.message || '服务器异常'}`);
-                });
-            }
-        });
+        document.querySelector('.submit-btn').addEventListener('click', () => {
+            const text = document.querySelector('textarea').value.trim();
+            if (text) this.postMessage(text);
+            });
+        document.addEventListener('DOMContentLoaded', () => {
+            new MessageManager();
+            });
+        body: JSON.stringify({
+            message: this.escapeHtml(text),  // 同步启用XSS过滤
+            created_at: new Date().toISOString()
+            })
         // 混合存储控制器
         class MessageManager {
             constructor() {
@@ -180,7 +167,10 @@
             `).join('');
             }
         }
-
+        catch (err) {
+            console.error('提交失败:', err);
+            this.saveToLocal('pending', [...this.getLocal('pending'), text]);
+        }
         // 初始化
         const manager = new MessageManager();
         function handleSubmit() {
