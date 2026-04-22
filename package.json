@@ -1,5 +1,0 @@
-"scripts": {
-  "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
-  "dev:frontend": "vite",
-  "dev:backend": "nodemon server.js"
-}
