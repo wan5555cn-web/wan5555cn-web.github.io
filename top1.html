@@ -8,12 +8,14 @@
         body {
 		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
             margin: 0;
+            padding: 20%;
 			overflow-y: auto;
             font-family: 'Segoe UI', system-ui, sans-serif;
             background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);
             background-size: 200% 200%;
             animation: gradient 8s ease infinite;
             text-align: center;
+            display: flex;
         }
         @keyframes gradient {
             0% { background-position: 0% 50%; }
