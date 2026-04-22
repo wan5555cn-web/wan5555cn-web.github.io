@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感谢您的留言</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2ecc71;
+            --dark-green: #27ae60;
+            --light-bg: #f8f9fa;
+        }
+        body {
+            margin: 0;
+			min-height: 100dvh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+            text-align: center;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .thank-you-card {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards 0.3s;
+        }
+        .checkmark {
+            font-size: 80px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: inline-block;
+            position: relative;
+            height: 120px;
+            width: 120px;
+        }
+        .checkmark-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 5px solid rgba(46, 204, 113, 0.2);
+            border-radius: 50%;
+            animation: scaleIn 1s forwards;
+        }
+        .checkmark-icon {
+            position: relative;
+            z-index: 1;
+            animation: bounceIn 0.8s forwards 0.5s;
+        }
+        h1 {
+            color: var(--dark-green);
+            margin: 20px 0;
+            font-weight: 700;
+            font-size: 28px;
+        }
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .btn-return {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-return:hover {
+            background: var(--dark-green);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.5);
+        }
+        .btn-return:active {
+            transform: translateY(1px);
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            opacity: 0;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-card">
+        <div class="checkmark">
+            <div class="checkmark-circle"></div>
+            <i class="fas fa-check checkmark-icon"></i>
+        </div>
+        <h1>留言提交成功！</h1>
+        <p>我们已收到您的宝贵意见，专业客服将在24小时内处理您的请求。<br>感谢您对我们的支持与信任！</p>
+        <button class="btn-return" onclick="window.location.href='index.html'">
+            <i class="fas fa-arrow-left"></i> 返回留言板
+        </button>
+    </div>
+
+    <script>
+        // 彩色纸屑动画
+        function createConfetti() {
+            const colors = ['#2ecc71', '#27ae60', '#1abc9c', '#16a085'];
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = -10 + 'px';
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                document.body.appendChild(confetti);
+                
+                const animation = confetti.animate([
+                    { top: -10 + 'px', opacity: 1 },
+                    { top: 100 + 'vh', opacity: 0 }
+                ], {
+                    duration: 2000 + Math.random() * 3000,
+                    delay: Math.random() * 2000
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        window.onload = function() {
+            setTimeout(createConfetti, 800);
+        };
+    </script>
+</body>
+</html>

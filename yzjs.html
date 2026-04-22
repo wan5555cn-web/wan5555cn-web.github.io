@@ -1,105 +1,94 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <form action="https://formsubmit.co/wan5555cn@qq.com" method="POST">
-     <input type="text" name="name" required>
-     <input type="email" name="email" required>
-     <button type="submit">Send</button>
-</form>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>龙视界留言板</title>
     <style>
         body {
-            margin: 0;
-            min-height: 100dvh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
-            background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
-        }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .comment-container {
-            width: 90%;
+            font-family: 'Microsoft YaHei', sans-serif;
             max-width: 600px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
         }
-        h2 {
-            color: #2563eb;
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
             text-align: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
         textarea {
             width: 100%;
-            min-height: 100px;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 8px;
-            resize: vertical;
-            font-family: inherit;
-            margin-bottom: 1rem;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
-        .submit-btn {
-            background: #2563eb;
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        button {
+            background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 12px 20px;
+            border-radius: 4px;
             cursor: pointer;
-            display: block;
-            margin: 0 auto 2rem;
+            width: 100%;
+            font-size: 16px;
         }
-        .comment-list {
-            border-top: 1px solid #eee;
-            padding-top: 1rem;
-        }
-        .comment-item {
-            background: white;
-            padding: 12px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <div class="comment-container">
-        <h2>龙视界留言墙</h2>
-        <textarea placeholder="分享你的感受，与千万网友共鸣..."></textarea>
-        <button class="submit-btn">发送留言</button>
-        
-        <div class="comment-list">
-            <div class="comment-item">
-                <strong>用户A：</strong> 特别喜欢《时代之光》的编曲！
-            </div>
-            <div class="comment-item">
-                <strong>旅行者：</strong> 贵州织金的风景和音乐完美融合
-            </div>
-        </div>
-    </div>
+    <div class="container">
+        <h1>龙视界留言板</h1>
+            <form action="https://formsubmit.co/wan5555cn@qq.com" method="POST">
+            <input type="text" name="name" required>
+            <input type="email" name="email" required>
+             <button type="submit">Send</button>
 
-    <script>
-        document.querySelector('.submit-btn').addEventListener('click', function() {
-            const textarea = document.querySelector('textarea');
-            if (textarea.value.trim()) {
-                const commentList = document.querySelector('.comment-list');
-                const newComment = document.createElement('div');
-                newComment.className = 'comment-item';
-                newComment.innerHTML = `<strong>新用户：</strong> ${textarea.value}`;
-                commentList.prepend(newComment);
-                textarea.value = '';
-            }
-        });
-    </script>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="#">
+            
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="姓名" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">邮箱</label>
+                <input type="email" id="email" name="邮箱" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">留言内容</label>
+                <textarea id="message" name="留言内容" required></textarea>
+            </div>
+            
+            <button type="submit">提交留言</button>
+              <!-- 推荐添加的隐藏字段 -->
+            <input type="hidden" name="_next" value="https://wan5555cn-web.github.io/thankyou.html">
+            <input type="hidden" name="_captcha" value="false">
+        </form>
+    </div>
 </body>
 </html>
