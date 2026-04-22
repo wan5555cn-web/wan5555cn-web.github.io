@@ -6,11 +6,21 @@
     <title>简易留言板</title>
     <style>
         body {
-            font-family: 'Microsoft YaHei', sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            margin: 0;
+			min-height: 100dvh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+            text-align: center;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .container {
             background-color: white;
