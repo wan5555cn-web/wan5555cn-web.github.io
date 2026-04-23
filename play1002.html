@@ -145,8 +145,8 @@
         }
 
         .play-icon {
-            width: 100px;
-            height: 30px;
+            width: 0;
+            height: 0;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
             border-left: 16px solid #333;
@@ -206,12 +206,13 @@
         
         <div class="time-display">
             <span id="current-time">0:00</span>
+            <span id="song-title">【歌名】</span>
             <span id="duration">0:00</span>
         </div>
         
         <div class="controls">
             <button class="control-btn" id="play-btn">
-                <div class="play-icon" id="play-icon"><p id="songInfo"></p></div>
+                <div class="play-icon" id="play-icon"></div>
             </button>
         </div>
         
@@ -222,7 +223,7 @@
             </div>
         </div>
     </div>
-    <audio id="audio" src="https://static.musicmuse.ai/audio/cmf3f0fyv002qiy9q52cc8jj9/20260106/cmk2igcrn000b12dqpf6sd7ik/3mV5Ez6DMybjuOIUeEflAj.mp3"></audio>
+    <audio id="audio" src="https://static.musicmuse.ai/audio/cmf3f0fyv002qiy9q52cc8jj9/20260106/cmk2igcrn000b12dqpf6sd7ik/3mV5Ez6DMybjuOIUeEflAj.mp3">悬浮地球 - Muse</audio>
     <script>
         const audio = document.getElementById('audio');
         const playBtn = document.getElementById('play-btn');
@@ -234,6 +235,8 @@
         const volumeSlider = document.getElementById('volume-slider');
         const volumeLevel = document.getElementById('volume-level');
         const songTitle = document.getElementById('song-title');
+        const urlParams = new URLSearchParams(window.location.search);
+        const songName = new URLSearchParams(window.location.search).get('title');
 
         // 播放/暂停切换
         function togglePlay() {
@@ -289,8 +292,13 @@
 
         // 设置歌曲信息
         function setSongInfo() {
-            // 这里可以扩展为从音频文件读取元数据
-            songTitle.textContent = "龙视界音乐播放器";
+            // 这里可以扩展为从列表文件读取歌名数据
+            function setSongInfo() {
+        songTitle.textContent = songName || "龙视界音乐播放器"; 
+        }
+                    // 同步更新两个显示区域
+        document.getElementById('song-title').textContent = songName || "未加载音乐";
+        document.querySelector('.time-display span:nth-child(2)').textContent = songName || "";
         }
 
         // 事件监听
@@ -303,10 +311,11 @@
         progressContainer.addEventListener('click', setProgress);
         volumeSlider.addEventListener('click', setVolume);
 
-        // 初始化
+        // 初始化时自动设置音频源
         setSongInfo();
         audio.volume = 0.7;
         volumeLevel.style.width = '90%';
+        audio.src = urlParams.get('song') || '';
     </script>
 </body>
 </html>
