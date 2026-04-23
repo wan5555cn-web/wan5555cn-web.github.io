@@ -192,6 +192,10 @@
         audio {
             display: none;
         }
+        span {
+            position: relative;
+            z-index: 9999; / 这个数字要大于播放器的z-index /
+        }
     </style>
 </head>
 <body>
@@ -206,7 +210,9 @@
         
         <div class="time-display">
             <span id="current-time">0:00</span>
+            <span id="current-time">
             <a #FFD700>悬浮地球 - Muse</a>
+            </span>
             <span id="duration">0:00</span>
         </div>
         
