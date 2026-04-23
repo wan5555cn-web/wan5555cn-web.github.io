@@ -188,6 +188,11 @@
             background: #444;
             border-radius: 2px;
         }
+        .gold-text {
+            color: #0abaf0 !important;
+            font-weight: bold;
+            font-size: 18px;
+        }
 
         audio {
             display: none;
@@ -206,6 +211,7 @@
         
         <div class="time-display">
             <span id="current-time">0:00</span>
+			<span class="gold-text">可否 可否 - Muse</span>
             <span id="duration">0:00</span>
         </div>
         
@@ -217,8 +223,7 @@
         
         <div class="volume-control">
             <div class="volume-slider" id="volume-slider">
-                <div class="volume-level" id="volume-level"></div>                
-                <a href="top1.html" onclick="history.back()">返回列表</a>
+                <div class="volume-level" id="volume-level"></div>
             </div>
         </div>
     </div>
@@ -308,7 +313,10 @@
         // 初始化
         setSongInfo();
         audio.volume = 0.7;
-        volumeLevel.style.width = '90%';
-    </script>    
+        volumeLevel.style.width = '70%';
+    </script>
+	    <p id="songInfo"></p>
+        <a href="top1.html" onclick="history.back()">返回列表</a>
+
 </body>
 </html>
