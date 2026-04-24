@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐分类导航</title>
+    <style>
+        body {
+		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+            margin: 0;
+			overflow-y: auto;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+            text-align: center;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+/* 基础网格布局 */
+		.base-grid {
+			display: grid;
+			grid-template-columns: repeat(6, minmax(150px, 1fr));
+			gap: 18px;
+			padding: 15px;
+			background: transparent;
+			position: relative;
+			z-index: 35;
+			min-height: 80dvh;
+		}
+/* 通用卡片样式 */
+		[class^="music-"] {
+			height: 380px;
+			border-radius: 14px;
+			position: relative;
+			isolation: isolate;
+			overflow: hidden;
+			transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+			background:
+			linear-gradient(145deg, rgba(0,0,0,0.22), transparent 72%),
+			var(--bg-image) center/cover no-repeat;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+		}
+/* 独立背景配置 */
+		.music-pop { --bg-image: url('png1.png'); 
+			min-height: 750px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-electronic { --bg-image: url('png2.png'); 
+			min-height: 750px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-rock { --bg-image: url('png3.png'); 
+			min-height: 750px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-classical { --bg-image: url('png4.png'); 
+			min-height: 750px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-hiphop { --bg-image: url('png5.png'); 
+			min-height: 750px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+		}
+		.music-jazz { --bg-image: url('png6.png'); 
+			min-height: 750px; / 设置最小高度 /
+			height: auto; / 允许自动扩展 /
+			}
+/* 内容区域 */
+		.music-card {
+			position: relative;
+			background: var(--bg-color);
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+			}
+	h3 { 
+		color: #FFD700; /* 金黄色 */
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.8), /* 基础阴影 */
+			0 0 10px rgba(255,215,0,0.5); /* 发光效果 */
+			font-weight: bold;
+			letter-spacing: 1px;
+			transition: all 0.3s ease; /* 悬停动画 */
+			font-size: 1.4rem; margin-bottom: 8px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+		.song-list { 
+			max-height: 650px;
+			overflow-y: auto;
+			padding: 0 15px;
+			scrollbar-width: thin;
+			scrollbar-color: #FFA500 rgba(0,0,0,0.1);
+			}
+		/* 滚动条美化（Webkit浏览器） */
+		.song-list::-webkit-scrollbar {
+			width: 3px;
+			}
+		.song-list::-webkit-scrollbar-thumb {
+			background: #FFA500;
+			border-radius: 4px;
+			max-height: 200px;
+			overflow-y: auto;
+			}
+		/* 歌名项样式 */
+		.song-item a {
+			display: block;
+			color: #FFFFFF;
+			padding: 6px 0;
+			transition: all 0.3s;
+			border-bottom: 1px dashed rgba(255,165,0,0.3);
+			}
+		.song-item a:hover {
+			color: #FF8C00;
+			transform: translateX(5px);
+			text-shadow: 0 0 5px rgba(255,140,0,0.5);
+			}
+		.song-item.repeat::after {
+			content: " × " attr(data-count);
+			color: #999;
+			}
+	/* 响应式设计 */
+@media (max-width: 1280px) { .music-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 960px) { .music-grid { grid-template-columns: repeat(3, 1fr); }
+[class^="music-"] { height: 220px; }
+}
+@media (max-width: 640px) { .music-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) { .music-grid { grid-template-columns: none;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding: 0 16px 16px;
+    -webkit-overflow-scrolling: touch; }
+[class^="music-"] { scroll-snap-align: start;
+    flex: 0 0 85vw;
+    height: 240px;
+    margin-bottom: 0; }
+}
+/* 交互效果 */
+[class^="music-"]:hover {
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+background-blend-mode: overlay;
+}
+.song-item a {
+  color: #FFFFFF; / 替换成你想要的流行色 /
+  transition: all 0.3s ease;
+}
+.song-item a:hover {
+color: #00FF00;
+text-decoration: underline;
+text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+    </style>
+</head>
+<a href="index.html" class="modern-back-btn">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 12H5M12 19l-7-7 7-7" stroke="#4A5568" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <span>返回列表</span>
+</a>
+<body>
+    <div class="base-grid">
+        <div class="music-pop">
+            <h3>流行音乐</h3>
+            <ul class="song-list">
+                <li class="song-item"><a href="player.html?song=我们的星球-Muse.mp3&title=我们的星球&artist=Muse">我们的星球 - Muse</a></li>
+                <li class="song-item"><a href="player.html?song=锚点与沙盒-Muse.mp3&title=锚点与沙盒&artist=Muse">锚点与沙盒 - Muse</a></li>
+                <li class="song-item"><a href="player.html?song=留言板的光-Muse.mp3&title=留言板的光&artist=Muse">留言板的光 - Muse</a></li>
+                <li class="song-item"><a href="play421.html?song=可否 可否=可否 可否&artist=Muse">可否 可否 - Muse</a></li>
+                <li class="song-item"><a href="play422.html?song=我的路由器今晚不加班=今晚不加班&artist=Muse">我的路由器今晚不加班</a></li>
+                <li class="song-item"><a href="play423.html?song=布依的弦=布依的弦&artist=Tunee">布依的弦 - Tunee</a></li>
+                <li class="song-item"><a href="play424.html?song=坠落时看见光=坠落时看见光&artist=Tunee">坠落时看见光 - Tunee</a></li>
+                <li class="song-item"><a href="play425.html?song=花果园的星光=花果园的星光&artist=Tunee">花果园的星光 - Tunee</a></li>
+                <li class="song-item"><a href="play426.html?song=甘肃的光=甘肃的光&artist=Tunee">甘肃的光 - Tunee</a></li>
+                <li class="song-item"><a href="play427.html?song=来时路=来时路&artist=Tunee">来时路 - Tunee</a></li>
+                <li class="song-item"><a href="play428.html?song=大美贵定=大美贵定&artist=Tunee">大美贵定 - Muse</a></li>
+                <li class="song-item"><a href="play429.html?song=云雾茶园=云雾茶园&artist=Tunee">云雾茶园 - Muse</a></li>
+                <li class="song-item"><a href="play430.html?song=正义之盾=正义之盾&artist=Tunee">正义之盾 - Muse</a></li>
+                <li class="song-item"><a href="play431.html?song=为司法警察点赞=为司法警察点赞&artist=Tunee">为司法警察点赞 Muse</a></li>
+                <li class="song-item"><a href="play432.html?song=司法警察赞歌=司法警察赞歌&artist=Tunee">司法警察赞歌 Muse</a></li>
+                <li class="song-item"><a href="play433.html?song=抬头见星光=抬头见星光&artist=Tunee">抬头见星光 - Muse</a></li>
+                <li class="song-item"><a href="play434.html?song=沙盒里的那颗星=沙盒里的那颗星&artist=Tunee">沙盒里的那颗星</a></li>
+                <li class="song-item"><a href="play435.html?song=放烟花的人=放烟花的人&artist=Tunee">放烟花的人 Muse</a></li>
+                <li class="song-item"><a href="play436.html?song=光速也追不上=光速也追不上&artist=Tunee">光速也追不上 Muse</a></li>
+                <li class="song-item"><a href="play437.html?song=伏尔加河的方向=伏尔加河的方向&artist=Tunee">伏尔加河的方向</a></li>
+                <li class="song-item"><a href="play438.html?song=简单日子开出花=简单日子开出花&artist=Tunee">简单日子开出花</a></li>
+                <li class="song-item"><a href="play439.html?song=掌心的春天=掌心的春天&artist=Tunee">掌心的春天 - Tunee</a></li>
+                <li class="song-item"><a href="play440.html?song=清醒的力量=清醒的力量&artist=Tunee">清醒的力量 Tunee</a></li>
+                <li class="song-item"><a href="play441.html?song=丙午马年=丙午马年&artist=Tunee">丙午马年 - Tunee</a></li>
+                <li class="song-item"><a href="play442.html?song=觉悟与担当=觉悟与担当&artist=Tunee">觉悟与担当 Tunee</a></li>
+                <li class="song-item"><a href="play443.html?song=古村新光=古村新光&artist=Tunee">古村新光 - Tunee</a></li>
+                <li class="song-item"><a href="play444.html?song=街角的灯=街角的灯&artist=Tunee">街角的灯 - Tunee</a></li>
+                <li class="song-item"><a href="play445.html?song=清镇的祝福=清镇的祝福&artist=Tunee">清镇的祝福 Tunee</a></li>
+                <li class="song-item"><a href="play446.html?song=俄式暖冬=俄式暖冬&artist=Tunee">俄式暖冬 - Tunee</a></li>
+                <li class="song-item"><a href="play447.html?song=折腾说明书=折腾说明书&artist=Tunee">折腾说明书 Tunee</a></li>
+                <li class="song-item"><a href="play448.html?song=来时路=来时路&artist=Tunee">我的因果 - Tunee</a></li>
+                <li class="song-item"><a href="play449.html?song=我来过，我赢了=我来过，我赢了&artist=Tunee">我来过，我赢了</a></li>
+                <li class="song-item"><a href="play450.html?song=卡拉麻了=卡拉麻了&artist=Tunee">卡拉麻了 - Muse</a></li>
+                <li class="song-item"><a href="play451.html?song=腾气里的笑脸=腾气里的笑脸&artist=Tunee">腾气里的笑脸-Muse</a></li>
+                <li class="song-item"><a href="play1035.html?song=清新天地=清新天地&artist=Tunee">清新天地 - Muse</a></li>
+                <li class="song-item"><a href="play1036.html?song=沉默的荣耀=沉默的荣耀&artist=Tunee">沉默的荣耀-Muse</a></li>
+                <li class="song-item"><a href="play1037.html?song=冬日行板=冬日行板&artist=Tunee">冬日行板-Tunee</a></li>
+            </ul>
+        </div>
+        <div class="music-electronic">
+            <h3>电子音乐</h3>
+            <ul class="song-list">
+                <li class="song-item"><a href="play1001.html?song=子弹绕山飞=子弹绕山飞&artist=Tunee">子弹绕山飞-Muse</a></li>
+                <li class="song-item"><a href="play1002.html?song=悬浮地球=悬浮地球&artist=Tunee">悬浮地球 - Muse</a></li>
+                <li class="song-item"><a href="play2003.html?song=最新骗局=最新骗局&artist=Tunee">最新骗局-Muse</a></li>
+                <li class="song-item"><a href="play2004.html?song=电脑搬回家=电脑搬回家&artist=Tunee">电脑搬回家-Muse</a></li>
+                <li class="song-item"><a href="play2005.html?song=Aurora and Laser=Aurora and Laser&artist=Tunee">Aurora and Laser</a></li>
+            </ul>
+        </div>
+        <div class="music-rock">
+            <h3>摇滚音乐</h3>
+            <ul class="song-list">
+                <li class="song-item"><a href="play3001.html?song=燃到尽头的我们=燃到尽头的我们&artist=Tunee">燃到尽头的我们</a></li>
+                <li class="song-item"><a href="play3002.html?song=觉醒之战=觉醒之战&artist=Tunee">觉醒之战 - Muse</a></li>
+                <li class="song-item"><a href="play3003.html?song=贵州村超=贵州村超&artist=Tunee">贵州村超 - Muse</a></li>
+                <li class="song-item"><a href="play3004.html?song=步步登高=步步登高&artist=Tunee">步步登高 - Muse</a></li>
+                <li class="song-item"><a href="play3005.html?song=光复之歌=光复之歌&artist=Tunee">光复之歌 - Muse</a></li>
+                <li class="song-item"><a href="play3006.html?song=意识噪声=意识噪声&artist=Tunee">意识噪声 - Muse</a></li>
+                <li class="song-item"><a href="play3007.html?song=重生新篇章=重生新篇章&artist=Tunee">重生新篇章 - Muse</a></li>
+                <li class="song-item"><a href="play3008.html?song=键盘失灵=键盘失灵&artist=Tunee">键盘失灵 - Muse</a></li>
+                <li class="song-item"><a href="play3009.html?song=选择=选择&artist=Tunee">选择 - Muse</a></li>
+                <li class="song-item"><a href="play3010.html?song=宇宙的皱褶=宇宙的皱褶&artist=Tunee">宇宙的皱褶 - Muse</a></li>
+                <li class="song-item"><a href="play3011.html?song=实训能力=实训能力&artist=Tunee">实训能力 - Muse</a></li>
+                <li class="song-item"><a href="play3012.html?song=修真直播=修真直播&artist=Tunee">修真直播 - Muse</a></li>
+                <li class="song-item"><a href="play3013.html?song=凡人神仙一=凡人神仙一&artist=Tunee">凡人神仙一 - Muse</a></li>
+                <li class="song-item"><a href="play3014.html?song=凡人神仙二=凡人神仙二&artist=Tunee">凡人神仙二 - Muse</a></li>
+                <li class="song-item"><a href="play3015.html?song=键引星潮=键引星潮&artist=Tunee">键引星潮 - Muse</a></li>
+                <li class="song-item"><a href="play3016.html?song=The Cool Noodle Queen=The Cool Noodle Queen&artist=Tunee">The Cool Noodle Queen</a></li>
+                <li class="song-item"><a href="play3017.html?song=晴空接住我=晴空接住我&artist=Tunee">晴空接住我 - Tunee</a></li>
+                <li class="song-item"><a href="play3018.html?song=不退周瑜=不退周瑜&artist=Tunee">不退周瑜 - Muse</a></li>
+                <li class="song-item"><a href="play3019.html?song=牢A回家了=牢A回家了&artist=Tunee">牢A回家了 - Muse</a></li>
+                <li class="song-item"><a href="play3020.html?song=不再等答案=不再等答案&artist=Tunee">不再等答案 - Muse</a></li>
+                <li class="song-item"><a href="play3021.html?song=新生绽放=新生绽放&artist=Tunee">新生绽放 - Muse</a></li>
+                <li class="song-item"><a href="play3022.html?song=正义从不迷航=正义从不迷航&artist=Tunee">正义从不迷航 - Muse</a></li>
+                <li class="song-item"><a href="play3023.html?song=心跳即战鼓=心跳即战鼓&artist=Tunee">心跳即战鼓 - Muse</a></li>
+                <li class="song-item"><a href="play3024.html?song=觉醒时刻=觉醒时刻&artist=Tunee">觉醒时刻 - Muse</a></li>
+            </ul>
+        </div>
+        <div class="music-classical">
+            <h3>古典音乐</h3>
+            <ul class="song-list">
+                <li class="song-item"><a href="play4001.html?song=长河向东流=长河向东流&artist=Tunee">长河向东流-Muse</a></li>
+                <li class="song-item"><a href="play4002.html?song=历史的长河=历史的长河&artist=Tunee">历史的长河-MUse</a></li>
+                <li class="song-item"><a href="play4003.html?song=墨之魂=墨之魂&artist=Tunee">墨之魂-Muse</a></li>
+                <li class="song-item"><a href="play4004.html?song=荣休时刻=荣休时刻&artist=Tunee">荣休时刻-MUse</a></li>
+                <li class="song-item"><a href="play4005.html?song=美好画卷=美好画卷&artist=Tunee">美好画卷-Muse</a></li>
+                <li class="song-item"><a href="play4006.html?song=相互尊重=相互尊重&artist=Tunee">相互尊重-MUse</a></li>
+                <li class="song-item"><a href="play4007.html?song=秦皇歌=秦皇歌&artist=Tunee">秦皇歌-MUse</a></li>
+                <li class="song-item"><a href="play4008.html?song=紫禁龙鳞=紫禁龙鳞&artist=Tunee">紫禁龙鳞-MUse</a></li>
+            </ul>
+        </div>
+        <div class="music-hiphop">
+            <h3>情感音乐</h3>
+            <ul class="song-list">
+                <li class="song-item"><a href="play5001.html?song=梯田的阶梯=梯田的阶梯&artist=Tunee">梯田的阶梯-Muse</a></li>
+                <li class="song-item"><a href="play5002.html?song=贵定的春天=贵定的春天&artist=Tunee">贵定的春天-Muse</a></li>
+				<li class="song-item"><a href="play5003.html?song=山海拳台慢摇=山海拳台慢摇&artist=Tunee">山海拳台慢摇-Muse</a></li>
+				<li class="song-item"><a href="play5004.html?song=山海拳台激情=山海拳台激情&artist=Tunee">山海拳台激情-Muse</a></li>
+            </ul>
+        </div>
+        <div class="music-jazz">
+            <h3>爵士音乐</h3>
+            <ul class="song-list">
+                <li class="song-item"><a href="play6001.html?song=豁然开朗=豁然开朗&artist=Tunee">豁然开朗 - Muse</a></li>
+                <li class="song-item"><a href="play6002.html?song=华语之巅=华语之巅&artist=Tunee">华语之巅 - Muse</a></li>
+                <li class="song-item"><a href="play6003.html?song=并肩是兄弟=并肩是兄弟&artist=Tunee">并肩是兄弟 - Muse</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+<style>
+.modern-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #4A5568;
+  font-size: 20px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent !important;
+}
+.modern-back-btn:hover {
+  background-color: rgba(237, 242, 247, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.modern-back-btn:active {
+  transform: translateY(0);
+}
+.modern-back-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.modern-back-btn:hover svg {
+  transform: translateX(-2px);
+}
+</style>
+</html>
