@@ -82,17 +82,18 @@ body {
 		}
 		}
         .grid-item {
-        position: relative;
-	    border-radius: 12px;
-	    overflow: hidden;
-	    box-shadow: 0 6px 15px var(--shadow-color);
-	    transition: all 0.4s cubic-bezier (0.25, 0.8, 0.25, 1);
-	    aspect-ratio: 4/3;
-        }
+            position: relative;
+	        border-radius: 12px;
+	        overflow: hidden;
+	        box-shadow: 0 6px 15px var(--shadow-color);
+	        transition: all 0.4s cubic-bezier (0.25, 0.8, 0.25, 1);
+	        aspect-ratio: 4/3;
+            }
         .grid-item:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--hover-shadow);
-        }
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            }
 	        .grid-item::before {
             content: '';
             position: absolute;
@@ -122,10 +123,10 @@ body {
             height: 60px;
             opacity: 0.9;
             transition: all 0.3s;
-        }
+            }
         .grid-item:hover .play-btn {
             transform: translate(-50%, -50%) scale(1.1);
-        }
+            }
         .video-title {
             position: absolute;
             bottom: 15px;
@@ -135,7 +136,7 @@ body {
             font-weight: bold;
             z-index: 2;
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-        }
+            }
 	/* 修改部分 - 粘性底部 */
 	.taskbar-footer {
 		position: fixed;
