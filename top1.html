@@ -21,15 +21,15 @@
             100% { background-position: 0% 50%; }
         }
 /* 基础网格布局 */
-		.music-grid {
+		.base-grid {
 			display: grid;
-			grid-template-columns: repeat(6, 1fr);
+			grid-template-columns: repeat(6, minmax(150px, 1fr));
 			gap: 18px;
 			padding: 15px;
 			background: transparent;
 			position: relative;
 			z-index: 35;
-			min-height: 100dvh;
+			min-height: 80dvh;
 		}
 /* 通用卡片样式 */
 		[class^="music-"] {
@@ -46,27 +46,27 @@
 		}
 /* 独立背景配置 */
 		.music-pop { --bg-image: url('png1.png'); 
-			min-height: 800px; / 设置最小高度 /
+			min-height: 750px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-electronic { --bg-image: url('png2.png'); 
-			min-height: 800px; / 设置最小高度 /
+			min-height: 750px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-rock { --bg-image: url('png3.png'); 
-			min-height: 800px; / 设置最小高度 /
+			min-height: 750px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-classical { --bg-image: url('png4.png'); 
-			min-height: 800px; / 设置最小高度 /
+			min-height: 750px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-hiphop { --bg-image: url('png5.png'); 
-			min-height: 800px; / 设置最小高度 /
+			min-height: 750px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 		}
 		.music-jazz { --bg-image: url('png6.png'); 
-			min-height: 800px; / 设置最小高度 /
+			min-height: 750px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 			}
 /* 内容区域 */
@@ -86,7 +86,7 @@
 			transition: all 0.3s ease; /* 悬停动画 */
 			font-size: 1.4rem; margin-bottom: 8px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
 		.song-list { 
-			max-height: 700px;
+			max-height: 650px;
 			overflow-y: auto;
 			padding: 0 15px;
 			scrollbar-width: thin;
@@ -119,7 +119,7 @@
 			content: " × " attr(data-count);
 			color: #999;
 			}
-/* 响应式设计 */
+	/* 响应式设计 */
 @media (max-width: 1280px) { .music-grid { grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 960px) { .music-grid { grid-template-columns: repeat(3, 1fr); }
@@ -145,9 +145,8 @@ transform: translateY(-8px) scale(1.02);
 box-shadow: 0 12px 24px rgba(0,0,0,0.18);
 background-blend-mode: overlay;
 }
-/* 替换成你想要的流行色 */
 .song-item a {
-  color: #FFFFFF;
+  color: #FFFFFF; / 替换成你想要的流行色 /
   transition: all 0.3s ease;
 }
 .song-item a:hover {
@@ -157,15 +156,20 @@ text-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
     </style>
 </head>
+<a href="javascript:history.back()" class="modern-back-btn">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 12H5M12 19l-7-7 7-7" stroke="#4A5568" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <span>返回列表</span>
+</a>
 <body>
-    <a href="index.html" onclick="history.back()">← 返回视频页</a>
-    <div class="music-grid">
+    <div class="base-grid">
         <div class="music-pop">
             <h3>流行音乐</h3>
             <ul class="song-list">
                 <li class="song-item"><a href="player.html?song=我们的星球-Muse.mp3&title=我们的星球&artist=Muse">我们的星球 - Muse</a></li>
                 <li class="song-item"><a href="player.html?song=锚点与沙盒-Muse.mp3&title=锚点与沙盒&artist=Muse">锚点与沙盒 - Muse</a></li>
-                <li class="song-item"><a href="play420.html?song=留言板=留言板&artist=Muse">留言板 - Muse</a></li>
+                <li class="song-item"><a href="player.html?song=留言板的光-Muse.mp3&title=留言板的光&artist=Muse">留言板的光 - Muse</a></li>
                 <li class="song-item"><a href="play421.html?song=可否 可否=可否 可否&artist=Muse">可否 可否 - Muse</a></li>
                 <li class="song-item"><a href="play422.html?song=我的路由器今晚不加班=今晚不加班&artist=Muse">我的路由器今晚不加班</a></li>
                 <li class="song-item"><a href="play423.html?song=布依的弦=布依的弦&artist=Tunee">布依的弦 - Tunee</a></li>
@@ -271,4 +275,35 @@ text-shadow: 0 0 8px rgba(255,255,255,0.3);
         </div>
     </div>
 </body>
+
+<style>
+.modern-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #4A5568;
+  font-size: 20px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent !important;
+}
+.modern-back-btn:hover {
+  background-color: rgba(237, 242, 247, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.modern-back-btn:active {
+  transform: translateY(0);
+}
+.modern-back-btn svg {
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.modern-back-btn:hover svg {
+  transform: translateX(-2px);
+}
+</style>
 </html>
