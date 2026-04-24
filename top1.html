@@ -134,16 +134,25 @@
     gap: 12px;
     padding: 0 16px 16px;
     -webkit-overflow-scrolling: touch; }
-[class^="music-"] { scroll-snap-align: start;
-    flex: 0 0 85vw;
-    height: 240px;
-    margin-bottom: 0; }
+[class^="music-"] {
+  scroll-snap-align: start;
+  flex: 0 0 85vw;
+  height: auto; / 动态高度 /
+  aspect-ratio: 1/1.2; / 保持宽高比 /
+  margin-bottom: 0;
 }
-/* 交互效果 */
+/ 交互效果 /
 [class^="music-"]:hover {
-transform: translateY(-8px) scale(1.02);
-box-shadow: 0 12px 24px rgba(0,0,0,0.18);
-background-blend-mode: overlay;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+  background-blend-mode: overlay;
+}
+/ 手机端优化 /
+@media (max-width: 768px) {
+  [class^="music-"] {
+    flex: 0 0 90vw; / 更宽的单列显示 /
+    aspect-ratio: 1/1.4; / 调整宽高比 /
+  }
 }
 .song-item a {
   color: #FFFFFF; / 替换成你想要的流行色 /
@@ -154,6 +163,7 @@ color: #00FF00;
 text-decoration: underline;
 text-shadow: 0 0 8px rgba(255,255,255,0.3);
 }
+
     </style>
 </head>
 <a href="javascript:history.back()" class="modern-back-btn">
