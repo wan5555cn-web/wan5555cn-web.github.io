@@ -412,7 +412,7 @@ body {
 			item.addEventListener('click', function() {
 			try {
 			const videoTitle = this.querySelector('.video-title')?.textContent || '未知视频';
-			console.log(播放视频: ${videoTitle}`);
+			console.log(`播放视频: ${videoTitle}`);
 			} catch(e) {
 			console.error('获取视频信息失败:', e);
 			}
