@@ -82,18 +82,17 @@ body {
 		}
 		}
         .grid-item {
-            position: relative;
-	        border-radius: 12px;
-	        overflow: hidden;
-	        box-shadow: 0 6px 15px var(--shadow-color);
-	        transition: all 0.4s cubic-bezier (0.25, 0.8, 0.25, 1);
-	        aspect-ratio: 4/3;
-            }
+        position: relative;
+	    border-radius: 12px;
+	    overflow: hidden;
+	    box-shadow: 0 6px 15px var(--shadow-color);
+	    transition: all 0.4s cubic-bezier (0.25, 0.8, 0.25, 1);
+	    aspect-ratio: 4/3;
+        }
         .grid-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-            }
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+        }
 	        .grid-item::before {
             content: '';
             position: absolute;
@@ -123,10 +122,10 @@ body {
             height: 60px;
             opacity: 0.9;
             transition: all 0.3s;
-            }
+        }
         .grid-item:hover .play-btn {
             transform: translate(-50%, -50%) scale(1.1);
-            }
+        }
         .video-title {
             position: absolute;
             bottom: 15px;
@@ -136,7 +135,7 @@ body {
             font-weight: bold;
             z-index: 2;
             text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-            }
+        }
 	/* 修改部分 - 粘性底部 */
 	.taskbar-footer {
 		position: fixed;
@@ -206,6 +205,13 @@ body {
   <body>
     <h1>欢迎来到龙视界</h1>
     <div class="grid-container">
+       <div class="grid-item" onclick="window.open('https://v.qq.com/txp/iframe/player.html?vid=n3237banjgr')">
+				<img src="shqt5004.png" alt="">
+				<svg class="play-btn" viewBox="0 0 24 24" fill="white">
+				<path d="M8 5v14l11-7z"/>
+			</svg>
+			<div class="video-title">山海拳台</div>
+		</div>	
        <div class="grid-item" onclick="window.open('https://v.qq.com/txp/iframe/player.html?vid=t3199dsgidr')">
 				<img src="lyb422.png" alt="">
 				<svg class="play-btn" viewBox="0 0 24 24" fill="white">
@@ -412,7 +418,7 @@ body {
 			item.addEventListener('click', function() {
 			try {
 			const videoTitle = this.querySelector('.video-title')?.textContent || '未知视频';
-			console.log(`播放视频: ${videoTitle}`);
+			console.log(播放视频: ${videoTitle}`);
 			} catch(e) {
 			console.error('获取视频信息失败:', e);
 			}
