@@ -129,7 +129,6 @@
 }
 @media (max-width: 480px) { .music-grid { grid-template-columns: none;
     display: flex;
-    flex-wrap: nowrap; / 关键：禁止换行 /
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 12px;
@@ -137,8 +136,7 @@
     -webkit-overflow-scrolling: touch; }
 [class^="music-"] { scroll-snap-align: start;
     flex: 0 0 85vw;
-    flex-shrink: 0; / 关键：防止挤压变形 /
-    height: auto;
+    height: 240px;
     margin-bottom: 0; }
 }
 /* 交互效果 */
@@ -171,7 +169,7 @@ text-shadow: 0 0 8px rgba(255,255,255,0.3);
             <ul class="song-list">
                 <li class="song-item"><a href="player.html?song=我们的星球-Muse.mp3&title=我们的星球&artist=Muse">我们的星球 - Muse</a></li>
                 <li class="song-item"><a href="player.html?song=锚点与沙盒-Muse.mp3&title=锚点与沙盒&artist=Muse">锚点与沙盒 - Muse</a></li>
-                <li class="song-item"><a href="play420.html?song=留言板-Muse&title=留言板&artist=Muse">留言板 - Muse</a></li>
+                <li class="song-item"><a href="player.html?song=留言板的光-Muse.mp3&title=留言板的光&artist=Muse">留言板的光 - Muse</a></li>
                 <li class="song-item"><a href="play421.html?song=可否 可否=可否 可否&artist=Muse">可否 可否 - Muse</a></li>
                 <li class="song-item"><a href="play422.html?song=我的路由器今晚不加班=今晚不加班&artist=Muse">我的路由器今晚不加班</a></li>
                 <li class="song-item"><a href="play423.html?song=布依的弦=布依的弦&artist=Tunee">布依的弦 - Tunee</a></li>
@@ -265,6 +263,8 @@ text-shadow: 0 0 8px rgba(255,255,255,0.3);
             <ul class="song-list">
                 <li class="song-item"><a href="play5001.html?song=梯田的阶梯=梯田的阶梯&artist=Tunee">梯田的阶梯-Muse</a></li>
                 <li class="song-item"><a href="play5002.html?song=贵定的春天=贵定的春天&artist=Tunee">贵定的春天-Muse</a></li>
+				<li class="song-item"><a href="play5002.html?song=贵定的春天=贵定的春天&artist=Tunee">山海拳台慢摇-Muse</a></li>
+				<li class="song-item"><a href="play5002.html?song=贵定的春天=贵定的春天&artist=Tunee">山海拳台激情-Muse</a></li>
             </ul>
         </div>
         <div class="music-jazz">
