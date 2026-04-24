@@ -84,15 +84,14 @@ body {
         .grid-item {
         position: relative;
 	    border-radius: 12px;
-	        overflow: hidden;
-	        box-shadow: 0 6px 15px var(--shadow-color);
-	        transition: all 0.4s cubic-bezier (0.25, 0.8, 0.25, 1);
-	        aspect-ratio: 4/3;
+	    overflow: hidden;
+	    box-shadow: 0 6px 15px var(--shadow-color);
+	    transition: all 0.4s cubic-bezier (0.25, 0.8, 0.25, 1);
+	    aspect-ratio: 4/3;
         }
         .grid-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
         }
 	        .grid-item::before {
             content: '';
@@ -181,7 +180,7 @@ body {
 		border-radius: 3px;
 		cursor: pointer;
 		}
-	/* 响应式设计代码建议放在head内 */
+	   <!-- 响应式设计代码建议放在head内 -->
     /* 悬浮按钮主样式 */
     .floating-btn {
       position: fixed;
@@ -213,20 +212,20 @@ body {
 			</svg>
 			<div class="video-title">留言板</div>
 		</div>
-        <div class="grid-item" onclick="window.open('https://v.qq.com/txp/iframe/player.html?vid=r3199llfm24')">
+		<div class="grid-item" onclick="window.open('https://v.qq.com/txp/iframe/player.html?vid=r3199llfm24')">
 				<img src="wmdxq.jpg" alt="">
 				<svg class="play-btn" viewBox="0 0 24 24" fill="white">
 				<path d="M8 5v14l11-7z"/>
 			</svg>
 			<div class="video-title">我们的星球</div>
 		</div>
-        <div class="grid-item" onclick="window.open('https://v.qq.com/txp/iframe/player.html?vid=p3236kln0ud')">
-				<img src="qdmt423.png" alt="">
+		<div class="grid-item" onclick="window.open('https://v.qq.com/txp/iframe/player.html?vid=p3236kln0ud')">
+				<img src="qpmt423.png" alt="">
 				<svg class="play-btn" viewBox="0 0 24 24" fill="white">
 				<path d="M8 5v14l11-7z"/>
 			</svg>
 			<div class="video-title">期盼明天</div>
-		</div>        
+		</div>
         <div class="grid-item" onclick="window.open('https://weixin.qq.com/sph/AO1Q5T8zo')">
             <img src="eracover0206.jpg" alt="https://weixin.qq.com/sph/AO1Q5T8zo">
             <svg class="play-btn" viewBox="0 0 24 24" fill="white">
@@ -412,7 +411,7 @@ body {
 			item.addEventListener('click', function() {
 			try {
 			const videoTitle = this.querySelector('.video-title')?.textContent || '未知视频';
-			console.log(`播放视频: ${videoTitle}`);
+			console.log(播放视频: ${videoTitle}`);
 			} catch(e) {
 			console.error('获取视频信息失败:', e);
 			}
