@@ -196,10 +196,49 @@
         audio {
             display: none;
         }
+        /* 酷炫悬浮动画 */
+        .hero-banner {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .hero-banner:hover img {
+            transform: scale(1.03) rotate(0.5deg);;
+        }
+        /* 播放器玻璃态效果 */
+        .player-container {
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+        }
+        /* 动态光效 */
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
     </style>
 </head>
 <body>
     <div class="player">
+		<div class="hero-banner">
+        <img src="/img/1gvX1qzDfxLBlgmmZuhbHr.jpeg" alt="Banner">
+			</div>
+
         <div class="song-info" id="song-title">未加载音乐</div>
         
         <div class="progress-container" id="progress-container">
@@ -210,7 +249,7 @@
         
         <div class="time-display">
             <span id="current-time">0:00</span>
-			<span class="gold-text">清新天地 - Muse</span>
+			<span class="gold-text">深海的呼唤 - Muse</span>
             <span id="duration">0:00</span>
         </div>
         
@@ -227,7 +266,7 @@
             </div>
         </div>
     </div>
-    <audio id="audio" src="https://static.musicmuse.ai/audio/cmik9tgdz0041r2a103apvuxf/20251129/cmik9u1vv00ea6ovmmggihv2v/1qWusADr7Sfw4FhfG5eizL.mp3"></audio>
+    <audio id="audio" src="https://static.musicmuse.ai/audio/cmf3f0fyv002qiy9q52cc8jj9/20250921/cmft7vosg0038ggiqhrscnxcr/1gvX1qzDfxLBlgmmZuhbHr.mp3"></audio>
     <script>
         const audio = document.getElementById('audio');
         const playBtn = document.getElementById('play-btn');
