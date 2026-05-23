@@ -196,12 +196,50 @@
         audio {
             display: none;
         }
+       /* 酷炫悬浮动画 */
+        .hero-banner {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .hero-banner:hover img {
+            transform: scale(1.03) rotate(0.5deg);;
+        }
+        /* 播放器玻璃态效果 */
+        .player-container {
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 0 0 15px 15px;
+        }
+        /* 动态光效 */
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
     </style>
 </head>
 <body>
     <div class="player">
-        <div class="song-info" id="song-title">未加载音乐</div>
+	<div class="hero-banner">
+        <img src="/img/20260523104238_6862_2.png" alt="Banner">
+    </div>
         
+        <div class="song-info" id="song-title">未加载音乐</div>        
         <div class="progress-container" id="progress-container">
             <div class="progress-bar" id="progress-bar">
                 <div class="progress-thumb"></div>
@@ -210,7 +248,7 @@
         
         <div class="time-display">
             <span id="current-time">0:00</span>
-			<span class="gold-text">古村新光 - Tunee</span>
+			<span class="gold-text">街巷人间 - Muse</span>
             <span id="duration">0:00</span>
         </div>
         
@@ -227,7 +265,7 @@
             </div>
         </div>
     </div>
-    <audio id="audio" src="https://media-cdn.tunee.ai/agent/audio/113366463152129-3ViTAdHfVKRcMHCXFaeWnm.mp3?auth_key=1777123055-0-0-d6679139ac5ab006fd50534632721101"></audio>
+    <audio id="audio" src="https://static.musicmuse.ai/audio/cmphogugd000l24m81htbiz4y/20260523/cmphojkpb009nmzwneam3nxdq/3ckTZ8vHcrZEfzzTthYkO4.mp3"></audio>
     <script>
         const audio = document.getElementById('audio');
         const playBtn = document.getElementById('play-btn');
