@@ -1,126 +1,296 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>音乐跳转播放系统</title>
-    <style>
-	    body {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交互式歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/bz1.png') no-repeat center center fixed;
+            background-size: cover;
             margin: 0;
-			min-height: 100dvh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
-            background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
-            text-align: center;
+            padding: 0;
+            height: 100vh;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        / 透明播放器样式 /
+      .player {
+            background: transparent; / 完全透明 /
+            backdrop-filter: blur(10px); / 可选：毛玻璃效果 /
+            border-radius: 15px;
+            padding: 20px;
+            width: 320px;
+            margin: 50px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
-        /* 列表页样式 */
-        .song-list {
-			width: 80%;
-			height: auto;
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.3);
+            height: 4px;
+            border-radius: 2px;
+            margin: 15px 0;
         }
-        .song-item {
-            padding: 12px;
-            border-bottom: 6px solid #ddd;
+        .progress {
+            background: #1DB954; / Spotify绿 /
+            height: 100%;
+            width: 31%; / 0:51/3:27 ≈ 31% /
+            border-radius: 2px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+        }
+        .play-btn {
+            background: #1DB954;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .time {
+            color: white;
+            font-family: Arial;
+            font-size: 12px;
             display: flex;
             justify-content: space-between;
-        }       
-        /* 播放页样式 */
-        .player-page {
-			width: 50%;
-            text-align: center;
-            padding: 2rem;
         }
-        audio {
-            width: 80%;
-            margin: 1rem 0;
-        }
-        /* 酷炫悬浮动画 */
-        .hero-banner {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .hero-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .hero-banner:hover img {
-            transform: scale(1.03) rotate(0.5deg);;
-        }
-        /* 播放器玻璃态效果 */
-        .player-container {
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 0 0 15px 15px;
-        }
-        /* 动态光效 */
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-        body {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-    </style>
+    .lyrics-viewport {
+      height: calc(100vh - 180px);
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 100px;
+    }
+    .lyric-line {
+      padding: 16px 0;
+      text-align: center;
+      font-size: 18px;
+      color: var(--text);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); / 可选：添加阴影增强可读性 /
+    }
+    .lyric-line.active {
+      color: var(--primary);
+      opacity: 1;
+      font-weight: 600;
+      transform: scale(1.08);
+    }
+    .control-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(90%, 480px);
+      background: rgba(50, 50, 50, 0.5);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+    }
+    .progress-container {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      border-radius: 2px;
+    }
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    #playButton {
+      display: block;
+      margin: 0 auto;
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    #playButton:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+  </style>
 </head>
 <body>
-    <!-- 列表页 -->
-    <div class="song-list" id="listPage">
-        <h2>歌曲列表</h2>
-        <div class="song-item">
-            <a href="player.html?song=司法警察.mp3&title=司法警察&artist=Muse">司法警察MP3</a>
-        </div>
-   </div>
-
-    <!-- 播放页（实际应单独为player.html文件） -->
-    <div class="player-page" id="playerPage" style="display:none;">
-    <div class="hero-banner">
-        <img src="logo.jpg" alt="Banner">
+  <div class="player-container">    
+<audio id="audio" src="https://static.musicmuse.ai/audio/cmgk74jja000clblwgfl7knx5/20260523/cmpifb0ok000n11cdbicdd9ok/2bTOhOd6ZdBPCgj3YOOHjf.mp3"></audio>
+    <div class="lyrics-viewport" id="lyricsViewport">  
+<div class="lyric-line" data-time="0.8">[前奏音乐]</div>
+<div class="lyric-line" data-time="9.0">方向盘握太久肩膀也会发酸</div>
+<div class="lyric-line" data-time="13.7">眼睛一眨一眨提醒你该停一站</div>
+<div class="lyric-line" data-time="17.3">路还很长很远别跟疲惫硬扛</div>
+<div class="lyric-line" data-time="21.1">把车停进服务区让自己缓一缓</div>
+<div class="lyric-line" data-time="25.5">四小时到了就停别拿意志去赌</div>
+<div class="lyric-line" data-time="28.2">二十分钟不算多却能换回一路稳</div>
+<div class="lyric-line" data-time="32.8">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="36.4">你的平安最要紧</div>
+<div class="lyric-line" data-time="40.0">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="43.6">休息好了再前行</div>
+<div class="lyric-line" data-time="47.2">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="50.8">家里还在等你回</div>
+<div class="lyric-line" data-time="54.5">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="58.1">慢一点，才更稳</div>
+<div class="lyric-line" data-time="72.0">客车载着很多人</div>
+<div class="lyric-line" data-time="76.7">每一张脸都沉甸甸</div>
+<div class="lyric-line" data-time="82.3">夜里从十点开始疲惫会更明显</div>
+<div class="lyric-line" data-time="86.9">开过两小时就停别把黑夜当底气</div>
+<div class="lyric-line" data-time="92.6">二十分钟喝口水把困意留在原地</div>
+<div class="lyric-line" data-time="98.2">凌晨到天亮之间更要把心放稳</div>
+<div class="lyric-line" data-time="103.8">轮到你守住方向就别让眼皮发沉</div>
+<div class="lyric-line" data-time="109.3">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="113.0">你的平安最要紧</div>
+<div class="lyric-line" data-time="117.4">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="121.1">休息好了再前行</div>
+<div class="lyric-line" data-time="125.9">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="130.2">家里还在等你回</div>
+<div class="lyric-line" data-time="134.7">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="138.5">慢一点，才更稳</div>
+<div class="lyric-line" data-time="143.0">二十四小时之内八小时就是界线</div>
+<div class="lyric-line" data-time="148.7">别拿忙碌当理由把危险开向前</div>
+<div class="lyric-line" data-time="154.3">一杯热水一阵风一段短短的放空</div>
+<div class="lyric-line" data-time="159.9">换来下一段路上更清醒的从容</div>
+<div class="lyric-line" data-time="165.6">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="169.3">你的平安最要紧</div>
+<div class="lyric-line" data-time="173.7">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="177.4">休息好了再前行</div>
+<div class="lyric-line" data-time="182.2">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="186.5">家里还在等你回</div>
+<div class="lyric-line" data-time="191.0">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="194.8">慢一点，才更稳</div>
+      </div>      
     </div>
-
-        <h2 id="nowPlaying">正在播放</h2>
-        <audio id="audioPlayer" controls autoplay></audio>
-   	    <p id="songInfo"></p>
-        <a href="top1.html" onclick="history.back()">返回列表</a>
-
+    
+    <div class="control-panel">
+      <div class="progress-container" id="progressBar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="time-display">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+      <button id="playButton">▶</button>
     </div>
+  </div>
 
-    <script>
-        // URL参数解析（实际应用中应拆分为两个HTML文件）
-        const urlParams = new URLSearchParams(window.location.search);
-        if(urlParams.has('song')) {
-            document.getElementById('listPage').style.display = 'none';
-            document.getElementById('playerPage').style.display = 'block';
-            
-            const player = document.getElementById('audioPlayer');
-            player.src = decodeURIComponent(urlParams.get('song'));
-            document.getElementById('songInfo').textContent = 
-                `${decodeURIComponent(urlParams.get('title'))} - ${decodeURIComponent(urlParams.get('artist'))}`;
-            player.play().catch(e => console.log("自动播放受限:", e));
+  <script>
+    // 优化后的JavaScript代码
+    const audio = document.getElementById('audio');
+    const lyricsViewport = document.getElementById('lyricsViewport');
+    const lyricLines = document.querySelectorAll('.lyric-line');
+    const progress = document.getElementById('progress');
+    const progressBar = document.getElementById('progressBar');
+    const playButton = document.getElementById('playButton');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationEl = document.getElementById('duration');
+
+    // 格式化时间显示
+    const formatTime = (seconds) => {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    // 播放/暂停控制
+playButton.addEventListener('click', () => {
+  if (audio.paused && playButton.dataset.state !== 'stopped') {
+    audio.play();
+    playButton.textContent = '❚❚';
+  } else if (playButton.dataset.state === 'stopped') {
+    audio.currentTime = 0; // 重置进度
+    audio.play();
+    playButton.textContent = '❚❚';
+    playButton.dataset.state = 'playing';
+  } else {
+    audio.pause();
+    playButton.textContent = '▶';
+  }
+});
+
+    // 进度条点击跳转
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const percent = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = percent * audio.duration;
+    });
+
+    // 歌词同步核心逻辑
+    const syncLyrics = () => {
+      const currentTime = audio.currentTime;
+      let activeLineIndex = -1;
+
+      lyricLines.forEach((line, index) => {
+        const lineTime = parseFloat(line.dataset.time);
+        if (currentTime >= lineTime) {
+          activeLineIndex = index;
         }
+        line.classList.remove('active');
+      });
 
-        // 实际部署时应：
-        // 1. 将播放器页面单独保存为player.html
-        // 2. 列表页链接改为：<a href="player.html?song=我们的星球.mp3&title=我们的星球&artist=Muse">
-        // 3. 删除本示例中的display切换逻辑
-    </script>
+      if (activeLineIndex >= 0) {
+        const activeLine = lyricLines[activeLineIndex];
+        activeLine.classList.add('active');
+        
+        // 自动滚动到当前歌词
+        const viewportHeight = lyricsViewport.clientHeight;
+        const lineTop = activeLine.offsetTop;
+        const lineHeight = activeLine.clientHeight;
+        lyricsViewport.scrollTo({
+          top: lineTop - (viewportHeight / 2) + (lineHeight / 2),
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // 音频时间更新事件
+    audio.addEventListener('timeupdate', () => {
+      // 更新进度条
+      const progressPercent = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = `${progressPercent}%`;
+      
+      // 更新时间显示
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+      
+      // 同步歌词
+      syncLyrics();
+    });
+
+    // 加载元数据后更新总时长
+    audio.addEventListener('loadedmetadata', () => {
+      durationEl.textContent = formatTime(audio.duration);
+    });
+    audio.addEventListener('ended', () => {
+      playButton.textContent = '⏹';
+      playButton.dataset.state = 'stopped'; // 标记状态
+    });
+    // 错误处理
+    audio.addEventListener('error', () => {
+      console.error("音频加载错误");
+      playButton.disabled = true;
+    });
+  </script>
 </body>
 </html>
