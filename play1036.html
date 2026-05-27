@@ -1,317 +1,314 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>在线音乐播放器</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交互式歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #0833f3;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
         body {
-		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+            background: url('img/20260527133932_8743_2.png') no-repeat center center fixed;
+            background-size: cover;
             margin: 0;
-			overflow-y: auto;
-            font-family: 'Segoe UI', system-ui, sans-serif;
-            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
-            background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
-            text-align: center;
-			justify-content: center;
-			display: flex;
-			align-items: center;
-			height: 100dvh;
+            padding: 0;
+            height: 100vh;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .player {
+        /* 透明播放器样式 */
+      .player {
+            background: transparent; / 完全透明 /
+            backdrop-filter: blur(10px); / 可选：毛玻璃效果 /
+            border-radius: 15px;
+            padding: 20px;
             width: 320px;
-            padding: 25px;
-            background: linear-gradient(145deg, 
-                #d4af37 0%, 
-                #f9d423 50%, 
-                #d4af37 100%);
-            border-radius: 20px;
-            box-shadow: 
-                0 10px 30px rgba(212, 175, 55, 0.5),
-                inset 0 -3px 10px rgba(0,0,0,0.2),
-                inset 0 3px 10px rgba(255,255,255,0.4);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            margin: 50px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-
-        .player::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: linear-gradient(to bottom, 
-                rgba(255,255,255,0.6) 0%, 
-                transparent 100%);
-            border-radius: 20px 20px 0 0;
-        }
-
-        .song-info {
-            margin: 15px 0 25px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 4px;
-            background: rgba(0,0,0,0.15);
-            border-radius: 2px;
-            margin: 20px 0;
-            cursor: pointer;
-            position: relative;
-        }
-
         .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(to right, 
-                #222 0%, 
-                #444 100%);
+            background: rgba(255, 255, 255, 0.3);
+            height: 4px;
             border-radius: 2px;
-            position: relative;
-            transition: width 0.1s linear;
+            margin: 15px 0;
         }
-
-        .progress-thumb {
-            width: 12px;
-            height: 12px;
-            background: #fff;
-            border-radius: 50%;
-            position: absolute;
-            right: -6px;
-            top: 50%;
-            transform: translateY(-50%);
-            box-shadow: 
-                0 0 0 2px rgba(34,34,34,0.8),
-                0 1px 3px rgba(0,0,0,0.3);
-            opacity: 0;
-            transition: opacity 0.2s;
+        .progress {
+            background: #1DB954; / Spotify绿 /
+            height: 100%;
+            width: 31%; / 0:51/3:27 ≈ 31% /
+            border-radius: 2px;
         }
-
-        .progress-container:hover .progress-thumb {
-            opacity: 1;
-        }
-
-        .time-display {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: #333;
-            margin-top: 5px;
-        }
-
         .controls {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-top: 20px;
         }
-
-        .control-btn {
-            width: 46px;
-            height: 46px;
+        .play-btn {
+            background: #1DB954;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
-            background: linear-gradient(145deg, 
-                rgba(255,255,255,0.85) 0%, 
-                rgba(255,255,255,0.35) 100%);
-            border: none;
-            box-shadow: 
-                0 3px 8px rgba(0,0,0,0.2),
-                inset 0 1px 0 rgba(255,255,255,0.5);
-            cursor: pointer;
             display: flex;
-            justify-content: center;
             align-items: center;
-            transition: all 0.2s;
+            justify-content: center;
+            cursor: pointer;
         }
-
-        .control-btn:active {
-            transform: scale(0.95);
-        }
-
-        .play-icon {
-            width: 0;
-            height: 0;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            border-left: 16px solid #333;
-            margin-left: 3px;
-        }
-
-        .pause-icon {
-            width: 16px;
-            height: 16px;
+        .time {
+            color: white;
+            font-family: Arial;
+            font-size: 12px;
             display: flex;
             justify-content: space-between;
         }
+    .lyrics-viewport {
+      height: calc(100vh - 180px);
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 100px;
+    }
+    .lyric-line {
+      padding: 16px 0;
+      text-align: center;
+      font-size: 18px;
+      color: var(--text);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); / 可选：添加阴影增强可读性 /
+    }
+    .lyric-line.active {
+      color: var(--primary);
+      opacity: 1;
+      font-weight: 600;
+      transform: scale(1.08);
+    }
+    .control-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(90%, 480px);
+      background: rgba(50, 50, 50, 0.5);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+    }
+    /* 新增按钮样式 */
+#backBtn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,40,80,0.7);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-        .pause-icon span {
-            width: 4px;
-            height: 100%;
-            background: #333;
-        }
+#backBtn:hover {
+  background: rgba(0,80,160,0.9);
+}
 
-        .volume-control {
-            width: 120px;
-            margin: 15px auto 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .volume-slider {
-            flex: 1;
-            height: 4px;
-            background: rgba(0,0,0,0.15);
-            border-radius: 2px;
-            cursor: pointer;
-        }
-
-        .volume-level {
-            height: 100%;
-            width: 70%;
-            background: #444;
-            border-radius: 2px;
-        }
-        .gold-text {
-            color: #0abaf0 !important;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        audio {
-            display: none;
-        }
-    </style>
+.safe-drive-btn svg {
+  vertical-align: middle;
+}
+    .progress-container {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      border-radius: 2px;
+    }
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    #playButton {
+      display: block;
+      margin: 0 auto;
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    #playButton:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+  </style>
 </head>
 <body>
-    <div class="player">
-        <div class="song-info" id="song-title">未加载音乐</div>
-        
-        <div class="progress-container" id="progress-container">
-            <div class="progress-bar" id="progress-bar">
-                <div class="progress-thumb"></div>
-            </div>
-        </div>
-        
-        <div class="time-display">
-            <span id="current-time">0:00</span>
-			<span class="gold-text">沉默的荣耀-Muse</span>
-            <span id="duration">0:00</span>
-        </div>
-        
-        <div class="controls">
-            <button class="control-btn" id="play-btn">
-                <div class="play-icon" id="play-icon"></div>
-            </button>
-        </div>
-        
-        <div class="volume-control">
-            <div class="volume-slider" id="volume-slider">
-                <div class="volume-level" id="volume-level"></div>
-				<a href="top1.html" onclick="history.back()">返回列表</a>
-            </div>
-        </div>
+  <div class="player-container">    
+<audio id="audio" src="https://static.musicmuse.ai/audio/cmf3f0fyv002qiy9q52cc8jj9/20251107/cmho6ahx000g9okfdkvgxi4rh/5PZ95YBmHzfYd5J6MaQZTE.mp3"></audio>
+    <div class="lyrics-viewport" id="lyricsViewport">  
+<div class="lyric-line" data-time="0.8">[前奏音乐]</div>
+<div class="lyric-line" data-time="16.75">假装微笑掩饰孤单</div>
+<div class="lyric-line" data-time="24.25">眼中迷雾不见晴天</div>
+<div class="lyric-line" data-time="31.70">被牵引着走过黑暗</div>
+<div class="lyric-line" data-time="37.95">谁的声音在心底呼唤</div>
+<div class="lyric-line" data-time="44.89">真相刺破夜的伪装尘埃</div>
+<div class="lyric-line" data-time="52.53">沉默里是荣耀在绽放</div>
+<div class="lyric-line" data-time="59.89">沉默的荣耀不喧嚣</div>
+<div class="lyric-line" data-time="63.63">内心的光芒永不倒</div>
+<div class="lyric-line" data-time="67.40">每一步都像火焰燃烧</div>
+<div class="lyric-line" data-time="71.13">从假到真我找到骄傲</div>
+<div class="lyric-line" data-time="91.78">过去的梦化作尘埃</div>
+<div class="lyric-line" data-time="99.25">仇恨如霜冰封胸怀</div>
+<div class="lyric-line" data-time="106.77">抬头看见星辰大海</div>
+<div class="lyric-line" data-time="112.33">觉醒的心不再徘徊</div>
+<div class="lyric-line" data-time="119.94">真相刺破夜的伪装尘埃</div>
+<div class="lyric-line" data-time="127.54">沉默里是荣耀在绽放</div>
+<div class="lyric-line" data-time="134.85">沉默的荣耀不喧嚣</div>
+<div class="lyric-line" data-time="138.63">内心的光芒永不倒</div>
+<div class="lyric-line" data-time="142.42">每一步都像火焰燃烧</div>
+<div class="lyric-line" data-time="146.11">从假到真我找到骄傲</div>
+<div class="lyric-line" data-time="168.78">过去的梦化作尘埃</div>
+<div class="lyric-line" data-time="172.55">仇恨如霜冰封胸怀</div>
+<div class="lyric-line" data-time="176.42">抬头看见星辰大海</div>
+<div class="lyric-line" data-time="179.95">觉醒的心不再徘徊</div>
+<div class="lyric-line" data-time="183.90">真相刺破夜的伪装尘埃</div>
+<div class="lyric-line" data-time="187.38">沉默里是荣耀在绽放</div>
+<div class="lyric-line" data-time="191.02">沉默的荣耀不喧嚣</div>
+<div class="lyric-line" data-time="195.44">内心的光芒永不倒</div>
+<div class="lyric-line" data-time="198.46">每一步都像火焰燃烧</div>
+<div class="lyric-line" data-time="202.47">从假到真我找到骄傲</div>
+      </div>      
     </div>
-    <audio id="audio" src="https://static.musicmuse.ai/audio/cmf3f0fyv002qiy9q52cc8jj9/20251107/cmho6ahx000g9okfdkvgxi4rh/5PZ95YBmHzfYd5J6MaQZTE.mp3"></audio>
-    <script>
-        const audio = document.getElementById('audio');
-        const playBtn = document.getElementById('play-btn');
-        const playIcon = document.getElementById('play-icon');
-        const progressBar = document.getElementById('progress-bar');
-        const progressContainer = document.getElementById('progress-container');
-        const currentTimeEl = document.getElementById('current-time');
-        const durationEl = document.getElementById('duration');
-        const volumeSlider = document.getElementById('volume-slider');
-        const volumeLevel = document.getElementById('volume-level');
-        const songTitle = document.getElementById('song-title');
+    <div class="control-panel">
+  <button id="backBtn" class="safe-drive-btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+    </svg>
+  </button>
+      <div class="progress-container" id="progressBar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="time-display">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+      <button id="playButton">▶</button>
+    </div>
+  </div>
 
-        // 播放/暂停切换
-        function togglePlay() {
-            if (audio.paused) {
-                audio.play();
-                playIcon.innerHTML = '';
-                playIcon.innerHTML = '<span></span><span></span>';
-                playIcon.className = 'pause-icon';
-            } else {
-                audio.pause();
-                playIcon.innerHTML = '';
-                playIcon.className = 'play-icon';
-            }
+  <script>
+    // 优化后的JavaScript代码
+    const audio = document.getElementById('audio');
+    const lyricsViewport = document.getElementById('lyricsViewport');
+    const lyricLines = document.querySelectorAll('.lyric-line');
+    const progress = document.getElementById('progress');
+    const progressBar = document.getElementById('progressBar');
+    const playButton = document.getElementById('playButton');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationEl = document.getElementById('duration');
+
+    // 格式化时间显示
+    const formatTime = (seconds) => {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    // 播放/暂停控制
+playButton.addEventListener('click', () => {
+  if (audio.paused && playButton.dataset.state !== 'stopped') {
+    audio.play();
+    playButton.textContent = '❚❚';
+  } else if (playButton.dataset.state === 'stopped') {
+    audio.currentTime = 0; // 重置进度
+    audio.play();
+    playButton.textContent = '❚❚';
+    playButton.dataset.state = 'playing';
+  } else {
+    audio.pause();
+    playButton.textContent = '▶';
+  }
+});
+
+    // 进度条点击跳转
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const percent = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = percent * audio.duration;
+    });
+
+    // 歌词同步核心逻辑
+    const syncLyrics = () => {
+      const currentTime = audio.currentTime;
+      let activeLineIndex = -1;
+
+      lyricLines.forEach((line, index) => {
+        const lineTime = parseFloat(line.dataset.time);
+        if (currentTime >= lineTime) {
+          activeLineIndex = index;
         }
+        line.classList.remove('active');
+      });
 
-        // 更新进度条
-        function updateProgress(e) {
-            const { duration, currentTime } = e.srcElement;
-            const progressPercent = (currentTime / duration) * 100;
-            progressBar.style.width = `${progressPercent}%`;
-            
-            // 更新时间显示
-            const durationMinutes = Math.floor(duration / 60);
-            let durationSeconds = Math.floor(duration % 60);
-            if (durationSeconds < 10) durationSeconds = `0${durationSeconds}`;
-            
-            if (duration) {
-                durationEl.textContent = `${durationMinutes}:${durationSeconds}`;
-            }
-            
-            const currentMinutes = Math.floor(currentTime / 60);
-            let currentSeconds = Math.floor(currentTime % 60);
-            if (currentSeconds < 10) currentSeconds = `0${currentSeconds}`;
-            currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
-        }
-
-        // 点击进度条跳转
-        function setProgress(e) {
-            const width = this.clientWidth;
-            const clickX = e.offsetX;
-            const duration = audio.duration;
-            audio.currentTime = (clickX / width) * duration;
-        }
-
-        // 音量控制
-        function setVolume(e) {
-            const width = this.clientWidth;
-            const clickX = e.offsetX;
-            const volume = clickX / width;
-            audio.volume = volume;
-            volumeLevel.style.width = `${volume * 100}%`;
-        }
-
-        // 设置歌曲信息
-        function setSongInfo() {
-            // 这里可以扩展为从音频文件读取元数据
-            songTitle.textContent = "龙视界音乐播放器";
-        }
-
-        // 事件监听
-        playBtn.addEventListener('click', togglePlay);
-        audio.addEventListener('timeupdate', updateProgress);
-        audio.addEventListener('ended', () => {
-            playIcon.innerHTML = '';
-            playIcon.className = 'play-icon';
+      if (activeLineIndex >= 0) {
+        const activeLine = lyricLines[activeLineIndex];
+        activeLine.classList.add('active');
+        
+        // 自动滚动到当前歌词
+        const viewportHeight = lyricsViewport.clientHeight;
+        const lineTop = activeLine.offsetTop;
+        const lineHeight = activeLine.clientHeight;
+        lyricsViewport.scrollTo({
+          top: lineTop - (viewportHeight / 2) + (lineHeight / 2),
+          behavior: 'smooth'
         });
-        progressContainer.addEventListener('click', setProgress);
-        volumeSlider.addEventListener('click', setVolume);
+      }
+    };
 
-        // 初始化
-        setSongInfo();
-        audio.volume = 0.7;
-        volumeLevel.style.width = '90%';
-    </script>
+    // 音频时间更新事件
+    audio.addEventListener('timeupdate', () => {
+      // 更新进度条
+      const progressPercent = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = `${progressPercent}%`;
+      
+      // 更新时间显示
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+      
+      // 同步歌词
+      syncLyrics();
+    });
+
+    // 加载元数据后更新总时长
+    audio.addEventListener('loadedmetadata', () => {
+      durationEl.textContent = formatTime(audio.duration);
+    });
+    audio.addEventListener('ended', () => {
+      playButton.textContent = '⏹';
+      playButton.dataset.state = 'stopped'; // 标记状态
+    });
+    // 错误处理
+    audio.addEventListener('error', () => {
+      console.error("音频加载错误");
+      playButton.disabled = true;
+    });
+    document.getElementById('backBtn').addEventListener('click', function() {
+      window.location.href = 'top1.html';
+    });
+  </script>
 </body>
 </html>
