@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交互式歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/pljs0601.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        /* 透明播放器样式 */
+      .player {
+            background: transparent; / 完全透明 /
+            backdrop-filter: blur(10px); / 可选：毛玻璃效果 /
+            border-radius: 15px;
+            padding: 20px;
+            width: 320px;
+            margin: 50px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.3);
+            height: 4px;
+            border-radius: 2px;
+            margin: 15px 0;
+        }
+        .progress {
+            background: #1DB954; / Spotify绿 /
+            height: 100%;
+            width: 31%; / 0:51/3:27 ≈ 31% /
+            border-radius: 2px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+        }
+        .play-btn {
+            background: #1DB954;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .time {
+            color: white;
+            font-family: Arial;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+    .lyrics-viewport {
+      height: calc(100vh - 180px);
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 100px;
+    }
+    .lyric-line {
+      padding: 16px 0;
+      text-align: center;
+      font-size: 18px;
+      color: var(--text);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); / 可选：添加阴影增强可读性 /
+    }
+    .lyric-line.active {
+      color: var(--primary);
+      opacity: 1;
+      font-weight: 600;
+      transform: scale(1.08);
+    }
+    .control-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(90%, 480px);
+      background: rgba(50, 50, 50, 0.5);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+    }
+    /* 新增按钮样式 */
+#backBtn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,40,80,0.7);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#backBtn:hover {
+  background: rgba(0,80,160,0.9);
+}
+
+.safe-drive-btn svg {
+  vertical-align: middle;
+}
+    .progress-container {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      border-radius: 2px;
+    }
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    #playButton {
+      display: block;
+      margin: 0 auto;
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    #playButton:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="player-container">    
+<audio id="audio" src="https://static.musicmuse.ai/audio/cmgk74jja000clblwgfl7knx5/20260523/cmpifb0ok000n11cdbicdd9ok/2bTOhOd6ZdBPCgj3YOOHjf.mp3"></audio>
+    <div class="lyrics-viewport" id="lyricsViewport">  
+<div class="lyric-line" data-time="0.8">[前奏音乐]</div>
+<div class="lyric-line" data-time="9.0">方向盘握太久肩膀也会发酸</div>
+<div class="lyric-line" data-time="15.0">眼睛一眨一眨提醒你该停一站</div>
+<div class="lyric-line" data-time="20.6">路还很长很远别跟疲惫硬扛</div>
+<div class="lyric-line" data-time="26.1">把车停进服务区让自己缓一缓</div>
+<div class="lyric-line" data-time="31.3">四小时到了就停别拿意志去赌</div>
+<div class="lyric-line" data-time="36.7">二十分钟不算多却能换回一路稳</div>
+<div class="lyric-line" data-time="41.5">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="44.0">你的平安最要紧</div>
+<div class="lyric-line" data-time="47.4">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="50.0">休息好了再前行</div>
+<div class="lyric-line" data-time="52.7">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="55.3">家里还在等你回</div>
+<div class="lyric-line" data-time="58.1">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="61.0">慢一点，才更稳</div>
+<div class="lyric-line" data-time="74.2">客车载着很多人</div>
+<div class="lyric-line" data-time="75.9">每一张脸都沉甸甸</div>
+<div class="lyric-line" data-time="79.5">夜里从十点开始疲惫会更明显</div>
+<div class="lyric-line" data-time="84.8">开过两小时就停别把黑夜当底气</div>
+<div class="lyric-line" data-time="90.1">二十分钟喝口水把困意留在原地</div>
+<div class="lyric-line" data-time="95.5">凌晨到天亮之间更要把心放稳</div>
+<div class="lyric-line" data-time="100.8">轮到你守住方向就别让眼皮发沉</div>
+<div class="lyric-line" data-time="106.0">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="108.6">你的平安最要紧</div>
+<div class="lyric-line" data-time="111.5">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="114.0">休息好了再前行</div>
+<div class="lyric-line" data-time="116.7">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="119.4">家里还在等你回</div>
+<div class="lyric-line" data-time="122.1">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="125.0">慢一点，才更稳</div>
+<div class="lyric-line" data-time="138.1">二十四小时之内八小时就是界线</div>
+<div class="lyric-line" data-time="143.4">别拿忙碌当理由把危险开向前</div>
+<div class="lyric-line" data-time="148.8">一杯热水一阵风一段短短的放空</div>
+<div class="lyric-line" data-time="154.4">换来下一段路上更清醒的从容</div>
+<div class="lyric-line" data-time="162.0">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="164.6">你的平安最要紧</div>
+<div class="lyric-line" data-time="167.0">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="170.2">休息好了再前行</div>
+<div class="lyric-line" data-time="172.3">别再硬撑，先停一停</div>
+<div class="lyric-line" data-time="175.1">家里还在等你回</div>
+<div class="lyric-line" data-time="178.0">别再硬撑，先醒一醒</div>
+<div class="lyric-line" data-time="181.0">慢一点，才更稳</div>
+      </div>      
+    </div>
+    <div class="control-panel">
+  <button id="backBtn" class="safe-drive-btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+    </svg>
+  </button>
+      <div class="progress-container" id="progressBar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="time-display">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+      <button id="playButton">▶</button>
+    </div>
+  </div>
+
+  <script>
+    // 优化后的JavaScript代码
+    const audio = document.getElementById('audio');
+    const lyricsViewport = document.getElementById('lyricsViewport');
+    const lyricLines = document.querySelectorAll('.lyric-line');
+    const progress = document.getElementById('progress');
+    const progressBar = document.getElementById('progressBar');
+    const playButton = document.getElementById('playButton');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationEl = document.getElementById('duration');
+
+    // 格式化时间显示
+    const formatTime = (seconds) => {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    // 播放/暂停控制
+playButton.addEventListener('click', () => {
+  if (audio.paused && playButton.dataset.state !== 'stopped') {
+    audio.play();
+    playButton.textContent = '❚❚';
+  } else if (playButton.dataset.state === 'stopped') {
+    audio.currentTime = 0; // 重置进度
+    audio.play();
+    playButton.textContent = '❚❚';
+    playButton.dataset.state = 'playing';
+  } else {
+    audio.pause();
+    playButton.textContent = '▶';
+  }
+});
+
+    // 进度条点击跳转
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const percent = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = percent * audio.duration;
+    });
+
+    // 歌词同步核心逻辑
+    const syncLyrics = () => {
+      const currentTime = audio.currentTime;
+      let activeLineIndex = -1;
+
+      lyricLines.forEach((line, index) => {
+        const lineTime = parseFloat(line.dataset.time);
+        if (currentTime >= lineTime) {
+          activeLineIndex = index;
+        }
+        line.classList.remove('active');
+      });
+
+      if (activeLineIndex >= 0) {
+        const activeLine = lyricLines[activeLineIndex];
+        activeLine.classList.add('active');
+        
+        // 自动滚动到当前歌词
+        const viewportHeight = lyricsViewport.clientHeight;
+        const lineTop = activeLine.offsetTop;
+        const lineHeight = activeLine.clientHeight;
+        lyricsViewport.scrollTo({
+          top: lineTop - (viewportHeight / 2) + (lineHeight / 2),
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // 音频时间更新事件
+    audio.addEventListener('timeupdate', () => {
+      // 更新进度条
+      const progressPercent = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = `${progressPercent}%`;
+      
+      // 更新时间显示
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+      
+      // 同步歌词
+      syncLyrics();
+    });
+
+    // 加载元数据后更新总时长
+    audio.addEventListener('loadedmetadata', () => {
+      durationEl.textContent = formatTime(audio.duration);
+    });
+    audio.addEventListener('ended', () => {
+      playButton.textContent = '⏹';
+      playButton.dataset.state = 'stopped'; // 标记状态
+    });
+    // 错误处理
+    audio.addEventListener('error', () => {
+      console.error("音频加载错误");
+      playButton.disabled = true;
+    });
+    document.getElementById('backBtn').addEventListener('click', function() {
+      window.location.href = 'top1.html';
+    });
+  </script>
+</body>
+</html>
