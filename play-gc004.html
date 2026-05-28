@@ -225,7 +225,6 @@
       <button id="playButton">▶</button>
     </div>
   </div>
-// 显示部分
   <div id="counter">0</div>
   <script>
     // 优化后的JavaScript代码
@@ -325,7 +324,7 @@ playButton.addEventListener('click', () => {
     document.getElementById('backBtn').addEventListener('click', function() {
       window.location.href = 'top1.html';
     });
- // 计算部分
+    // 计算部分
     const counter = document.getElementById('counter');
     counter.textContent = parseInt(localStorage.getItem('count') || 0) + 1;
     localStorage.setItem('count', counter.textContent);   
