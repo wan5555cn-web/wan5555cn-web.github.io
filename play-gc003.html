@@ -155,6 +155,16 @@
       transform: scale(1.1);
       box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
     }
+    // 访问计数器样式
+    #counter {
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    #counter::before {
+      content: "👀";
+      font-size: 16px;
+    }     
   </style>
 </head>
 <body>
@@ -204,7 +214,8 @@
       <button id="playButton">▶</button>
     </div>
   </div>
-
+// 显示部分
+  <div id="counter">0</div>
   <script>
     // 优化后的JavaScript代码
     const audio = document.getElementById('audio');
@@ -303,6 +314,10 @@ playButton.addEventListener('click', () => {
     document.getElementById('backBtn').addEventListener('click', function() {
       window.location.href = 'top1.html';
     });
+// 计算部分
+    const counter = document.getElementById('counter');
+    counter.textContent = parseInt(localStorage.getItem('count') || 0) + 1;
+    localStorage.setItem('count', counter.textContent);    
   </script>
 </body>
 </html>
