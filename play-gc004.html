@@ -7,7 +7,7 @@
   <style>
     /* 视觉设计系统 */
     :root {
-      --primary: #0833f3;
+      --primary: #4361ee;
       --secondary: #3f37c9;
       --text: #2b2d42;
       --bg: #34393f2d;
@@ -155,6 +155,7 @@
       transform: scale(1.1);
       box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
     }
+    // 访问计数器样式
     #counter {
       padding: 5px 10px;
       border-radius: 3px;
@@ -323,10 +324,11 @@ playButton.addEventListener('click', () => {
     document.getElementById('backBtn').addEventListener('click', function() {
       window.location.href = 'top1.html';
     });
-    // 计算部分
+     // 计算部分
     const counter = document.getElementById('counter');
     const count = parseInt(localStorage.getItem('pageCount')) || 0;
     localStorage.setItem('pageCount', count + 1);
     counter.textContent = count + 1;
+  </script>
 </body>
 </html>
