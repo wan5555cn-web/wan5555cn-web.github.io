@@ -326,8 +326,8 @@ playButton.addEventListener('click', () => {
     });
     // 计算部分
     const counter = document.getElementById('counter');
-    counter.textContent = parseInt(localStorage.getItem('count') || 0) + 1;
-    localStorage.setItem('count', counter.textContent);   
-  </script>
+    const count = parseInt(localStorage.getItem('pageCount')) || 0;
+    localStorage.setItem('pageCount', count + 1);
+    counter.textContent = count + 1;
 </body>
 </html>
