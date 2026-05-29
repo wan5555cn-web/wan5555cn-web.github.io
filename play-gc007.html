@@ -7,13 +7,13 @@
   <style>
     /* 视觉设计系统 */
     :root {
-      --primary: #0833f3;
+      --primary: #4361ee;
       --secondary: #3f37c9;
       --text: #2b2d42;
       --bg: #34393f2d;
     }
         body {
-            background: url('img/20260527133932_8743_2.png') no-repeat center center fixed;
+            background: url('img/20260529104843_9424_2.png') no-repeat center center fixed;
             background-size: cover;
             margin: 0;
             padding: 0;
@@ -67,7 +67,7 @@
       height: calc(100vh - 180px);
       overflow-y: auto;
       scroll-behavior: smooth;
-      padding-bottom: 100px;
+      padding-bottom: 180px;
     }
     .lyric-line {
       padding: 16px 0;
@@ -91,7 +91,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: min(90%, 480px);
-      background: rgba(50, 50, 50, 0.5);
+      background: rgba(50, 50, 50, 0.295);
       border-radius: 12px;
       padding: 15px;
       box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
@@ -155,6 +155,14 @@
       transform: scale(1.1);
       box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
     }
+    // 访问计数器样式
+    #counter {
+      position: fixed;
+      }
+    #counter::before {
+      content: "👀";
+      font-size: 16px;
+    }  
   </style>
 </head>
 <body>
@@ -194,7 +202,7 @@
 <div class="lyric-line" data-time="202.47">从假到真我找到骄傲</div>
       </div>      
     </div>
-    <div class="control-panel">
+    <div class="control-panel"><div id="counter">0</div>
   <button id="backBtn" class="safe-drive-btn">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
       <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
@@ -309,6 +317,11 @@ playButton.addEventListener('click', () => {
     document.getElementById('backBtn').addEventListener('click', function() {
       window.location.href = 'top1.html';
     });
+      // 计算部分
+      const counter = document.getElementById('counter');
+      const count = parseInt(localStorage.getItem('pageCount')) || 0;
+      localStorage.setItem('pageCount', count + 1);
+      counter.textContent = count + 1;    
   </script>
 </body>
 </html>
