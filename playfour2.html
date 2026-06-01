@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交互式歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #dfaa18;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/20260601162328_10898_2.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        /* 透明播放器样式 */
+      .player {
+            background: transparent; / 完全透明 /
+            backdrop-filter: blur(10px); / 可选：毛玻璃效果 /
+            border-radius: 15px;
+            padding: 20px;
+            width: 320px;
+            margin: 50px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.3);
+            height: 4px;
+            border-radius: 2px;
+            margin: 15px 0;
+        }
+        .progress {
+            background: #1DB954; / Spotify绿 /
+            height: 100%;
+            width: 31%; / 0:51/3:27 ≈ 31% /
+            border-radius: 2px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+        }
+        .play-btn {
+            background: #1DB954;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .time {
+            color: white;
+            font-family: Arial;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+    .lyrics-viewport {
+      height: calc(100vh - 180px);
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 180px;
+    }
+    .lyric-line {
+      padding: 16px 0;
+      text-align: center;
+      font-size: 18px;
+      color: var(--text);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); / 可选：添加阴影增强可读性 /
+    }
+    .lyric-line.active {
+      color: var(--primary);
+      opacity: 1;
+      font-weight: 600;
+      transform: scale(1.08);
+    }
+    .control-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(90%, 480px);
+      background: rgba(50, 50, 50, 0.3);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+    }
+    /* 新增按钮样式 */
+#backBtn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,40,80,0.7);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#backBtn:hover {
+  background: rgba(0,80,160,0.9);
+}
+
+.safe-drive-btn svg {
+  vertical-align: middle;
+}
+    .progress-container {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      border-radius: 2px;
+    }
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    #playButton {
+      display: block;
+      margin: 0 auto;
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    #playButton:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(28, 67, 241, 0.678);
+    }
+    // 访问计数器样式
+    #counter {
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    #counter::before {
+      content: "👀";
+      font-size: 16px;
+    }     
+  </style>
+</head>
+<body>
+  <div class="player-container">    
+<audio id="audio" src="/mp3/肝胆照征袍.mp3"></audio>
+    <div class="lyrics-viewport" id="lyricsViewport">  
+<div class="lyric-line" data-time="0.8">[前奏音乐]</div>
+<div class="lyric-line" data-time="19.82">铁甲映寒江 烽烟卷怒涛</div>
+<div class="lyric-line" data-time="27.58">将军横刀立 倭寇胆尽消</div>
+<div class="lyric-line" data-time="35.60">箭雨破云来 鼓声震九霄</div>
+<div class="lyric-line" data-time="43.60">谁言书生弱 肝胆照征袍</div>
+<div class="lyric-line" data-time="51.61">万里海疆剑出鞘</div>
+<div class="lyric-line" data-time="55.62">男儿热血化碧涛</div>
+<div class="lyric-line" data-time="59.65">不求青史留名姓</div>
+<div class="lyric-line" data-time="63.67">只护山河日月高</div>
+<div class="lyric-line" data-time="67.58">只护山河日月高</div>
+<div class="lyric-line" data-time="79.90">狼烟起 战鼓齐</div>
+<div class="lyric-line" data-time="83.56">咱行营 齐步移</div>
+<div class="lyric-line" data-time="87.56">踏破狼 为家国</div>
+<div class="lyric-line" data-time="91.69">踏破狼 为救家国</div>
+<div class="lyric-line" data-time="95.70">百战功 终不回</div>
+<div class="lyric-line" data-time="103.63">万里海疆剑出鞘</div>
+<div class="lyric-line" data-time="107.67">男儿热血化碧涛</div>
+<div class="lyric-line" data-time="111.66">不求青史留名姓</div>
+<div class="lyric-line" data-time="115.63">只护山河日月高</div>
+<div class="lyric-line" data-time="119.58">只护山河日月高</div>
+<div class="lyric-line" data-time="133.82">战马嘶 北风啸</div>
+<div class="lyric-line" data-time="141.58">旌旗裂 战未了</div>
+<div class="lyric-line" data-time="148.94">待到太平归来日</div>
+<div class="lyric-line" data-time="155.85">共醉东海钓金鳌</div>
+<div class="lyric-line" data-time="163.64">共醉东海钓金鳌</div>
+      </div>      
+    </div>
+    <div class="control-panel"><div id="counter">0</div>
+  <button id="backBtn" class="safe-drive-btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+    </svg>
+  </button>
+      <div class="progress-container" id="progressBar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="time-display">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+      <button id="playButton">▶</button>
+    </div>
+  </div>
+  <script>
+    // 优化后的JavaScript代码
+    const audio = document.getElementById('audio');
+    const lyricsViewport = document.getElementById('lyricsViewport');
+    const lyricLines = document.querySelectorAll('.lyric-line');
+    const progress = document.getElementById('progress');
+    const progressBar = document.getElementById('progressBar');
+    const playButton = document.getElementById('playButton');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationEl = document.getElementById('duration');
+
+    // 格式化时间显示
+    const formatTime = (seconds) => {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    // 播放/暂停控制
+playButton.addEventListener('click', () => {
+  if (audio.paused && playButton.dataset.state !== 'stopped') {
+    audio.play();
+    playButton.textContent = '❚❚';
+  } else if (playButton.dataset.state === 'stopped') {
+    audio.currentTime = 0; // 重置进度
+    audio.play();
+    playButton.textContent = '❚❚';
+    playButton.dataset.state = 'playing';
+  } else {
+    audio.pause();
+    playButton.textContent = '▶';
+  }
+});
+
+    // 进度条点击跳转
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const percent = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = percent * audio.duration;
+    });
+
+    // 歌词同步核心逻辑
+    const syncLyrics = () => {
+      const currentTime = audio.currentTime;
+      let activeLineIndex = -1;
+
+      lyricLines.forEach((line, index) => {
+        const lineTime = parseFloat(line.dataset.time);
+        if (currentTime >= lineTime) {
+          activeLineIndex = index;
+        }
+        line.classList.remove('active');
+      });
+
+      if (activeLineIndex >= 0) {
+        const activeLine = lyricLines[activeLineIndex];
+        activeLine.classList.add('active');
+        
+        // 自动滚动到当前歌词
+        const viewportHeight = lyricsViewport.clientHeight;
+        const lineTop = activeLine.offsetTop;
+        const lineHeight = activeLine.clientHeight;
+        lyricsViewport.scrollTo({
+          top: lineTop - (viewportHeight / 2) + (lineHeight / 2),
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // 音频时间更新事件
+    audio.addEventListener('timeupdate', () => {
+      // 更新进度条
+      const progressPercent = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = `${progressPercent}%`;
+      
+      // 更新时间显示
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+      
+      // 同步歌词
+      syncLyrics();
+    });
+
+    // 加载元数据后更新总时长
+    audio.addEventListener('loadedmetadata', () => {
+      durationEl.textContent = formatTime(audio.duration);
+    });
+    audio.addEventListener('ended', () => {
+      playButton.textContent = '⏹';
+      playButton.dataset.state = 'stopped'; // 标记状态
+    });
+    // 错误处理
+    audio.addEventListener('error', () => {
+      console.error("音频加载错误");
+      playButton.disabled = true;
+    });
+    document.getElementById('backBtn').addEventListener('click', function() {
+      window.location.href = 'top1.html';
+    });
+     // 计算部分
+    const counter = document.getElementById('counter');
+    const count = parseInt(localStorage.getItem('pageCount')) || 0;
+    localStorage.setItem('pageCount', count + 1);
+    counter.textContent = count + 1;
+  </script>
+</body>
+</html>
