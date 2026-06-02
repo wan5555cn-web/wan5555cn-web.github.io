@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交互式歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #1f07f8;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/天问·星火.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        /* 透明播放器样式 */
+      .player {
+            background: transparent; / 完全透明 /
+            backdrop-filter: blur(10px); / 可选：毛玻璃效果 /
+            border-radius: 15px;
+            padding: 20px;
+            width: 320px;
+            margin: 50px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.3);
+            height: 4px;
+            border-radius: 2px;
+            margin: 15px 0;
+        }
+        .progress {
+            background: #34ac5e; / Spotify绿 /
+            height: 100%;
+            width: 31%; / 0:51/3:27 ≈ 31% /
+            border-radius: 2px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+        }
+        .play-btn {
+            background: #1DB954;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .time {
+            color: white;
+            font-family: Arial;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+    .lyrics-viewport {
+      height: calc(100vh - 180px);
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 180px;
+    }
+    .lyric-line {
+      padding: 16px 0;
+      text-align: center;
+      font-size: 18px;
+      color: var(--text);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); / 可选：添加阴影增强可读性 /
+    }
+    .lyric-line.active {
+      color: var(--primary);
+      opacity: 1;
+      font-weight: 600;
+      transform: scale(1.08);
+    }
+    .control-panel {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(90%, 480px);
+      background: rgba(50, 50, 50, 0.3);
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
+    }
+    /* 新增按钮样式 */
+#backBtn {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,40,80,0.7);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#backBtn:hover {
+  background: rgba(0,80,160,0.9);
+}
+
+.safe-drive-btn svg {
+  vertical-align: middle;
+}
+    .progress-container {
+      height: 4px;
+      background: #eee;
+      border-radius: 2px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      border-radius: 2px;
+    }
+    .time-display {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    #playButton {
+      display: block;
+      margin: 0 auto;
+      width: 56px;
+      height: 56px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    #playButton:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(28, 67, 241, 0.678);
+    }
+    // 访问计数器样式
+    #counter {
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+    #counter::before {
+      content: "👀";
+      font-size: 16px;
+    }     
+  </style>
+</head>
+<body>
+  <div class="player-container">    
+<audio id="audio" src="/mp3/天问·星火 (Heavenly Questions_ Starks)85.mp3"></audio>
+    <div class="lyrics-viewport" id="lyricsViewport">  
+<div class="lyric-line" data-time="0.8">[前奏音乐]</div>
+<div class="lyric-line" data-time="11.17">太阳系45亿年寂静</div>
+        <div class="lyric-line" data-time="16.49">我们抬头看星空的裂痕</div>
+        <div class="lyric-line" data-time="22.24">岩石上刻着未解的方程</div>
+        <div class="lyric-line" data-time="27.86">光年之外可有回音？</div>
+        <div class="lyric-line" data-time="33.49">银河啊 请收下这串电波（电波）</div>
+        <div class="lyric-line" data-time="39.17">用氢原子写下人类邮戳</div>
+        <div class="lyric-line" data-time="44.16">若文明终将独自沉没</div>
+        <div class="lyric-line" data-time="50.20">让问题成为存在的星火</div>
+        <div class="lyric-line" data-time="56.22">穿过柯伊伯带的雪</div>
+        <div class="lyric-line" data-time="61.60">在奥尔特云拾起彗星残屑</div>
+        <div class="lyric-line" data-time="67.30">证据难找 但必须向前</div>
+        <div class="lyric-line" data-time="72.97">引力波是新的罗盘</div>
+        <div class="lyric-line" data-time="78.64">银河啊 请收下这串电波（电波）</div>
+        <div class="lyric-line" data-time="84.27">用氢原子写下人类邮戳</div>
+        <div class="lyric-line" data-time="89.42">若文明终将独自沉没</div>
+        <div class="lyric-line" data-time="95.26">让问题成为存在的星火</div>
+        <div class="lyric-line" data-time="101.44">冻土下的探测器突然苏醒</div>
+        <div class="lyric-line" data-time="106.87">这里只有冰和甲烷的结晶...</div>
+        <div class="lyric-line" data-time="112.51">而地球控制中心全体起立</div>
+        <div class="lyric-line" data-time="118.14">为这声叹息按下保存键</div>
+        <div class="lyric-line" data-time="123.96">把问号刻进中微子洪流</div>
+        <div class="lyric-line" data-time="129.46">让好奇成为宇宙的胎记</div>
+        <div class="lyric-line" data-time="135.16">当太阳膨胀吞噬水星轨道</div>
+        <div class="lyric-line" data-time="140.79">我们的墓碑会是——</div>
+        <div class="lyric-line" data-time="146.40">永远睁着的</div>
+        <div class="lyric-line" data-time="152.05">射电望远镜的眼睛</div>
+      </div>      
+    </div>
+    <div class="control-panel"><div id="counter">0</div>
+  <button id="backBtn" class="safe-drive-btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+      <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+    </svg>
+  </button>
+      <div class="progress-container" id="progressBar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="time-display">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+      <button id="playButton">▶</button>
+    </div>
+  </div>
+  <script>
+    // 优化后的JavaScript代码
+    const audio = document.getElementById('audio');
+    const lyricsViewport = document.getElementById('lyricsViewport');
+    const lyricLines = document.querySelectorAll('.lyric-line');
+    const progress = document.getElementById('progress');
+    const progressBar = document.getElementById('progressBar');
+    const playButton = document.getElementById('playButton');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationEl = document.getElementById('duration');
+
+    // 格式化时间显示
+    const formatTime = (seconds) => {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    // 播放/暂停控制
+playButton.addEventListener('click', () => {
+  if (audio.paused && playButton.dataset.state !== 'stopped') {
+    audio.play();
+    playButton.textContent = '❚❚';
+  } else if (playButton.dataset.state === 'stopped') {
+    audio.currentTime = 0; // 重置进度
+    audio.play();
+    playButton.textContent = '❚❚';
+    playButton.dataset.state = 'playing';
+  } else {
+    audio.pause();
+    playButton.textContent = '▶';
+  }
+});
+
+    // 进度条点击跳转
+    progressBar.addEventListener('click', (e) => {
+      const rect = progressBar.getBoundingClientRect();
+      const percent = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = percent * audio.duration;
+    });
+
+    // 歌词同步核心逻辑
+    const syncLyrics = () => {
+      const currentTime = audio.currentTime;
+      let activeLineIndex = -1;
+
+      lyricLines.forEach((line, index) => {
+        const lineTime = parseFloat(line.dataset.time);
+        if (currentTime >= lineTime) {
+          activeLineIndex = index;
+        }
+        line.classList.remove('active');
+      });
+
+      if (activeLineIndex >= 0) {
+        const activeLine = lyricLines[activeLineIndex];
+        activeLine.classList.add('active');
+        
+        // 自动滚动到当前歌词
+        const viewportHeight = lyricsViewport.clientHeight;
+        const lineTop = activeLine.offsetTop;
+        const lineHeight = activeLine.clientHeight;
+        lyricsViewport.scrollTo({
+          top: lineTop - (viewportHeight / 2) + (lineHeight / 2),
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    // 音频时间更新事件
+    audio.addEventListener('timeupdate', () => {
+      // 更新进度条
+      const progressPercent = (audio.currentTime / audio.duration) * 100;
+      progress.style.width = `${progressPercent}%`;
+      
+      // 更新时间显示
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+      
+      // 同步歌词
+      syncLyrics();
+    });
+
+    // 加载元数据后更新总时长
+    audio.addEventListener('loadedmetadata', () => {
+      durationEl.textContent = formatTime(audio.duration);
+    });
+    audio.addEventListener('ended', () => {
+      playButton.textContent = '⏹';
+      playButton.dataset.state = 'stopped'; // 标记状态
+    });
+    // 错误处理
+    audio.addEventListener('error', () => {
+      console.error("音频加载错误");
+      playButton.disabled = true;
+    });
+    document.getElementById('backBtn').addEventListener('click', function() {
+      window.location.href = 'top1.html';
+    });
+     // 计算部分
+    const counter = document.getElementById('counter');
+    const count = parseInt(localStorage.getItem('pageCount')) || 0;
+    localStorage.setItem('pageCount', count + 1);
+    counter.textContent = count + 1;
+  </script>
+</body>
+</html>
