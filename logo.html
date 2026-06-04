@@ -102,10 +102,9 @@
 <body>
     <div class="logo-container">
         <img src="logoone.png" alt="星穹KTV奇境LOGO" class="logo-img">
-    </div>
-
+    </div>	
     <div class="symbolism-section">
-        <h2>【龙腾四海】</h2>
+        <a href="NewPlayer.html" onclick="history.back()";return false;" class="back-link">星穹KTV本地歌词编辑器</a><h2>【龙腾四海】</h2>
         <p>龙头造型的"7"字：</p>
         <ul>
             <li><strong>生肖属相</strong>：蜿蜒龙身象征东方生肖的祥瑞之力</li>
@@ -133,19 +132,12 @@
                 <li>象征社会存在的阴影面</li>
                 <li>体现"不回避真实"的创作态度</li>
                 <li>与上方亮色形成张力，构成完整世界观</li>
+                <li><a href="index.html" style="color: white; text-decoration: none;">返回列表</a></li>
+            </div>
             </ul>
         </div>
     </div>
-	<div class="volume-control">
-            <div class="volume-slider" id="volume-slider">
-                <div class="volume-level" id="volume-level"></div>
-				<a href="NewPlayer.html" onclick="history.back()">星穹KTV本地歌词编辑器</a>
-            </div>        
-            <div class="volume-slider" id="volume-slider">
-                <div class="volume-level" id="volume-level"></div>
-				<a href="index.html" onclick="history.back()">返回列表</a>
-            </div>
-    </div>
+</div>
 	<script>
 	document.querySelector('.back-btn').addEventListener('click', function(e) {
 		if (!document.referrer) {
