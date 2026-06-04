@@ -189,7 +189,7 @@
         // 渲染歌词行
         function renderLyricLines() {
             lyricContainer.innerHTML = lyricsData.map((line, index) => 
-                `<div class=".lyric-line ${index === currentLineIndex ? 'active' : ''}" data-index="${index}">
+                `<div class="lyric-line ${index === currentLineIndex ? 'active' : ''}" data-index="${index}">
                     <span class="time-display">${line.time ? formatTime(line.time) : '未标记'}</span>
                     ${line.text || '(空白行)'}
                 </div>`
