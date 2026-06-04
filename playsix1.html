@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星穹KTV5#时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #f87307;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/捉迷藏2.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 600px;
+            margin: 0 auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        .lyric-viewport {
+            height: 800px;
+            overflow-y: auto;
+            padding: 15px 25px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01) !important; / 半透明歌词背景，可自行调整透明度 /
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 10px 0;
+            margin: 5px 0;
+            color: #555;
+            font-size: 16px;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(26, 115, 232, 0.05);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmpzg59il000iorrd2zyfi5fh/20260604/cmpzg9p1u00jua09rzlcvlkdg/1AxB9eu6fTmmTldGWMx3NV.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:07.77">凌晨三点屏幕亮</div>
+<div class="lyric-line" data-time="00:11.03">代码像迷宫一样</div>
+<div class="lyric-line" data-time="00:14.53">.class少了个点</div>
+<div class="lyric-line" data-time="00:16.54">整个页面全跑偏~</div>
+<div class="lyric-line" data-time="00:23.60">改来改去像猜谜</div>
+<div class="lyric-line" data-time="00:24.87">上一行下一行在捉迷藏</div>
+<div class="lyric-line" data-time="00:29.32">你说删掉就删掉</div>
+<div class="lyric-line" data-time="00:31.15">结果突然又正常！</div>
+<div class="lyric-line" data-time="00:36.89">改来改去像猜谜</div>
+<div class="lyric-line" data-time="00:38.83">上一行下一行在捉迷藏</div>
+<div class="lyric-line" data-time="00:44.08">你说删掉就删掉</div>
+<div class="lyric-line" data-time="00:45.91">结果突然又正常！</div>
+<div class="lyric-line" data-time="01:06.81">事件委托像蛛网</div>
+<div class="lyric-line" data-time="01:10.36">点击这里那里响</div>
+<div class="lyric-line" data-time="01:13.87">当前行索引</div>
+<div class="lyric-line" data-time="01:15.67">偷偷跳转不商量~</div>
+<div class="lyric-line" data-time="01:21.18">F12按到手发烫</div>
+<div class="lyric-line" data-time="01:23.78">控制台满屏慌</div>
+<div class="lyric-line" data-time="01:28.41">突然你灵光一闪</div>
+<div class="lyric-line" data-time="01:30.53">原来多打个点！</div>
+<div class="lyric-line" data-time="01:36.05">改来改去像猜谜</div>
+<div class="lyric-line" data-time="01:37.93">上一行下一行在捉迷藏</div>
+<div class="lyric-line" data-time="01:43.22">你说删掉就删掉</div>
+<div class="lyric-line" data-time="01:45.03">结果突然又正常！</div>
+<div class="lyric-line" data-time="01:50.77">改来改去像猜谜</div>
+<div class="lyric-line" data-time="01:52.67">上一行下一行在捉迷藏</div>
+<div class="lyric-line" data-time="01:57.89">你说删掉就删掉</div>
+<div class="lyric-line" data-time="01:59.80">结果突然又正常！</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
