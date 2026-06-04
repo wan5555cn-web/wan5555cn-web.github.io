@@ -222,7 +222,25 @@
             
             outputDiv.textContent = html;
         }
+function adjustLyricTimes() {
+  document.querySelectorAll('.lyric-line').forEach(line => {
+    const originalTime = parseFloat(line.dataset.time);
+    const adjustedTime = Math.max(0, originalTime - 0.3); // 提前0.3秒且不低于0
+    
+    // 转换格式函数（内部使用）
+    const formatTime = (seconds) => {
+      const mins = Math.floor(seconds / 60);
+      const secs = (seconds % 60).toFixed(2);
+      return `${mins}:${secs.padStart(5, '0')}`;
+    };
 
+    // 新增调整后时间属性（原时间保留）
+    line.dataset.timeAdjusted = formatTime(adjustedTime); 
+  });
+}
+
+// 执行后示例输出：
+// <div class="lyric-line" data-time="11.52" data-time-adjusted="00:11.22">...
         // 导出LRC文件
         function exportLrcFile() {
             const lrcContent = lyricsData
@@ -319,6 +337,7 @@
                     break;
             }
         });
+        
     </script>
 </body>
 </html>
