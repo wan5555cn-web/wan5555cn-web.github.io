@@ -217,7 +217,7 @@
         function generateHtmlLyrics() {
             const html = lyricsData
                 .filter(line => line.text) // 过滤空白行
-                .map(line => `<div class=".lyric-line" data-time="${line.time ? formatTime(line.time) : '00:00.00'}">${line.text}</div>`)
+                .map(line => `<div class="lyric-line" data-time="${line.time ? formatTime(line.time) : '00:00.00'}">${line.text}</div>`)
                 .join('\n');
             
             outputDiv.textContent = html;
