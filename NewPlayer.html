@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>专业级歌词时间轴生成器</title>
+    <title>星穹KTV专业级歌词时间轴生成器</title>
     <style>
         body {
             font-family: 'Microsoft YaHei', sans-serif;
@@ -92,12 +92,15 @@
             color: #7f8c8d;
             margin-top: 10px;
         }
-        
+        @media (max-width: 600px) {
+          .container { padding: 10px; }
+          button { display: block; margin: 5px 0; width: 100%; }
+        }        
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>专业级歌词时间轴生成器</h1>
+        <h1>星穹KTV专业级歌词时间轴生成器</h1>
         
         <!-- 音频处理模块 -->
         <div class="section">
@@ -132,7 +135,7 @@
 
         <!-- 输出模块 -->
         <div class="section">
-            <div class="section-title">4. 生成HTML歌词</div>
+            <div class="section-title">4. 星穹KTV生成HTML歌词</div>
             <button id="generateHtmlBtn">生成HTML</button>
             <button id="exportLrcBtn">导出LRC</button>
             <div id="output"></div>
@@ -162,11 +165,17 @@
             }));
             renderLyricLines();
         }
-
+          // 替换多个歌词行的事件绑定
+            lyricContainer.addEventListener('click', (e) => {
+              if (e.target.closest('.lyric-line')) {
+              currentLineIndex = parseInt(e.target.closest('.lyric-line').dataset.index);
+              renderLyricLines();
+              }
+            });
         // 渲染歌词行
         function renderLyricLines() {
             lyricContainer.innerHTML = lyricsData.map((line, index) => 
-                `<div class="lyric-line ${index === currentLineIndex ? 'active' : ''}" data-index="${index}">
+                `<div class=".lyric-line ${index === currentLineIndex ? 'active' : ''}" data-index="${index}">
                     <span class="time-display">${line.time ? formatTime(line.time) : '未标记'}</span>
                     ${line.text || '(空白行)'}
                 </div>`
@@ -194,7 +203,7 @@
         function generateHtmlLyrics() {
             const html = lyricsData
                 .filter(line => line.text) // 过滤空白行
-                .map(line => `<div class="lyric-line" data-time="${line.time ? formatTime(line.time) : '00:00.00'}">${line.text}</div>`)
+                .map(line => `<div class=".lyric-line" data-time="${line.time ? formatTime(line.time) : '00:00.00'}">${line.text}</div>`)
                 .join('\n');
             
             outputDiv.textContent = html;
