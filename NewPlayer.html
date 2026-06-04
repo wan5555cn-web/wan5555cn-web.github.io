@@ -1,207 +1,301 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <title>星穹KTV智能歌词编辑器</title>
-  <meta charset="UTF-8">
-  <style>
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: #f5f7fa;
-      margin: 0;
-      padding: 20px;
-      color: #333;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
-    }
-    .panel {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-    #lyricsDisplay {
-      height: 400px;
-      overflow-y: auto;
-      padding: 20px;
-      background: linear-gradient(to bottom, #f8fafc, #f0f4f8);
-      border-radius: 8px;
-      line-height: 2.2;
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-    .lyric-line {
-      margin: 12px 0;
-      transition: all 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
-      opacity: 0.7;
-    }
-    .active {
-      color: #2563eb;
-      font-weight: 600;
-      opacity: 1;
-      transform: scale(1.07);
-      text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
-    }
-    .control-panel {
-      margin: 20px 0;
-    }
-    input[type="range"] {
-      width: 180px;
-      margin: 8px 0;
-    }
-    button {
-      padding: 8px 16px;
-      border: none;
-      border-radius: 6px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业级歌词时间轴生成器</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        audio {
+            width: 100%;
+            margin: 10px 0;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .time-display {
+            font-family: monospace;
+            font-size: 1.2em;
+            margin: 0 15px;
+        }
+        .lyric-line {
+            padding: 8px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+        }
+        .lyric-line:hover {
+            background-color: #f0f7ff;
+        }
+        .lyric-line.active {
+            border-left-color: #3498db;
+            background-color: #e3f2fd;
+            font-weight: bold;
+        }
+        #output {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            white-space: pre;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .shortcut-hint {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="panel">
-      <h2>🎵 星穹KTV音乐播放器</h2>
-      <audio id="audioPlayer" controls>
-        <source src="" type="audio/mpeg">
-      </audio>
-      <input type="file" id="audioFile" accept="audio/*" style="width:100%; margin:15px 0">
-      
-      <div class="control-panel">
-        <div style="display:flex; gap:20px;">
-          <div>
-            <label>🔵 高亮时长：<span id="stayTimeValue">4.5秒</span></label>
-            <input type="range" id="stayTime" min="1" max="10" step="0.1" value="4.5">
-          </div>
-          <div>
-            <label>🔠 字体大小：<span id="fontSizeValue">16px</span></label>
-            <input type="range" id="fontSize" min="12" max="24" step="1" value="16">
-          </div>
+    <div class="container">
+        <h1>专业级歌词时间轴生成器</h1>
+        
+        <!-- 音频处理模块 -->
+        <div class="section">
+            <div class="section-title">1. 音频处理</div>
+            <input type="file" id="audioFile" accept="audio/*">
+            <audio id="audioPlayer" controls></audio>
+            <div id="fileInfo"></div>
         </div>
-      </div>
-      
-      <h2>📜 歌词展示</h2>
-      <div id="lyricsDisplay"></div>
+
+        <!-- 歌词编辑模块 -->
+        <div class="section">
+            <div class="section-title">2. 歌词编辑</div>
+            <textarea id="lyricInput" placeholder="每行输入一句歌词（空白行用于节奏控制）"></textarea>
+            <div style="margin-top: 10px;">
+                <button id="confirmLyricsBtn">确认歌词</button>
+                <span class="shortcut-hint">提示：按回车键标记当前行时间点</span>
+            </div>
+        </div>
+
+        <!-- 时间轴标记模块 -->
+        <div class="section">
+            <div class="section-title">3. 时间轴标记</div>
+            <div id="lyricContainer"></div>
+            <div style="margin-top: 15px;">
+                <button id="playPauseBtn">播放/暂停</button>
+                <button id="markTimeBtn">标记当前行</button>
+                <span class="time-display" id="currentTime">00:00.00</span>
+                <button id="prevLineBtn">上一行</button>
+                <button id="nextLineBtn">下一行</button>
+            </div>
+        </div>
+
+        <!-- 输出模块 -->
+        <div class="section">
+            <div class="section-title">4. 生成HTML歌词</div>
+            <button id="generateHtmlBtn">生成HTML</button>
+            <button id="exportLrcBtn">导出LRC</button>
+            <div id="output"></div>
+        </div>
     </div>
-    
-    <div class="panel">
-      <h2>✏️ 歌词编辑器</h2>
-      <textarea id="lyricsEditor" style="width:100%; height:300px; padding:10px; border:1px solid #ddd; border-radius:6px;" 
-                placeholder="[00:00.00]歌曲开始\n[00:05.50]第一句歌词..."></textarea>
-      <div style="margin-top:15px">
-        <button id="loadLyrics" style="background:#4f46e5; color:white">加载歌词</button>
-        <button id="saveLyrics" style="background:#10b981; color:white">保存歌词</button>
-        <button id="demoLyrics" style="background:#f59e0b; color:white">示例歌词</button>
-      </div>
-    </div>
-  </div>
 
-  <script>
-    // 核心配置
-    const config = {
-      stayTime: 5.5,
-      fontSize: 16
-    };
+    <script>
+        // 全局变量
+        let lyricsData = [];
+        let currentLineIndex = 0;
+        let isLyricsConfirmed = false;
 
-    // 初始化UI
-    document.addEventListener('DOMContentLoaded', () => {
-      // 滑块控制
-      document.getElementById('stayTime').addEventListener('input', (e) => {
-        config.stayTime = parseFloat(e.target.value);
-        document.getElementById('stayTimeValue').textContent = `${config.stayTime.toFixed(1)}秒`;
-      });
-      
-      document.getElementById('fontSize').addEventListener('input', (e) => {
-        config.fontSize = parseInt(e.target.value);
-        document.getElementById('fontSizeValue').textContent = `${config.fontSize}px`;
-        document.getElementById('lyricsDisplay').style.fontSize = `${config.fontSize}px`;
-      });
+        // DOM元素
+        const audioPlayer = document.getElementById('audioPlayer');
+        const lyricInput = document.getElementById('lyricInput');
+        const lyricContainer = document.getElementById('lyricContainer');
+        const currentTimeDisplay = document.getElementById('currentTime');
+        const outputDiv = document.getElementById('output');
+        const fileInfoDiv = document.getElementById('fileInfo');
 
-      // 音频加载
-      document.getElementById('audioFile').addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-          document.getElementById('audioPlayer').src = URL.createObjectURL(file);
-          document.getElementById('lyricsDisplay').innerHTML = 
-            '<div style="text-align:center;padding:50px 0;color:#64748b">🎧 音乐已加载</div>';
+        // 初始化歌词数据
+        function initLyricsData() {
+            const lines = lyricInput.value.split('\n');
+            lyricsData = lines.map(text => ({
+                text: text.trim(),
+                time: null
+            }));
+            renderLyricLines();
         }
-      });
 
-      // 歌词解析
-      document.getElementById('loadLyrics').addEventListener('click', parseLyrics);
+        // 渲染歌词行
+        function renderLyricLines() {
+            lyricContainer.innerHTML = lyricsData.map((line, index) => 
+                `<div class="lyric-line ${index === currentLineIndex ? 'active' : ''}" data-index="${index}">
+                    <span class="time-display">${line.time ? formatTime(line.time) : '未标记'}</span>
+                    ${line.text || '(空白行)'}
+                </div>`
+            ).join('');
 
-      // 示例歌词
-      document.getElementById('demoLyrics').addEventListener('click', () => {
-        document.getElementById('lyricsEditor').value = `[00:00.00]示例歌曲
-[00:05.50]这是第一句歌词
-[00:10.70]高亮时长已设为5.5秒
-[00:16.90]支持动态调整参数
-[00:22.30]Enjoy the music!`.trim();
-      });
-
-      // 歌词保存
-      document.getElementById('saveLyrics').addEventListener('click', () => {
-        const blob = new Blob([document.getElementById('lyricsEditor').value], 
-          {type: 'text/plain;charset=utf-8'});
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `歌词_${new Date().toLocaleString()}.lrc`;
-        a.click();
-        setTimeout(() => URL.revokeObjectURL(url), 100);
-      });
-    });
-
-    // 歌词解析引擎
-    function parseLyrics() {
-      const editor = document.getElementById('lyricsEditor');
-      const display = document.getElementById('lyricsDisplay');
-      const lines = editor.value.split('\n');
-      let lyricsData = [];
-      
-      lines.forEach(line => {
-        const match = line.match(/^\[(\d+):(\d+)\.(\d+)\](.+)/);
-        if (match) {
-          const time = parseInt(match[1]) * 60 + parseFloat(`${match[2]}.${match[3]}`);
-          lyricsData.push({ time, text: match[4].trim() });
+            // 绑定歌词行点击事件
+            document.querySelectorAll('.lyric-line').forEach(el => {
+                el.addEventListener('click', function() {
+                    currentLineIndex = parseInt(this.dataset.index);
+                    renderLyricLines();
+                });
+            });
         }
-      });
-      
-      lyricsData.sort((a, b) => a.time - b.time);
-      renderLyrics(lyricsData);
-    }
 
-    // 歌词渲染
-    function renderLyrics(data) {
-      const display = document.getElementById('lyricsDisplay');
-      display.innerHTML = data.map(item => 
-        `<div class="lyric-line" data-time="${item.time}">${item.text}</div>`
-      ).join('');
-    }
-
-    // 歌词同步系统
-    document.getElementById('audioPlayer').addEventListener('timeupdate', function() {
-      const currentTime = this.currentTime;
-      const lines = document.querySelectorAll('.lyric-line');
-      
-      lines.forEach(line => {
-        const lineTime = parseFloat(line.dataset.time);
-        const isActive = currentTime >= lineTime && 
-                        currentTime < lineTime + config.stayTime;
-        
-        line.classList.toggle('active', isActive);
-        
-        if (isActive && !line._scrolled) {
-          line.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          line._scrolled = true;
-          setTimeout(() => line._scrolled = false, 1000);
+        // 标记当前行时间
+        function markCurrentTime() {
+            if (isLyricsConfirmed && !isNaN(audioPlayer.currentTime)) {
+                lyricsData[currentLineIndex].time = audioPlayer.currentTime;
+                currentLineIndex = Math.min(currentLineIndex + 1, lyricsData.length - 1);
+                renderLyricLines();
+            }
         }
-      });
-    });
-  </script>
+
+        // 生成HTML歌词
+        function generateHtmlLyrics() {
+            const html = lyricsData
+                .filter(line => line.text) // 过滤空白行
+                .map(line => `<div class="lyric-line" data-time="${line.time ? formatTime(line.time) : '00:00.00'}">${line.text}</div>`)
+                .join('\n');
+            
+            outputDiv.textContent = html;
+        }
+
+        // 导出LRC文件
+        function exportLrcFile() {
+            const lrcContent = lyricsData
+                .filter(line => line.text && line.time !== null)
+                .map(line => `[${formatTime(line.time)}] ${line.text}`)
+                .join('\n');
+            
+            const blob = new Blob([lrcContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'lyrics.lrc';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // 时间格式化 (秒 → mm:ss.xx)
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const secs = (seconds % 60).toFixed(2).padStart(5, '0');
+            return `${mins}:${secs}`;
+        }
+
+        // 事件监听
+        document.getElementById('audioFile').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                fileInfoDiv.textContent = `已加载: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)}MB)`;
+                audioPlayer.src = URL.createObjectURL(file);
+                audioPlayer.load();
+            }
+        });
+
+        document.getElementById('confirmLyricsBtn').addEventListener('click', function() {
+            if (lyricInput.value.trim()) {
+                isLyricsConfirmed = true;
+                initLyricsData();
+            } else {
+                alert('请先输入歌词内容！');
+            }
+        });
+
+        document.getElementById('playPauseBtn').addEventListener('click', function() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        });
+
+        document.getElementById('markTimeBtn').addEventListener('click', markCurrentTime);
+        document.getElementById('prevLineBtn').addEventListener('click', function() {
+            currentLineIndex = Math.max(0, currentLineIndex - 1);
+            renderLyricLines();
+        });
+        document.getElementById('nextLineBtn').addEventListener('click', function() {
+            currentLineIndex = Math.min(lyricsData.length - 1, currentLineIndex + 1);
+            renderLyricLines();
+        });
+        document.getElementById('generateHtmlBtn').addEventListener('click', generateHtmlLyrics);
+        document.getElementById('exportLrcBtn').addEventListener('click', exportLrcFile);
+
+        // 音频时间更新
+        audioPlayer.addEventListener('timeupdate', function() {
+            currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+        });
+
+        // 快捷键支持
+        document.addEventListener('keydown', function(e) {
+            if (!isLyricsConfirmed) return;
+
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    if (audioPlayer.paused) {
+                        audioPlayer.play();
+                    } else {
+                        audioPlayer.pause();
+                    }
+                    break;
+                case 'Enter':
+                    e.preventDefault();
+                    markCurrentTime();
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    currentLineIndex = Math.max(0, currentLineIndex - 1);
+                    renderLyricLines();
+                    break;
+                case 'ArrowDown':
+                    e.preventDefault();
+                    currentLineIndex = Math.min(lyricsData.length - 1, currentLineIndex + 1);
+                    renderLyricLines();
+                    break;
+            }
+        });
+    </script>
 </body>
 </html>
