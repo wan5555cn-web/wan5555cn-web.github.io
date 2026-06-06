@@ -12,12 +12,12 @@
 </script>  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>星穹KTV4#交互式歌词播放器</title>
+  <title>星穹KTV4#星河倒挂交互式歌词播放器</title>
   <style>
     /* 视觉设计系统 */
     :root {
       --primary: #f87307;
-      --secondary: #3f37c9;
+      --secondary: #c93737;
       --text: #2b2d42;
       --bg: #34393f2d;
     }
@@ -46,7 +46,7 @@
             margin: 15px 0;
         }
         .progress {
-            background: #34ac5e; / Spotify绿 /
+            background: #e20f0f; / Spotify绿 /
             height: 100%;
             width: 31%; / 0:51/3:27 ≈ 31% /
             border-radius: 2px;
@@ -56,7 +56,7 @@
             justify-content: center;
         }
         .play-btn {
-            background: #1DB954;
+            background: #b91d1d;
             width: 56px;
             height: 56px;
             border-radius: 50%;
@@ -121,7 +121,7 @@
 }
 
 #backBtn:hover {
-  background: rgba(0,80,160,0.9);
+  background: rgba(238, 2, 2, 0.9);
 }
 
 .safe-drive-btn svg {
@@ -153,7 +153,7 @@
       width: 56px;
       height: 56px;
       background: var(--primary);
-      color: white;
+      color: rgb(233, 20, 20);
       border: none;
       border-radius: 50%;
       font-size: 20px;
@@ -162,7 +162,7 @@
     }
     #playButton:hover {
       transform: scale(1.1);
-      box-shadow: 0 4px 15px rgba(28, 67, 241, 0.678);
+      box-shadow: 0 4px 15px rgba(241, 28, 28, 0.678);
     }
     // 访问计数器样式
     #counter {
