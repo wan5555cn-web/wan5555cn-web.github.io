@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#我爱贵定时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #f80707;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/我爱贵定.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmq20gxcd000rvsni2aoidj4h/20260606/cmq20jt1u0013m6n4y5kwzz0f/54K7kIY7sFAbKZnVffiCaK.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: white; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:09.92">清晨的贵定，雾气绕山梁</div>
+<div class="lyric-line" data-time="00:13.91">菜市场的阿婆，秤杆压着光</div>
+<div class="lyric-line" data-time="00:18.50">一碗米粉烫，辣油浮金黄</div>
+<div class="lyric-line" data-time="00:22.59">谁家收音机，唱着老花灯调</div>
+<div class="lyric-line" data-time="00:27.18">苗绣娘的手，稳得像山岗</div>
+<div class="lyric-line" data-time="00:31.50">银针穿彩线，慢慢把梦缝上</div>
+<div class="lyric-line" data-time="00:34.91">石板路醒着，雨点敲得响</div>
+<div class="lyric-line" data-time="00:39.10">远处的山梁，慢慢露出亮</div>
+<div class="lyric-line" data-time="00:43.55">我听见这座城，心跳一样长</div>
+<div class="lyric-line" data-time="00:47.96">不急不忙，却把人扶正方向</div>
+<div class="lyric-line" data-time="00:52.47">我爱贵定，贵定有硬气</div>
+<div class="lyric-line" data-time="00:56.10">石板路发亮，脚步不虚急</div>
+<div class="lyric-line" data-time="01:00.93">雨打风吹过，屋檐都挺直</div>
+<div class="lyric-line" data-time="01:05.27">日子再细碎，心火不熄</div>
+<div class="lyric-line" data-time="01:09.92">我爱贵定，贵定有硬气</div>
+<div class="lyric-line" data-time="01:14.06">一碗热米粉，辣到心里去</div>
+<div class="lyric-line" data-time="01:18.59">抬头看山梁，云也站得起</div>
+<div class="lyric-line" data-time="01:22.76">我在这小城，把自己站稳</div>
+<div class="lyric-line" data-time="01:29.77">斑驳木窗前，绣线轻轻移</div>
+<div class="lyric-line" data-time="01:33.82">靛蓝土布上，开出山和溪</div>
+<div class="lyric-line" data-time="01:38.16">窗框像画幅，框住好四季</div>
+<div class="lyric-line" data-time="01:42.45">外头梯田绿，层层往上起</div>
+<div class="lyric-line" data-time="01:46.79">暴雨初晴后，公路拐着弯</div>
+<div class="lyric-line" data-time="01:51.24">护路人的背，扛着碎石团</div>
+<div class="lyric-line" data-time="01:55.55">古铜色汗光，落在泥水边</div>
+<div class="lyric-line" data-time="01:59.91">把每条回家的路，铺得更踏实点</div>
+<div class="lyric-line" data-time="02:04.60">云雾散一半，天光慢慢长</div>
+<div class="lyric-line" data-time="02:08.53">水洼映出天，照见新希望</div>
+<div class="lyric-line" data-time="02:12.87">这地方不喧哗，也不爱张扬</div>
+<div class="lyric-line" data-time="02:17.21">可一开口，全是往前的力量</div>
+<div class="lyric-line" data-time="02:21.95">我爱贵定，贵定有硬气</div>
+<div class="lyric-line" data-time="02:25.51">石板路发亮，脚步不虚急</div>
+<div class="lyric-line" data-time="02:30.19">雨打风吹过，屋檐都挺直</div>
+<div class="lyric-line" data-time="02:34.74">日子再细碎，心火不熄</div>
+<div class="lyric-line" data-time="02:39.44">我爱贵定，贵定有硬气</div>
+<div class="lyric-line" data-time="02:43.52">一碗热米粉，辣到心里去</div>
+<div class="lyric-line" data-time="02:47.95">抬头看山梁，云也站得起</div>
+<div class="lyric-line" data-time="02:52.08">我在这小城，把自己站稳</div>
+<div class="lyric-line" data-time="02:59.02">就算风再急，也吹不弯这城</div>
+<div class="lyric-line" data-time="03:03.30">就算雨再重，也压不住晨灯</div>
+<div class="lyric-line" data-time="03:07.90">绣娘一针针，缝出好人生</div>
+<div class="lyric-line" data-time="03:11.98">石板一寸寸，磨出我心声</div>
+<div class="lyric-line" data-time="03:16.57">我爱贵定，贵定有硬气</div>
+<div class="lyric-line" data-time="03:20.42">石板路发亮，脚步不虚急</div>
+<div class="lyric-line" data-time="03:25.02">雨打风吹过，屋檐都挺直</div>
+<div class="lyric-line" data-time="03:29.25">日子再细碎，心火不熄</div>
+<div class="lyric-line" data-time="03:34.00">我爱贵定，贵定有硬气</div>
+<div class="lyric-line" data-time="03:38.01">一碗热米粉，辣到心里去</div>
+<div class="lyric-line" data-time="03:42.47">抬头看山梁，云也站得起</div>
+<div class="lyric-line" data-time="03:46.79">我在这小城，把自己站稳</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.5) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
