@@ -21,17 +21,11 @@
 			justify-content: center;
 			align-items: center;
             font-family: 'Segoe UI', system-ui, sans-serif;
-            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
-            background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             text-align: center;
         }
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         /* 列表页样式 */
         .song-list {
 			width: 80%;
@@ -50,7 +44,7 @@
             padding: 2rem;
         }
         audio {
-            width: 100%;
+            width: 80%;
             margin: 1rem 0;
             opacity: 0.5;
         }
@@ -84,11 +78,11 @@
             50% {background-position: 100% 50%;}
             100% {background-position: 0% 50%;}
         }
-        body {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
+        @media (max-width: 768px) {  
+            .player-page { width: 90%; }  
+            .song-list { width: 95%; }  
+            .hero-banner { height: 40dvh; }  
+        }        
     </style>
 </head>
 <body>
