@@ -12,16 +12,16 @@
 </script> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星穹KTV3#在线音乐播放器</title>
+    <title>星穹KTV3#壬申传奇在线音乐播放器</title>
     <style>
         body {
 		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
             margin: 0;
 			overflow-y: auto;
             font-family: 'Segoe UI', system-ui, sans-serif;
-            background: conic-gradient(from 0deg, #FFD700, #4ECDC4, #45B7D1, #FFD700);
-            background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
             text-align: center;
 			justify-content: center;
 			display: flex;
@@ -228,17 +228,6 @@
             background: rgba(255,255,255,0.1);
             padding: 20px;
             border-radius: 0 0 15px 15px;
-        }
-        /* 动态光效 */
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-        body {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
         }
     </style>
 </head>
