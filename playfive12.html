@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#雨痕时针时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #f8a407;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/765ca9d9da0c4fe4bb703b0cb4865572.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmq3mavtq001lsmlubzptindx/20260607/cmq3mh715006z51foef3ol2cp/1RN8fytJnK9iy6EuRIAvTF.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: white; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:11.40">鹅卵石吞咽最后一滴暮色</div>
+<div class="lyric-line" data-time="00:17.65">你悬在空中的手</div>
+<div class="lyric-line" data-time="00:22.89">丈量雨坠落的延迟</div>
+<div class="lyric-line" data-time="00:26.39">红砖墙渗出橱窗的旧温度</div>
+<div class="lyric-line" data-time="00:32.26">我们之间永远差三格霓虹的亮度</div>
+<div class="lyric-line" data-time="00:36.76">秒针在积水里骨折</div>
+<div class="lyric-line" data-time="00:40.22">绿毛衣吸饱了所有未完成的独白</div>
+<div class="lyric-line" data-time="00:46.84">此刻的雨是倒流的沙漏</div>
+<div class="lyric-line" data-time="00:51.70">当整座城开始漏电</div>
+<div class="lyric-line" data-time="00:54.90">我们用雨滴校准时间</div>
+<div class="lyric-line" data-time="00:57.85">你留下的水痕时针</div>
+<div class="lyric-line" data-time="01:00.76">在玻璃上画愈合的圆</div>
+<div class="lyric-line" data-time="01:04.38">所有迷路的温暖</div>
+<div class="lyric-line" data-time="01:07.28">都躲在蒸汽弥漫的便利店</div>
+<div class="lyric-line" data-time="01:11.28">(都躲在便利店)</div>
+<div class="lyric-line" data-time="01:13.83">(都躲在便利店)</div>
+<div class="lyric-line" data-time="01:16.13">垃圾桶收容凋谢的伞骨</div>
+<div class="lyric-line" data-time="01:19.62">植物在绿得最痛时学会用影子拥抱</div>
+<div class="lyric-line" data-time="01:27.14">长街尽头路灯像颗融化的方糖</div>
+<div class="lyric-line" data-time="01:30.82">我们的沉默比天气预报更早知道</div>
+<div class="lyric-line" data-time="01:36.15">你转身时，风也轻了一点</div>
+<div class="lyric-line" data-time="01:39.17">雨突然停驻的刹那</div>
+<div class="lyric-line" data-time="01:41.95">所有倒影站起来行走</div>
+<div class="lyric-line" data-time="01:45.10">它们用涟漪背诵</div>
+<div class="lyric-line" data-time="01:47.57">我们没签收的温柔</div>
+<div class="lyric-line" data-time="01:50.53">我把失散的名字</div>
+<div class="lyric-line" data-time="01:53.86">轻轻放回掌心</div>
+<div class="lyric-line" data-time="01:59.00">当整座城开始漏电</div>
+<div class="lyric-line" data-time="02:02.32">我们用雨滴校准时间</div>
+<div class="lyric-line" data-time="02:05.21">你留下的水痕时针</div>
+<div class="lyric-line" data-time="02:08.18">在玻璃上画愈合的圆</div>
+<div class="lyric-line" data-time="02:11.77">所有迷路的温暖</div>
+<div class="lyric-line" data-time="02:14.60">都躲在蒸汽弥漫的便利店</div>
+<div class="lyric-line" data-time="02:18.61">(都躲在便利店)</div>
+<div class="lyric-line" data-time="02:21.19">(都躲在便利店)</div>
+<div class="lyric-line" data-time="02:35.18">某个被冲散的地址</div>
+<div class="lyric-line" data-time="02:37.91">正在下水道里</div>
+<div class="lyric-line" data-time="02:41.11">用铁锈写信</div>
+<div class="lyric-line" data-time="02:43.25">我替它等你回音</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
