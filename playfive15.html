@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《活着的历史》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #070bf8;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/活着的历史.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmgk74jja000clblwgfl7knx5/20260608/cmq4z73n80039ufqd5j653hjg/3yFfjgPtSyrXSyt9QZ4CzB.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: white; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:04.39">马蹄凿进祁连山的月光</div>
+<div class="lyric-line" data-time="00:06.95">箭囊里抖落二十四节气</div>
+<div class="lyric-line" data-time="00:11.12">而今天定位的牧草</div>
+<div class="lyric-line" data-time="00:13.05">仍用匈奴语的韵脚生长</div>
+<div class="lyric-line" data-time="00:18.79">风把旧城门吹得发亮</div>
+<div class="lyric-line" data-time="00:22.10">我听见石头在慢慢回响</div>
+<div class="lyric-line" data-time="00:25.88">你眼里那片远方</div>
+<div class="lyric-line" data-time="00:27.73">像一张没写完的地图纸张</div>
+<div class="lyric-line" data-time="00:32.64">等高线缝合时间的断层</div>
+<div class="lyric-line" data-time="00:36.75">每道河谷都是未闭合的括号</div>
+<div class="lyric-line" data-time="00:40.46">我们沿着虚线行走时</div>
+<div class="lyric-line" data-time="00:44.46">经纬网突然长出体温</div>
+<div class="lyric-line" data-time="00:48.28">地图学，地图学</div>
+<div class="lyric-line" data-time="00:52.21">把我带回你身旁</div>
+<div class="lyric-line" data-time="00:55.75">地图学，地图学</div>
+<div class="lyric-line" data-time="00:59.71">每条路都在发烫</div>
+<div class="lyric-line" data-time="01:03.24">等高线，等高线</div>
+<div class="lyric-line" data-time="01:07.35">绕着心跳来回唱</div>
+<div class="lyric-line" data-time="01:10.67">地图学，地图学</div>
+<div class="lyric-line" data-time="01:14.56">你在我眼里发光</div>
+<div class="lyric-line" data-time="01:19.30">露营灯照亮岩画上的公羊</div>
+<div class="lyric-line" data-time="01:22.72">银河从卫青的箭筒倾泻而下</div>
+<div class="lyric-line" data-time="01:26.44">当手指划过电子屏的战场</div>
+<div class="lyric-line" data-time="01:28.20">两千年的风正吹动你刘海</div>
+<div class="lyric-line" data-time="01:30.10">我把沙丘写进短信里</div>
+<div class="lyric-line" data-time="01:31.78">你把晨露藏进掌心里</div>
+<div class="lyric-line" data-time="01:33.79">那些沉默的旧名字</div>
+<div class="lyric-line" data-time="01:37.10">在你笑的时候重新响起</div>
+<div class="lyric-line" data-time="01:40.35">等高线缝合时间的断层</div>
+<div class="lyric-line" data-time="01:44.63">每道河谷都是未闭合的括号</div>
+<div class="lyric-line" data-time="01:48.29">我们沿着虚线行走时</div>
+<div class="lyric-line" data-time="01:51.95">经纬网突然长出体温</div>
+<div class="lyric-line" data-time="01:55.18">地图学，地图学</div>
+<div class="lyric-line" data-time="01:59.82">把我带回你身旁</div>
+<div class="lyric-line" data-time="02:03.12">地图学，地图学</div>
+<div class="lyric-line" data-time="02:07.27">每条路都在发烫</div>
+<div class="lyric-line" data-time="02:10.61">等高线，等高线</div>
+<div class="lyric-line" data-time="02:14.75">绕着心跳来回唱</div>
+<div class="lyric-line" data-time="02:18.11">地图学，地图学</div>
+<div class="lyric-line" data-time="02:22.17">你在我眼里发光</div>
+<div class="lyric-line" data-time="02:25.64">我曾以为历史很远</div>
+<div class="lyric-line" data-time="02:29.05">远到摸不着边</div>
+<div class="lyric-line" data-time="02:32.97">可你一抬眼</div>
+<div class="lyric-line" data-time="02:35.58">就把边界改写一遍</div>
+<div class="lyric-line" data-time="02:39.15">那颗最久的星</div>
+<div class="lyric-line" data-time="02:41.24">落进你的指尖</div>
+<div class="lyric-line" data-time="02:42.83">原来所有迁徙</div>
+<div class="lyric-line" data-time="02:44.69">都是为了今天相见</div>
+<div class="lyric-line" data-time="02:50.11">地图学，地图学</div>
+<div class="lyric-line" data-time="02:54.07">把我带回你身旁</div>
+<div class="lyric-line" data-time="02:57.37">地图学，地图学</div>
+<div class="lyric-line" data-time="03:01.55">每条路都在发烫</div>
+<div class="lyric-line" data-time="03:05.08">等高线，等高线</div>
+<div class="lyric-line" data-time="03:09.16">绕着心跳来回唱</div>
+<div class="lyric-line" data-time="03:12.43">地图学，地图学</div>
+<div class="lyric-line" data-time="03:16.54">你在我眼里发光</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
