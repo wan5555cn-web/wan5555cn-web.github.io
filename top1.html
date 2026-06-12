@@ -173,6 +173,15 @@
   <span>返回列表</span>
 </a>
 <body>
+    <script>
+        // 动态设置背景高度（兼容安卓）
+        function setBodyHeight() {
+            document.body.style.minHeight = window.innerHeight + 'px';
+        }
+        // 页面加载和执行
+        window.addEventListener('load', setBodyHeight);
+        window.addEventListener('resize', setBodyHeight);
+    </script>    
     <div class="base-grid">
         <div class="music-pop">
             <h3>流行音乐</h3>
