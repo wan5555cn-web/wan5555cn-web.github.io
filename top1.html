@@ -15,11 +15,11 @@
     <title>星穹KTV音乐分类导航</title>
     <style>
         body {
-    		height: min-height: 100dvh
+    		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
             margin: 0;
 			overflow-y: auto;
             font-family: 'Segoe UI', system-ui, sans-serif;
-            background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 200% 200%;
             animation: gradient 8s ease infinite;
             text-align: center;
@@ -38,6 +38,7 @@
 			background: transparent;
 			position: relative;
 			z-index: 35;
+            min-height: 80dvh;
 		}
 /* 通用卡片样式 */
 		[class^="music-"] {
