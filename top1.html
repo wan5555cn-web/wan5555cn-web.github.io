@@ -29,7 +29,7 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-/* 基础网格布局 */
+    /* 基础网格布局 */
 		.base-grid {
 			display: grid;
 			grid-template-columns: repeat(6, minmax(150px, 1fr));
@@ -40,7 +40,7 @@
 			z-index: 35;
             min-height: 80dvh;
 		}
-/* 通用卡片样式 */
+    /* 通用卡片样式 */
 		[class^="music-"] {
 			height: 380px;
 			border-radius: 14px;
@@ -53,7 +53,7 @@
 			var(--bg-image) center/cover no-repeat;
 			box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 		}
-/* 独立背景配置 */
+    /* 独立背景配置 */
 		.music-pop { --bg-image: url('png1.png'); 
 			min-height: 850px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
@@ -78,7 +78,7 @@
 			min-height: 850px; / 设置最小高度 /
 			height: auto; / 允许自动扩展 /
 			}
-/* 内容区域 */
+    /* 内容区域 */
 		.music-card {
 			position: relative;
 			background: var(--bg-color);
@@ -129,14 +129,14 @@
 			color: #999;
 			}
 	/* 响应式设计 */
-@media (max-width: 1280px) { .music-grid { grid-template-columns: repeat(4, 1fr); }
-}
-@media (max-width: 960px) { .music-grid { grid-template-columns: repeat(3, 1fr); }
-[class^="music-"] { height: 220px; }
-}
-@media (max-width: 640px) { .music-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 480px) { .music-grid { grid-template-columns: none;
+    @media (max-width: 1280px) { .music-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 960px) { .music-grid { grid-template-columns: repeat(3, 1fr); }
+    [class^="music-"] { height: 220px; }
+    }
+    @media (max-width: 640px) { .music-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) { .music-grid { grid-template-columns: none;
     body { min-height: 100vh !important; }
     display: flex;
     overflow-x: auto;
@@ -144,26 +144,26 @@
     gap: 12px;
     padding: 0 16px 16px;
     -webkit-overflow-scrolling: touch; }
-[class^="music-"] { scroll-snap-align: start;
+    [class^="music-"] { scroll-snap-align: start;
     flex: 0 0 85vw;
     height: 240px;
     margin-bottom: 0; }
-}
-/* 交互效果 */
-[class^="music-"]:hover {
-transform: translateY(-8px) scale(1.02);
-box-shadow: 0 12px 24px rgba(0,0,0,0.18);
-background-blend-mode: overlay;
-}
-.song-item a {
-  color: #FFFFFF; / 替换成你想要的流行色 /
-  transition: all 0.3s ease;
-}
-.song-item a:hover {
-color: #00FF00;
-text-decoration: underline;
-text-shadow: 0 0 8px rgba(255,255,255,0.3);
-}
+    }
+    /* 交互效果 */
+    [class^="music-"]:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+    background-blend-mode: overlay;
+    }
+    .song-item a {
+    color: #FFFFFF; / 替换成你想要的流行色 /
+    transition: all 0.3s ease;
+    }
+    .song-item a:hover {
+    color: #00FF00;
+    text-decoration: underline;
+    text-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
     </style>
 </head>
 <a href="index.html" class="modern-back-btn">
