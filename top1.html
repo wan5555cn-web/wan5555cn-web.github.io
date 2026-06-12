@@ -137,18 +137,35 @@
     @media (max-width: 640px) { .music-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 480px) { body { min-height: 100vh !important; }
-    .music-grid { grid-template-columns: none;
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 12px;
-    padding: 0 16px 16px;
-    -webkit-overflow-scrolling: touch; }
-    [class^="music-"] { scroll-snap-align: start;
-    flex: 0 0 85vw;
-    height: 100px;
-    margin-bottom: 0; }
-    }
+/* 音乐网格布局容器 */
+.music-grid {
+  /* 禁用网格布局 */
+  grid-template-columns: none;
+  /* 启用弹性布局 */
+  display: flex;
+  /* 允许横向滚动 */
+  overflow-x: auto;
+  /* 滚动对齐方式 */
+  scroll-snap-type: x mandatory;
+  /* 元素间距 */
+  gap: 12px;
+  /* 内边距（上右下左） */
+  padding: 0 16px 16px;
+  /* iOS滚动优化 */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 音乐卡片通用样式 */
+[class^="music-"] {
+  /* 滚动对齐起点 */
+  scroll-snap-align: start;
+  /* 弹性项目属性（不伸缩/不扩展/基础宽度85vw） */
+  flex: 0 0 85vw;
+  /* 固定高度 */
+  height: 100px;
+  /* 底部外边距清零 */
+  margin-bottom: 0;
+}
     /* 交互效果 */
     [class^="music-"]:hover {
     transform: translateY(-8px) scale(1.02);
