@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《加了四秒》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/加了四秒.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/加了四秒.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:09.51">早上运气好</div>
+<div class="lyric-line" data-time="00:11.96">正好得二斤多点背纽</div>
+<div class="lyric-line" data-time="00:14.64">请师傅调汤</div>
+<div class="lyric-line" data-time="00:16.90">要原滋原味，慢慢熬透</div>
+<div class="lyric-line" data-time="00:19.73">所用应用程序</div>
+<div class="lyric-line" data-time="00:21.78">全部是免费版本</div>
+<div class="lyric-line" data-time="00:24.93">一分一寸都算清</div>
+<div class="lyric-line" data-time="00:26.77">日子过得不慌不忙</div>
+<div class="lyric-line" data-time="00:29.41">加了四秒</div>
+<div class="lyric-line" data-time="00:31.05">像给春天添一口热气</div>
+<div class="lyric-line" data-time="00:33.30">孙儿天地亮堂堂</div>
+<div class="lyric-line" data-time="00:36.83">笑声落进碗里</div>
+<div class="lyric-line" data-time="00:39.25">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="00:41.83">一口汤，暖开怀</div>
+<div class="lyric-line" data-time="00:44.22">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="00:46.75">家里人都在</div>
+<div class="lyric-line" data-time="00:49.30">大伯点头</div>
+<div class="lyric-line" data-time="00:50.61">大舅舅也还可以嘛</div>
+<div class="lyric-line" data-time="00:53.95">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="00:56.81">平平淡淡最有爱</div>
+<div class="lyric-line" data-time="01:08.85">案板边的光</div>
+<div class="lyric-line" data-time="01:10.67">照着一盆家常滋味</div>
+<div class="lyric-line" data-time="01:13.67">谁来都能坐下</div>
+<div class="lyric-line" data-time="01:15.58">一句话就把门推开</div>
+<div class="lyric-line" data-time="01:18.76">万荃在旁边</div>
+<div class="lyric-line" data-time="01:20.54">温旭颖也笑得自在</div>
+<div class="lyric-line" data-time="01:23.55">小事堆成日子</div>
+<div class="lyric-line" data-time="01:25.57">日子堆成了精彩</div>
+<div class="lyric-line" data-time="01:28.83">加了四秒</div>
+<div class="lyric-line" data-time="01:30.44">像把福气多留一会儿</div>
+<div class="lyric-line" data-time="01:33.78">孙儿天地亮堂堂</div>
+<div class="lyric-line" data-time="01:36.17">一桌人心更合</div>
+<div class="lyric-line" data-time="01:38.76">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="01:41.22">一口汤，暖开怀</div>
+<div class="lyric-line" data-time="01:43.60">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="01:46.14">家里人都在</div>
+<div class="lyric-line" data-time="01:48.76">大伯点头</div>
+<div class="lyric-line" data-time="01:50.00">大舅舅也还可以嘛</div>
+<div class="lyric-line" data-time="01:53.34">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="01:55.90">平平淡淡最有爱</div>
+<div class="lyric-line" data-time="02:00.29">不求排场大</div>
+<div class="lyric-line" data-time="02:01.48">只求这一锅刚刚好</div>
+<div class="lyric-line" data-time="02:04.70">不怕风和雨</div>
+<div class="lyric-line" data-time="02:06.33">只要回家还有笑</div>
+<div class="lyric-line" data-time="02:08.85">把清早的鲜</div>
+<div class="lyric-line" data-time="02:10.98">熬成午后的香</div>
+<div class="lyric-line" data-time="02:13.83">把寻常的忙</div>
+<div class="lyric-line" data-time="02:15.71">过成心里的光</div>
+<div class="lyric-line" data-time="02:20.67">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="02:23.24">一口汤，暖开怀</div>
+<div class="lyric-line" data-time="02:25.61">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="02:28.12">家里人都在</div>
+<div class="lyric-line" data-time="02:30.87">万荃温旭颖</div>
+<div class="lyric-line" data-time="02:32.60">大伯大舅舅都在</div>
+<div class="lyric-line" data-time="02:35.77">烟火人生，慢慢来</div>
+<div class="lyric-line" data-time="02:37.95">这一口，就是春天</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
