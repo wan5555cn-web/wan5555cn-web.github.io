@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《刀锋》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/刀锋.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmqfzfwa3000jh6ecap25y64d/20260616/cmqfzpyv9000feveihil3j0wc/3E8QQml6ztm3P8VqASLAyP.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:02.84">造景刀，快！快！快！</div>
+<div class="lyric-line" data-time="00:05.64">（拆迁队碾过老街的残骸）</div>
+<div class="lyric-line" data-time="00:12.69">毁绿刀，狠！狠！狠！</div>
+<div class="lyric-line" data-time="00:17.05">（红线在合同里碎成粉尘）</div>
+<div class="lyric-line" data-time="00:18.90">充数刀飘得像气球</div>
+<div class="lyric-line" data-time="00:24.12">藏债刀阴得像蛇游</div>
+<div class="lyric-line" data-time="00:29.37">吸血刀毒发在年终报表后</div>
+<div class="lyric-line" data-time="00:32.54">一层层，往上爬</div>
+<div class="lyric-line" data-time="00:35.79">谁在练？谁在递？</div>
+<div class="lyric-line" data-time="00:38.67">刀光背后，藏着谁的戏？</div>
+<div class="lyric-line" data-time="00:41.50">政绩秀场，谁当编剧？</div>
+<div class="lyric-line" data-time="00:44.13">百姓的血汗，成了谁的收视率？</div>
+<div class="lyric-line" data-time="00:47.09">谁在练？谁在递？(谁在递)</div>
+<div class="lyric-line" data-time="00:50.07">刀光背后，藏着谁的戏？(谁的戏)</div>
+<div class="lyric-line" data-time="00:58.48">拆东墙，补西墙</div>
+<div class="lyric-line" data-time="00:59.85">账页翻得比风还响</div>
+<div class="lyric-line" data-time="01:01.30">口号写满大堂墙</div>
+<div class="lyric-line" data-time="01:02.54">锅却甩给雨和霜</div>
+<div class="lyric-line" data-time="01:03.96">招商宴，杯子亮</div>
+<div class="lyric-line" data-time="01:05.50">转身就是空壳仓</div>
+<div class="lyric-line" data-time="01:07.02">手续盖章像鼓点</div>
+<div class="lyric-line" data-time="01:08.39">一锤一锤敲心房</div>
+<div class="lyric-line" data-time="01:10.04">充数刀飘得像气球</div>
+<div class="lyric-line" data-time="01:15.63">藏债刀阴得像蛇游</div>
+<div class="lyric-line" data-time="01:20.85">吸血刀毒发在年终报表后</div>
+<div class="lyric-line" data-time="01:24.01">一层层，往上爬</div>
+<div class="lyric-line" data-time="01:27.23">谁在练？谁在递？</div>
+<div class="lyric-line" data-time="01:29.37">刀光背后，藏着谁的戏？</div>
+<div class="lyric-line" data-time="01:32.73">政绩秀场，谁当编剧？</div>
+<div class="lyric-line" data-time="01:35.60">百姓的血汗，成了谁的收视率？</div>
+<div class="lyric-line" data-time="01:38.57">谁在练？谁在递？(谁在递)</div>
+<div class="lyric-line" data-time="01:41.51">刀光背后，藏着谁的戏？(谁的戏)</div>
+<div class="lyric-line" data-time="01:50.65">白：审计组的打印机突然卡纸</div>
+<div class="lyric-line" data-time="01:54.46">墨盒干涸前</div>
+<div class="lyric-line" data-time="01:57.15">最后一页写着</div>
+<div class="lyric-line" data-time="01:59.22">「整改通知已存档」</div>
+<div class="lyric-line" data-time="02:13.03">谁在练？谁在递？</div>
+<div class="lyric-line" data-time="02:15.70">刀光背后，藏着谁的戏？</div>
+<div class="lyric-line" data-time="02:18.59">政绩秀场，谁当编剧？</div>
+<div class="lyric-line" data-time="02:21.27">百姓的血汗，成了谁的收视率？</div>
+<div class="lyric-line" data-time="02:24.36">谁在练？谁在递？(谁在递)</div>
+<div class="lyric-line" data-time="02:27.25">刀光背后，藏着谁的戏？(谁的戏)</div>
+<div class="lyric-line" data-time="02:35.70">五把刀插在</div>
+<div class="lyric-line" data-time="02:37.11">地方志第108页</div>
+<div class="lyric-line" data-time="02:38.62">刀柄上刻着</div>
+<div class="lyric-line" data-time="02:39.78">「发展必经之路」</div>
+<div class="lyric-line" data-time="03:13.93">政绩秀场，谁当编剧？</div>
+<div class="lyric-line" data-time="03:16.62">百姓的血汗，成了谁的收视率？</div>
+<div class="lyric-line" data-time="03:19.47">谁在练？谁在递？(谁在递)</div>
+<div class="lyric-line" data-time="03:22.53">刀光背后，藏着谁的戏？(谁的戏)</div>
+<div class="lyric-line" data-time="03:30.91">五把刀插在</div>
+<div class="lyric-line" data-time="03:32.38">地方志第108页</div>
+<div class="lyric-line" data-time="03:34.01">刀柄上刻着</div>
+<div class="lyric-line" data-time="03:35.37">「发展必经之路」</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
