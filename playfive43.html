@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《半生归来仍少年》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/半生归来仍少年.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmqjmuw0x002if61t97pdoq6z/20260618/cmqjmv1vy007c6hc5jx49d02l/6hUCf7Rb8jEwCkhDG8ituv.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:14.75">六十年代山风凉</div>
+<div class="lyric-line" data-time="00:18.32">吊脚楼旁药草香</div>
+<div class="lyric-line" data-time="00:23.07">银针握碎晨霜</div>
+<div class="lyric-line" data-time="00:26.16">白衣染透月光</div>
+<div class="lyric-line" data-time="00:29.52">卫生院灯亮到天光</div>
+<div class="lyric-line" data-time="00:37.25">半生济世走千寨</div>
+<div class="lyric-line" data-time="00:44.58">归来仍是少年郎</div>
+<div class="lyric-line" data-time="00:52.23">无人机掠过梯田上</div>
+<div class="lyric-line" data-time="00:59.30">镜头里故乡在发光</div>
+<div class="lyric-line" data-time="01:06.85">苗调新词唱沧桑</div>
+<div class="lyric-line" data-time="01:11.89">少年郎</div>
+<div class="lyric-line" data-time="01:15.14">故乡在发光</div>
+<div class="lyric-line" data-time="01:25.45">卫生局里写担当</div>
+<div class="lyric-line" data-time="01:32.60">退休又披新战裳</div>
+<div class="lyric-line" data-time="01:39.98">私立院墙春意涨</div>
+<div class="lyric-line" data-time="01:46.47">教年轻人握稳希望</div>
+<div class="lyric-line" data-time="01:54.29">像当年师父那样</div>
+<div class="lyric-line" data-time="01:59.00">阿公的芦笙唤云海</div>
+<div class="lyric-line" data-time="02:02.57">我把新词绣成彩带</div>
+<div class="lyric-line" data-time="02:05.87">山路长</div>
+<div class="lyric-line" data-time="02:07.61">心不改</div>
+<div class="lyric-line" data-time="02:09.50">一针一线都是爱</div>
+<div class="lyric-line" data-time="02:11.86">阿公的芦笙</div>
+<div class="lyric-line" data-time="02:13.44">若问此生何所向</div>
+<div class="lyric-line" data-time="02:16.68">青蒿满山月满江</div>
+<div class="lyric-line" data-time="02:20.63">一生一首苗乡乐章</div>
+<div class="lyric-line" data-time="02:22.83">唱到白发也滚烫</div>
+<div class="lyric-line" data-time="02:26.95">苗乡乐章</div>
+<div class="lyric-line" data-time="02:33.03">唱到白发也滚烫</div>
+<div class="lyric-line" data-time="02:50.37">半生济世走千寨</div>
+<div class="lyric-line" data-time="02:57.59">归来仍是少年郎</div>
+<div class="lyric-line" data-time="03:05.39">无人机掠过梯田上</div>
+<div class="lyric-line" data-time="03:11.85">镜头里故乡在发光</div>
+<div class="lyric-line" data-time="03:15.07">苗调新词唱沧桑</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
