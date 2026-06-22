@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《烬与光》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/烬与光.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmqnrejh100068mvf9nyy0ms4/20260621/cmqnrhc1d0029xz3zz60merof/6nDvGFUydqjWr5oDLWTOpZ.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:10.68">灰白的烟升起来了</div>
+<div class="lyric-line" data-time="00:13.27">像谁把天边揉碎</div>
+<div class="lyric-line" data-time="00:15.84">人类在日历上</div>
+<div class="lyric-line" data-time="00:17.63">划掉的每一页</div>
+<div class="lyric-line" data-time="00:20.31">都像未烧透的纸钱</div>
+<div class="lyric-line" data-time="00:23.13">飘着飘着</div>
+<div class="lyric-line" data-time="00:24.62">突然被暴雨按进泥土里</div>
+<div class="lyric-line" data-time="00:27.38">而根茎在暗处发笑</div>
+<div class="lyric-line" data-time="00:30.45">它们记得</div>
+<div class="lyric-line" data-time="00:31.52">所有匆忙的脚印</div>
+<div class="lyric-line" data-time="00:32.79">记得鞋底的慌张</div>
+<div class="lyric-line" data-time="00:34.14">也记得你回头时</div>
+<div class="lyric-line" data-time="00:35.49">那一瞬间的空白</div>
+<div class="lyric-line" data-time="00:36.86">最终都成了</div>
+<div class="lyric-line" data-time="00:37.76">种子的襁褓</div>
+<div class="lyric-line" data-time="00:39.10">把沉默抱紧</div>
+<div class="lyric-line" data-time="00:40.33">把明天放低</div>
+<div class="lyric-line" data-time="00:41.53">听</div>
+<div class="lyric-line" data-time="00:42.75">焦土还在裂开</div>
+<div class="lyric-line" data-time="00:45.09">一寸一寸</div>
+<div class="lyric-line" data-time="00:47.44">把旧日吐出来</div>
+<div class="lyric-line" data-time="00:51.45">听</div>
+<div class="lyric-line" data-time="00:52.70">黑暗松了手</div>
+<div class="lyric-line" data-time="00:55.18">有些名字</div>
+<div class="lyric-line" data-time="00:57.24">开始往上长</div>
+<div class="lyric-line" data-time="01:00.88">烬里有光</div>
+<div class="lyric-line" data-time="01:03.38">烬里有光</div>
+<div class="lyric-line" data-time="01:06.10">灰落下去芽就醒了</div>
+<div class="lyric-line" data-time="01:10.73">烬里有光</div>
+<div class="lyric-line" data-time="01:13.56">烬里有光</div>
+<div class="lyric-line" data-time="01:15.92">你看那条路</div>
+<div class="lyric-line" data-time="01:17.73">正从灰里长出来</div>
+<div class="lyric-line" data-time="01:21.05">第三幕的篝火边</div>
+<div class="lyric-line" data-time="01:22.60">老人把泛黄照片</div>
+<div class="lyric-line" data-time="01:24.07">一张一张</div>
+<div class="lyric-line" data-time="01:24.68">送进火里</div>
+<div class="lyric-line" data-time="01:25.97">火星突然凝滞</div>
+<div class="lyric-line" data-time="01:27.46">像时间咬住了舌头</div>
+<div class="lyric-line" data-time="01:28.85">他的眼眶里</div>
+<div class="lyric-line" data-time="01:29.75">装着一整个冬天</div>
+<div class="lyric-line" data-time="01:31.18">却还是把手</div>
+<div class="lyric-line" data-time="01:32.46">伸向那团热</div>
+<div class="lyric-line" data-time="01:34.07">画外音轻轻说</div>
+<div class="lyric-line" data-time="01:35.32">看呐</div>
+<div class="lyric-line" data-time="01:36.58">灰烬在给新生者让路</div>
+<div class="lyric-line" data-time="01:41.33">空镜里</div>
+<div class="lyric-line" data-time="01:42.38">焦土裂缝深处</div>
+<div class="lyric-line" data-time="01:43.51">一株野芒草</div>
+<div class="lyric-line" data-time="01:44.75">刺破凝固的沥青</div>
+<div class="lyric-line" data-time="01:46.53">细得像一句誓言</div>
+<div class="lyric-line" data-time="01:48.13">却倔得不肯倒下</div>
+<div class="lyric-line" data-time="01:52.04">听</div>
+<div class="lyric-line" data-time="01:53.57">蛇在灰下蜕身</div>
+<div class="lyric-line" data-time="01:56.02">一圈一圈</div>
+<div class="lyric-line" data-time="01:58.33">脱去旧皮</div>
+<div class="lyric-line" data-time="02:00.24">听</div>
+<div class="lyric-line" data-time="02:03.53">风把火吹低</div>
+<div class="lyric-line" data-time="02:05.65">可每一粒暗</div>
+<div class="lyric-line" data-time="02:08.35">都在发亮</div>
+<div class="lyric-line" data-time="02:11.71">烬里有光</div>
+<div class="lyric-line" data-time="02:14.12">烬里有光</div>
+<div class="lyric-line" data-time="02:16.64">灰落下去芽就醒了</div>
+<div class="lyric-line" data-time="02:21.72">烬里有光</div>
+<div class="lyric-line" data-time="02:24.26">烬里有光</div>
+<div class="lyric-line" data-time="02:26.66">你看那条路</div>
+<div class="lyric-line" data-time="02:28.49">正从灰里长出来</div>
+<div class="lyric-line" data-time="02:31.74">如果你也曾被埋进</div>
+<div class="lyric-line" data-time="02:34.82">那一页一页的遗忘</div>
+<div class="lyric-line" data-time="02:36.88">如果你也曾在雨里</div>
+<div class="lyric-line" data-time="02:39.27">把名字交给泥土</div>
+<div class="lyric-line" data-time="02:41.87">别怕</div>
+<div class="lyric-line" data-time="02:43.20">根在下面</div>
+<div class="lyric-line" data-time="02:44.01">早已替你</div>
+<div class="lyric-line" data-time="02:44.98">把春天翻面</div>
+<div class="lyric-line" data-time="02:46.83">别怕</div>
+<div class="lyric-line" data-time="02:48.01">蛇褪去旧壳</div>
+<div class="lyric-line" data-time="02:48.99">不是为了消失</div>
+<div class="lyric-line" data-time="02:50.50">是为了</div>
+<div class="lyric-line" data-time="02:51.92">继续活</div>
+<div class="lyric-line" data-time="02:53.53">烬里有光</div>
+<div class="lyric-line" data-time="02:55.94">烬里有光</div>
+<div class="lyric-line" data-time="02:58.39">灰落下去芽就醒了</div>
+<div class="lyric-line" data-time="03:03.48">烬里有光</div>
+<div class="lyric-line" data-time="03:05.92">烬里有光</div>
+<div class="lyric-line" data-time="03:08.40">火烧完以后</div>
+<div class="lyric-line" data-time="03:10.19">新生才抬头说话</div>
+<div class="lyric-line" data-time="03:13.71">烬里有光</div>
+<div class="lyric-line" data-time="03:16.11">烬里有光</div>
+<div class="lyric-line" data-time="03:18.49">你看那条路</div>
+<div class="lyric-line" data-time="03:20.38">正从灰里长出来</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
