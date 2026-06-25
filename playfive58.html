@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《进修旅行手册》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/进修旅行手册.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmqsw0ogn000pf4fn9ur8sxrp/20260625/cmqsw1quk003wbrnmf7hdn67v/73sjhNnbuWDJuhxpJyGswJ.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:13.62">我总觉得旅行不该只负责看风景</div>
+<div class="lyric-line" data-time="00:16.95">有些地方得去学点没用的东西</div>
+<div class="lyric-line" data-time="00:20.10">比如折一只纸鹤听一块石头怎么呼吸</div>
+<div class="lyric-line" data-time="00:26.34">再把日子慢慢学成另一种语言</div>
+<div class="lyric-line" data-time="00:32.56">订一张去京都的车票学折纸鹤到破晓</div>
+<div class="lyric-line" data-time="00:38.68">老师傅说皱纹里藏禅意我数到第三道就睡着</div>
+<div class="lyric-line" data-time="00:45.29">巷口豆腐店借把尺量完月光量猫的腰</div>
+<div class="lyric-line" data-time="00:51.95">笔记本写满唐招提寺蚂蚁搬运落叶的线条</div>
+<div class="lyric-line" data-time="00:57.87">我把鞋底踩得很轻</div>
+<div class="lyric-line" data-time="01:01.08">像怕惊动一阵旧风</div>
+<div class="lyric-line" data-time="01:03.55">越是学这些无用</div>
+<div class="lyric-line" data-time="01:06.86">越像在认领自己</div>
+<div class="lyric-line" data-time="01:11.12">把地图折成准考证</div>
+<div class="lyric-line" data-time="01:14.46">每个地名都是选修课表</div>
+<div class="lyric-line" data-time="01:17.97">南极考冰川雕刻学</div>
+<div class="lyric-line" data-time="01:21.15">撒哈拉练沙漏颠倒</div>
+<div class="lyric-line" data-time="01:24.01">若你问学分有什么用</div>
+<div class="lyric-line" data-time="01:27.59">摊开手接住风在笑</div>
+<div class="lyric-line" data-time="01:30.67">这世界本是无用学院</div>
+<div class="lyric-line" data-time="01:34.14">毕业证是晒黑的眼角</div>
+<div class="lyric-line" data-time="01:48.54">午后在寺后抄一页经学把沉默写得工整</div>
+<div class="lyric-line" data-time="01:52.20">抄到最后一笔蝉鸣把纸面烫出小小波纹</div>
+<div class="lyric-line" data-time="01:55.37">我跟一位清洁工学会擦亮台阶上的阴影</div>
+<div class="lyric-line" data-time="01:59.05">他笑我太认真说答案常常躲在脏鞋印里</div>
+<div class="lyric-line" data-time="02:02.14">我把行李放得很慢</div>
+<div class="lyric-line" data-time="02:05.03">像放下一整座从前</div>
+<div class="lyric-line" data-time="02:08.49">越是学这些无用</div>
+<div class="lyric-line" data-time="02:11.58">越像在修补时间</div>
+<div class="lyric-line" data-time="02:14.21">把地图折成准考证</div>
+<div class="lyric-line" data-time="02:17.72">每个地名都是选修课表</div>
+<div class="lyric-line" data-time="02:21.04">南极考冰川雕刻学</div>
+<div class="lyric-line" data-time="02:24.37">撒哈拉练沙漏颠倒</div>
+<div class="lyric-line" data-time="02:27.23">若你问学分有什么用</div>
+<div class="lyric-line" data-time="02:30.81">摊开手接住风在笑</div>
+<div class="lyric-line" data-time="02:33.95">这世界本是无用学院</div>
+<div class="lyric-line" data-time="02:37.38">毕业证是晒黑的眼角</div>
+<div class="lyric-line" data-time="02:40.23">凌晨三点便利店跟流浪汉讨论星座暗号</div>
+<div class="lyric-line" data-time="02:44.85">他教我如何用易拉罐环接住整个太平洋的涨潮</div>
+<div class="lyric-line" data-time="02:51.75">我把这句秘密背好</div>
+<div class="lyric-line" data-time="02:55.42">藏进明天的车票</div>
+<div class="lyric-line" data-time="02:58.81">原来最远的修行</div>
+<div class="lyric-line" data-time="03:01.87">是学会轻轻地老</div>
+<div class="lyric-line" data-time="03:04.51">把地图折成准考证</div>
+<div class="lyric-line" data-time="03:08.01">每个地名都是选修课表</div>
+<div class="lyric-line" data-time="03:11.45">南极考冰川雕刻学</div>
+<div class="lyric-line" data-time="03:14.68">撒哈拉练沙漏颠倒</div>
+<div class="lyric-line" data-time="03:17.49">若你问学分有什么用</div>
+<div class="lyric-line" data-time="03:21.07">摊开手接住风在笑</div>
+<div class="lyric-line" data-time="03:24.35">这世界本是无用学院</div>
+<div class="lyric-line" data-time="03:27.68">毕业证是晒黑的眼角</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
