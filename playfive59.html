@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《另一种语言(慢摇版)》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/另一种语言 (慢摇版).png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/另一种语言 (慢摇版).mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Google音乐]</div>
+<div class="lyric-line" data-time="00:10.46">我总觉得旅行不该只负责看风景</div>
+<div class="lyric-line" data-time="00:14.21">有些地方得去学点没用的东西</div>
+<div class="lyric-line" data-time="00:17.38">比如折一只纸鹤听一块石头怎么呼吸</div>
+<div class="lyric-line" data-time="00:21.04">再把日子慢慢学成另一种语言</div>
+<div class="lyric-line" data-time="00:24.77">在陌生的街角我跟老人學編草鞋</div>
+<div class="lyric-line" data-time="00:27.89">他說手藝不是為了賣是讓時間慢下來</div>
+<div class="lyric-line" data-time="00:31.16">我記下每個指尖的摺痕像記一首無言的歌</div>
+<div class="lyric-line" data-time="00:34.75">走的時候他沒說再見只把一片落葉交給我</div>
+<div class="lyric-line" data-time="00:41.55">原來車票從不承諾抵達</div>
+<div class="lyric-line" data-time="00:44.85">只有腳步會回答</div>
+<div class="lyric-line" data-time="00:47.97">學著用另一種語言數春秋</div>
+<div class="lyric-line" data-time="00:51.66">讓每個名詞都慢慢熟透</div>
+<div class="lyric-line" data-time="00:54.67">在別人的炊煙裡學會停留</div>
+<div class="lyric-line" data-time="00:58.05">在自己的行囊裡裝滿感受</div>
+<div class="lyric-line" data-time="01:01.98">我慢慢學會了另一種自由</div>
+<div class="lyric-line" data-time="01:05.09">不是更懂是更不懂卻更足夠</div>
+<div class="lyric-line" data-time="01:08.99">在午後的市集看女人揉她的陶土</div>
+<div class="lyric-line" data-time="01:15.97">她掌心的溫度像個山谷我從未碰過的深度</div>
+<div class="lyric-line" data-time="01:18.82">她說把一首詩燒進胚裡再放進水裡等它還原</div>
+<div class="lyric-line" data-time="01:26.21">我在那裡蹲了很久原來有些事不是學是去走一遍</div>
+<div class="lyric-line" data-time="01:32.92">原來地圖從不標示抵達</div>
+<div class="lyric-line" data-time="01:36.28">只有回頭才會回答</div>
+<div class="lyric-line" data-time="01:39.36">學著用另一種語言數春秋</div>
+<div class="lyric-line" data-time="01:43.10">讓每個名詞都慢慢熟透</div>
+<div class="lyric-line" data-time="01:46.12">在別人的炊煙裡學會停留</div>
+<div class="lyric-line" data-time="01:49.56">在自己的行囊裡裝滿感受</div>
+<div class="lyric-line" data-time="01:53.43">我慢慢學會了另一種自由</div>
+<div class="lyric-line" data-time="01:56.58">不是更懂是更不懂卻更足夠</div>
+<div class="lyric-line" data-time="02:00.34">折了一千隻紙鶴才明白</div>
+<div class="lyric-line" data-time="02:03.75">它們從不落回同一片海</div>
+<div class="lyric-line" data-time="02:07.15">石頭的呼吸是最慢的節拍</div>
+<div class="lyric-line" data-time="02:13.72">我終於聽懂了卻再也不猜</div>
+<div class="lyric-line" data-time="02:17.39">學著用另一種語言數春秋</div>
+<div class="lyric-line" data-time="02:20.85">讓每個日子都慢慢熟透</div>
+<div class="lyric-line" data-time="02:27.30">在別人的炊煙裡學會停留</div>
+<div class="lyric-line" data-time="02:30.64">在自己的行囊裡裝滿感受</div>
+<div class="lyric-line" data-time="02:34.55">我慢慢學會了另一種自由</div>
+<div class="lyric-line" data-time="02:37.69">不是更懂是更不懂卻更富有</div>
+<div class="lyric-line" data-time="02:43.52">学着呼吸...</div>
+<div class="lyric-line" data-time="02:50.43">学着停留...</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
