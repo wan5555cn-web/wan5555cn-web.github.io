@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《少年锋芒》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/少年锋芒.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/少年锋芒.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Tunee音乐]</div>
+<div class="lyric-line" data-time="00:21.14">十七岁的眼眸</div>
+<div class="lyric-line" data-time="00:24.46">装着星海的辽阔</div>
+<div class="lyric-line" data-time="00:28.83">未褪的青涩里</div>
+<div class="lyric-line" data-time="00:31.83">藏着无畏的执着</div>
+<div class="lyric-line" data-time="00:36.84">当污染的暗涌</div>
+<div class="lyric-line" data-time="00:39.76">吞没蔚蓝的轮廓</div>
+<div class="lyric-line" data-time="00:43.62">他站上潮头</div>
+<div class="lyric-line" data-time="00:45.87">把信念写成战歌</div>
+<div class="lyric-line" data-time="00:53.19">指尖轻叩键盘</div>
+<div class="lyric-line" data-time="00:56.62">代码编织着承诺</div>
+<div class="lyric-line" data-time="01:01.12">少年的肩头</div>
+<div class="lyric-line" data-time="01:03.44">扛起未来的轮廓</div>
+<div class="lyric-line" data-time="01:09.65">召集同路伙伴</div>
+<div class="lyric-line" data-time="01:11.87">点燃智慧的篝火</div>
+<div class="lyric-line" data-time="01:17.63">用奇思作桨</div>
+<div class="lyric-line" data-time="01:19.15">要劈开浪涌的波</div>
+<div class="lyric-line" data-time="01:26.96">智澜之光</div>
+<div class="lyric-line" data-time="01:28.26">划破暗夜的迷茫</div>
+<div class="lyric-line" data-time="01:30.79">少年锋芒</div>
+<div class="lyric-line" data-time="01:32.26">敢与天地试锋芒</div>
+<div class="lyric-line" data-time="01:34.71">七万九千载的荣光</div>
+<div class="lyric-line" data-time="01:36.91">在此刻绽放</div>
+<div class="lyric-line" data-time="01:42.92">他用梦想</div>
+<div class="lyric-line" data-time="01:44.23">为海洋续写新章</div>
+<div class="lyric-line" data-time="01:46.83">智澜之光</div>
+<div class="lyric-line" data-time="01:48.27">照亮未来的远方</div>
+<div class="lyric-line" data-time="01:50.68">团队并肩</div>
+<div class="lyric-line" data-time="01:51.84">踏碎风浪的阻挡</div>
+<div class="lyric-line" data-time="01:58.26">用智慧改写命运的篇章</div>
+<div class="lyric-line" data-time="02:06.22">让蓝色星球</div>
+<div class="lyric-line" data-time="02:08.04">重归纯净模样</div>
+<div class="lyric-line" data-time="02:26.69">让浪花记住这名字</div>
+<div class="lyric-line" data-time="02:29.88">让岁月铭记这担当</div>
+<div class="lyric-line" data-time="02:33.77">少年的故事还在传唱</div>
+<div class="lyric-line" data-time="02:37.88">智慧的光芒永远滚烫</div>
+<div class="lyric-line" data-time="02:47.04">智澜之光</div>
+<div class="lyric-line" data-time="02:48.29">划破暗夜的迷茫</div>
+<div class="lyric-line" data-time="02:50.71">少年锋芒</div>
+<div class="lyric-line" data-time="02:52.26">敢与天地试锋芒</div>
+<div class="lyric-line" data-time="02:54.62">七万九千载的荣光</div>
+<div class="lyric-line" data-time="02:56.91">在此刻绽放</div>
+<div class="lyric-line" data-time="03:02.97">他用梦想</div>
+<div class="lyric-line" data-time="03:04.33">为海洋续写新章</div>
+<div class="lyric-line" data-time="03:06.73">智澜之光</div>
+<div class="lyric-line" data-time="03:08.25">照亮未来的远方</div>
+<div class="lyric-line" data-time="03:10.69">团队并肩</div>
+<div class="lyric-line" data-time="03:11.80">踏碎风浪的阻挡</div>
+<div class="lyric-line" data-time="03:18.21">用智慧改写命运的篇章</div>
+<div class="lyric-line" data-time="03:26.19">让蓝色星球</div>
+<div class="lyric-line" data-time="03:28.10">重归纯净模样</div>
+<div class="lyric-line" data-time="03:39.03">那片蔚蓝永远闪亮</div>
+<div class="lyric-line" data-time="03:46.92">永远闪亮</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
