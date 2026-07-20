@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《最美意外》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/最美意外.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmrsgexix000ao1and6gzj6ju/20260719/cmrsggm8v000ot9972i0fy3yi/3isVvaGrWhi7QclBxH4JkL.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:10.67">你像夜里的一道光</div>
+<div class="lyric-line" data-time="00:12.58">不张扬，却很亮</div>
+<div class="lyric-line" data-time="00:15.19">我以为要费尽力气</div>
+<div class="lyric-line" data-time="00:17.46">才配站在你身旁</div>
+<div class="lyric-line" data-time="00:20.41">你却轻轻走过来</div>
+<div class="lyric-line" data-time="00:22.26">把慌张都安放</div>
+<div class="lyric-line" data-time="00:25.01">原来答案不必追</div>
+<div class="lyric-line" data-time="00:27.16">它早就在路上</div>
+<div class="lyric-line" data-time="00:29.60">不必刻意去找</div>
+<div class="lyric-line" data-time="00:31.96">不必拼命去猜</div>
+<div class="lyric-line" data-time="00:34.73">你站在那里</div>
+<div class="lyric-line" data-time="00:37.22">就已经很精彩</div>
+<div class="lyric-line" data-time="00:39.20">你本身就是</div>
+<div class="lyric-line" data-time="00:41.14">最美的意外</div>
+<div class="lyric-line" data-time="00:43.80">我心里那块空白</div>
+<div class="lyric-line" data-time="00:46.00">被你轻轻填满</div>
+<div class="lyric-line" data-time="00:49.07">你本身就是</div>
+<div class="lyric-line" data-time="00:50.96">最美的意外</div>
+<div class="lyric-line" data-time="00:53.64">不用多余安排</div>
+<div class="lyric-line" data-time="00:56.00">爱就这样盛开</div>
+<div class="lyric-line" data-time="00:58.60">（最美的意外）</div>
+<div class="lyric-line" data-time="01:09.18">我曾把期待折得太紧</div>
+<div class="lyric-line" data-time="01:11.84">怕一碰就散开</div>
+<div class="lyric-line" data-time="01:14.29">直到你把平凡日子</div>
+<div class="lyric-line" data-time="01:16.96">都照成了花海</div>
+<div class="lyric-line" data-time="01:19.39">原来温柔有重量</div>
+<div class="lyric-line" data-time="01:21.67">原来靠近有依赖</div>
+<div class="lyric-line" data-time="01:24.21">你不是我找来的答案</div>
+<div class="lyric-line" data-time="01:26.60">是命运递来的安排</div>
+<div class="lyric-line" data-time="01:29.08">不必刻意去找</div>
+<div class="lyric-line" data-time="01:31.35">不必拼命去猜</div>
+<div class="lyric-line" data-time="01:33.90">你站在那里</div>
+<div class="lyric-line" data-time="01:36.60">就已经很精彩</div>
+<div class="lyric-line" data-time="01:38.58">你本身就是</div>
+<div class="lyric-line" data-time="01:40.50">最美的意外</div>
+<div class="lyric-line" data-time="01:43.03">我心里那块空白</div>
+<div class="lyric-line" data-time="01:45.36">被你轻轻填满</div>
+<div class="lyric-line" data-time="01:48.43">你本身就是</div>
+<div class="lyric-line" data-time="01:50.43">最美的意外</div>
+<div class="lyric-line" data-time="01:53.11">不用多余安排</div>
+<div class="lyric-line" data-time="01:55.39">爱就这样盛开</div>
+<div class="lyric-line" data-time="01:57.94">（最美的意外）</div>
+<div class="lyric-line" data-time="02:08.52">如果世界太快</div>
+<div class="lyric-line" data-time="02:10.90">我就慢下来</div>
+<div class="lyric-line" data-time="02:13.83">只要你在</div>
+<div class="lyric-line" data-time="02:15.88">我就敢打开</div>
+<div class="lyric-line" data-time="02:18.72">那些没说出口的</div>
+<div class="lyric-line" data-time="02:21.16">都在眼神里澎湃</div>
+<div class="lyric-line" data-time="02:23.44">我终于明白</div>
+<div class="lyric-line" data-time="02:24.92">遇见你不是巧合</div>
+<div class="lyric-line" data-time="02:26.75">是我等来的现在</div>
+<div class="lyric-line" data-time="02:30.55">你本身就是</div>
+<div class="lyric-line" data-time="02:32.51">最美的意外</div>
+<div class="lyric-line" data-time="02:35.03">我心里那块空白</div>
+<div class="lyric-line" data-time="02:37.40">被你轻轻填满</div>
+<div class="lyric-line" data-time="02:40.34">你本身就是</div>
+<div class="lyric-line" data-time="02:42.34">最美的意外</div>
+<div class="lyric-line" data-time="02:45.08">不用多余安排</div>
+<div class="lyric-line" data-time="02:47.32">爱就这样盛开</div>
+<div class="lyric-line" data-time="02:49.98">（最美的意外）</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
