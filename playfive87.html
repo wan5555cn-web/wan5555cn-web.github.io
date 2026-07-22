@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《资源池》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/资源池.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmrvyk5rt000jpd38rosz504h/20260722/cmrvykar9004t122yysq8t07g/1ItmllY9Qm3eNxPWYHYg8p.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:10.67">请柬翻开像文件</div>
+<div class="lyric-line" data-time="00:13.06">红毯铺成一条线</div>
+<div class="lyric-line" data-time="00:15.56">他递来一份诚意</div>
+<div class="lyric-line" data-time="00:17.78">她回敬一整页人脉</div>
+<div class="lyric-line" data-time="00:20.96">伴郎笑得很得体</div>
+<div class="lyric-line" data-time="00:23.30">红包里藏着筹码</div>
+<div class="lyric-line" data-time="00:25.95">伴娘转身那一秒</div>
+<div class="lyric-line" data-time="00:28.21">裙摆闪过新牌照</div>
+<div class="lyric-line" data-time="00:30.98">谁在签字</div>
+<div class="lyric-line" data-time="00:32.01">谁在盖章</div>
+<div class="lyric-line" data-time="00:35.83">谁把命运</div>
+<div class="lyric-line" data-time="00:37.07">折成了礼单</div>
+<div class="lyric-line" data-time="00:40.76">谁在举杯</div>
+<div class="lyric-line" data-time="00:41.90">谁在盯盘</div>
+<div class="lyric-line" data-time="00:45.10">这一场婚礼</div>
+<div class="lyric-line" data-time="00:47.48">像一场盛宴</div>
+<div class="lyric-line" data-time="00:50.86">资源池，资源池</div>
+<div class="lyric-line" data-time="00:53.28">一转身就升级</div>
+<div class="lyric-line" data-time="00:55.94">资源池，资源池</div>
+<div class="lyric-line" data-time="00:58.21">喜糖都带股息</div>
+<div class="lyric-line" data-time="01:00.60">你把真心交出去</div>
+<div class="lyric-line" data-time="01:03.06">我把筹码攥手里</div>
+<div class="lyric-line" data-time="01:06.04">资源池，资源池</div>
+<div class="lyric-line" data-time="01:08.18">今夜全员入局</div>
+<div class="lyric-line" data-time="01:20.81">行长对着婚戒按</div>
+<div class="lyric-line" data-time="01:23.11">协议上留下指纹</div>
+<div class="lyric-line" data-time="01:26.07">导演把婚纱照修</div>
+<div class="lyric-line" data-time="01:28.48">修成了头条封面</div>
+<div class="lyric-line" data-time="01:31.21">宾客举杯不闲谈</div>
+<div class="lyric-line" data-time="01:33.19">只谈回报和窗口</div>
+<div class="lyric-line" data-time="01:36.29">有人看见花车过</div>
+<div class="lyric-line" data-time="01:38.62">有人先算后路走</div>
+<div class="lyric-line" data-time="01:41.56">谁在签字</div>
+<div class="lyric-line" data-time="01:42.64">谁在盖章</div>
+<div class="lyric-line" data-time="01:46.47">谁把祝福</div>
+<div class="lyric-line" data-time="01:47.72">写成了增长</div>
+<div class="lyric-line" data-time="01:51.52">谁在微笑</div>
+<div class="lyric-line" data-time="01:52.72">谁在对望</div>
+<div class="lyric-line" data-time="01:55.84">这一场热闹</div>
+<div class="lyric-line" data-time="01:58.20">藏着锋芒</div>
+<div class="lyric-line" data-time="02:01.59">资源池，资源池</div>
+<div class="lyric-line" data-time="02:03.97">一转身就升级</div>
+<div class="lyric-line" data-time="02:06.65">资源池，资源池</div>
+<div class="lyric-line" data-time="02:08.90">喜糖都带股息</div>
+<div class="lyric-line" data-time="02:11.38">你把真心交出去</div>
+<div class="lyric-line" data-time="02:13.85">我把筹码攥手里</div>
+<div class="lyric-line" data-time="02:16.79">资源池，资源池</div>
+<div class="lyric-line" data-time="02:18.89">今夜全员入局</div>
+<div class="lyric-line" data-time="02:21.66">本故事纯属虚构</div>
+<div class="lyric-line" data-time="02:23.09">偏偏太像真相</div>
+<div class="lyric-line" data-time="02:24.55">每句玩笑背后</div>
+<div class="lyric-line" data-time="02:25.42">都站着一整排名单</div>
+<div class="lyric-line" data-time="02:27.03">灯光再亮一点</div>
+<div class="lyric-line" data-time="02:29.07">把笑容照得更满</div>
+<div class="lyric-line" data-time="02:31.54">这不是普通婚宴</div>
+<div class="lyric-line" data-time="02:34.17">是门票，是通关</div>
+<div class="lyric-line" data-time="02:42.06">资源池，资源池</div>
+<div class="lyric-line" data-time="02:44.50">一转身就升级</div>
+<div class="lyric-line" data-time="02:47.08">资源池，资源池</div>
+<div class="lyric-line" data-time="02:49.34">喜糖都带股息</div>
+<div class="lyric-line" data-time="02:51.75">你把真心交出去</div>
+<div class="lyric-line" data-time="02:54.11">我把筹码攥手里</div>
+<div class="lyric-line" data-time="02:57.16">资源池，资源池</div>
+<div class="lyric-line" data-time="02:59.28">今夜全员入局</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
