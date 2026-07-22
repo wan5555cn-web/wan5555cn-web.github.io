@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《小人物的图腾》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/小人物的图腾.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmrvj93sv00009wf8rmkxrf3n/20260722/cmrvja4ed003nm0o3dfsavbsw/4bxVPUOVm7KFgeIdszgNuv.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:12.28">他们不惧你焚香祷告</div>
+<div class="lyric-line" data-time="00:14.67">只怕你从泥塑里借来棱角</div>
+<div class="lyric-line" data-time="00:17.82">看清了香火缭绕的帷幕后</div>
+<div class="lyric-line" data-time="00:20.65">那把丈量人性的软刀</div>
+<div class="lyric-line" data-time="00:23.77">他们怕你抬眼</div>
+<div class="lyric-line" data-time="00:26.24">怕你不再低头</div>
+<div class="lyric-line" data-time="00:29.35">怕你在灰里站稳</div>
+<div class="lyric-line" data-time="00:31.58">把真相攥在手口</div>
+<div class="lyric-line" data-time="00:34.69">所以他们忙着涂黑</div>
+<div class="lyric-line" data-time="00:37.74">忙着把你说成笑话</div>
+<div class="lyric-line" data-time="00:41.30">可越想盖住火</div>
+<div class="lyric-line" data-time="00:43.84">越照见谁在害怕</div>
+<div class="lyric-line" data-time="00:46.23">资本的镰刀怕你挺直腰</div>
+<div class="lyric-line" data-time="00:49.41">怕你认出他们全是草包</div>
+<div class="lyric-line" data-time="00:51.88">怕你识破神仙爱情是圈套</div>
+<div class="lyric-line" data-time="00:55.10">怕你不再跪着，把银幕当神庙</div>
+<div class="lyric-line" data-time="00:57.82">资本的镰刀怕你挺直腰</div>
+<div class="lyric-line" data-time="01:00.75">怕你把裂缝活成光的通道</div>
+<div class="lyric-line" data-time="01:03.85">怕你说出一句：我偏要看到</div>
+<div class="lyric-line" data-time="01:06.61">小人物也能把命运撞破一道</div>
+<div class="lyric-line" data-time="01:21.37">所以他们要把星爷搞臭</div>
+<div class="lyric-line" data-time="01:24.01">让小人物的梦碎在街头</div>
+<div class="lyric-line" data-time="01:26.95">让女足的汗水变成笑料</div>
+<div class="lyric-line" data-time="01:29.75">让替你说话的人，先闭上嘴</div>
+<div class="lyric-line" data-time="01:32.80">他们要你习惯</div>
+<div class="lyric-line" data-time="01:35.19">把羞辱当成福气</div>
+<div class="lyric-line" data-time="01:38.79">要你笑着吞下去</div>
+<div class="lyric-line" data-time="01:41.37">还替他们鼓掌卖力</div>
+<div class="lyric-line" data-time="01:44.10">可每一双沾泥的手</div>
+<div class="lyric-line" data-time="01:47.39">都记得怎么把自己扶起</div>
+<div class="lyric-line" data-time="01:50.17">当你终于不求饶</div>
+<div class="lyric-line" data-time="01:52.46">风就会换个名字</div>
+<div class="lyric-line" data-time="01:55.63">资本的镰刀怕你挺直腰</div>
+<div class="lyric-line" data-time="01:58.70">怕你认出他们全是草包</div>
+<div class="lyric-line" data-time="02:01.27">怕你识破神仙爱情是圈套</div>
+<div class="lyric-line" data-time="02:04.48">怕你不再跪着，把银幕当神庙</div>
+<div class="lyric-line" data-time="02:07.24">资本的镰刀怕你挺直腰</div>
+<div class="lyric-line" data-time="02:10.24">怕你把裂缝活成光的通道</div>
+<div class="lyric-line" data-time="02:13.04">怕你说出一句：我偏要看到</div>
+<div class="lyric-line" data-time="02:15.94">小人物也能把命运撞破一道</div>
+<div class="lyric-line" data-time="02:20.14">当所有的脊梁都被打折</div>
+<div class="lyric-line" data-time="02:22.80">当所有的声音都只剩赞歌</div>
+<div class="lyric-line" data-time="02:25.72">他们便可以安心地收割</div>
+<div class="lyric-line" data-time="02:28.21">你最后的余热</div>
+<div class="lyric-line" data-time="02:30.36">可我们偏不</div>
+<div class="lyric-line" data-time="02:32.97">偏要把沉默掀翻</div>
+<div class="lyric-line" data-time="02:36.04">偏要把眼泪</div>
+<div class="lyric-line" data-time="02:38.77">磨成新的刀刃</div>
+<div class="lyric-line" data-time="02:44.84">资本的镰刀怕你挺直腰</div>
+<div class="lyric-line" data-time="02:47.81">怕你认出他们全是草包</div>
+<div class="lyric-line" data-time="02:50.61">怕你识破神仙爱情是圈套</div>
+<div class="lyric-line" data-time="02:53.51">怕你不再跪着，把银幕当神庙</div>
+<div class="lyric-line" data-time="02:56.81">但我们偏要挺直腰</div>
+<div class="lyric-line" data-time="02:59.63">把废墟踩成新的跑道</div>
+<div class="lyric-line" data-time="03:02.59">把垃圾烧成灰，照亮今朝</div>
+<div class="lyric-line" data-time="03:05.11">用我们的故事重写“人”的招牌</div>
+<div class="lyric-line" data-time="03:08.24">小人物不小</div>
+<div class="lyric-line" data-time="03:10.99">站起来就高</div>
+<div class="lyric-line" data-time="03:13.86">把命运拧断</div>
+<div class="lyric-line" data-time="03:16.60">把名字擦亮</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
