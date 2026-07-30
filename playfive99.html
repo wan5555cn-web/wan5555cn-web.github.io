@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《木星老大哥》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/木星老大哥.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cms7dtebm000sc46aboo54yl0/20260730/cms7dwlq40001j1up2ef2wx48/5Q0dPSeRc0LMf6Cz8KyRzy.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:02.99">我不需要固体来定义骨骼</div>
+<div class="lyric-line" data-time="00:08.44">高压和风暴撑起我的胸怀</div>
+<div class="lyric-line" data-time="00:13.70">腰带上挂着几十颗小月亮</div>
+<div class="lyric-line" data-time="00:18.08">它们是我的勋章</div>
+<div class="lyric-line" data-time="00:21.48">唯一的观众</div>
+<div class="lyric-line" data-time="00:23.50">我是太阳系的保护伞</div>
+<div class="lyric-line" data-time="00:27.10">温柔的暴君</div>
+<div class="lyric-line" data-time="00:28.78">用巨大引力挡住致命撞击</div>
+<div class="lyric-line" data-time="00:34.83">沉默的盾牌</div>
+<div class="lyric-line" data-time="00:36.71">银河边缘的守门人</div>
+<div class="lyric-line" data-time="00:39.52">没有我</div>
+<div class="lyric-line" data-time="00:42.13">地球的蓝早已归于死寂</div>
+<div class="lyric-line" data-time="00:46.15">看我眼睛</div>
+<div class="lyric-line" data-time="00:47.34">三百年不散的风暴</div>
+<div class="lyric-line" data-time="00:50.09">那不是愤怒</div>
+<div class="lyric-line" data-time="00:52.56">是我无法排解的忧郁</div>
+<div class="lyric-line" data-time="00:55.72">只要风暴还在</div>
+<div class="lyric-line" data-time="00:58.32">你们就在</div>
+<div class="lyric-line" data-time="01:00.65">只要风暴还在</div>
+<div class="lyric-line" data-time="01:03.52">你们就在</div>
+<div class="lyric-line" data-time="01:06.04">保护好那颗蓝色的弹珠</div>
+<div class="lyric-line" data-time="01:11.31">继续转吧</div>
+<div class="lyric-line" data-time="01:15.27">我吞下彗星</div>
+<div class="lyric-line" data-time="01:16.68">瓦解小行星</div>
+<div class="lyric-line" data-time="01:18.13">用庞大的身体为你们定下秩序</div>
+<div class="lyric-line" data-time="01:20.71">叫我残暴</div>
+<div class="lyric-line" data-time="01:21.93">叫我气态的怪物</div>
+<div class="lyric-line" data-time="01:23.88">只要我还在转</div>
+<div class="lyric-line" data-time="01:25.65">你们就安全</div>
+<div class="lyric-line" data-time="01:27.05">我用引力弹奏着乐章</div>
+<div class="lyric-line" data-time="01:30.05">保护好那颗蓝色的弹珠</div>
+<div class="lyric-line" data-time="01:34.57">别让黑暗靠近</div>
+<div class="lyric-line" data-time="01:37.96">继续转吧</div>
+<div class="lyric-line" data-time="01:40.71">在这气态的海洋</div>
+<div class="lyric-line" data-time="01:43.38">我是老大哥</div>
+<div class="lyric-line" data-time="01:46.06">看着一切</div>
+<div class="lyric-line" data-time="01:47.48">我把伤口藏进旋涡里</div>
+<div class="lyric-line" data-time="01:52.01">把沉默留给自己</div>
+<div class="lyric-line" data-time="01:55.51">如果某天我停下</div>
+<div class="lyric-line" data-time="01:58.05">如果风暴也散去</div>
+<div class="lyric-line" data-time="02:00.69">记得我曾站在这里</div>
+<div class="lyric-line" data-time="02:06.11">替你们拦住陨落</div>
+<div class="lyric-line" data-time="02:08.74">我不是神</div>
+<div class="lyric-line" data-time="02:10.77">只是一直没退</div>
+<div class="lyric-line" data-time="02:15.39">只要风暴还在</div>
+<div class="lyric-line" data-time="02:18.31">你们就在</div>
+<div class="lyric-line" data-time="02:20.70">只要风暴还在</div>
+<div class="lyric-line" data-time="02:23.51">你们就在</div>
+<div class="lyric-line" data-time="02:26.09">保护好那颗蓝色的弹珠</div>
+<div class="lyric-line" data-time="02:31.32">继续转吧</div>
+<div class="lyric-line" data-time="02:36.78">在这气态的海洋</div>
+<div class="lyric-line" data-time="02:39.44">我还在</div>
+<div class="lyric-line" data-time="02:42.06">只要我还在转</div>
+<div class="lyric-line" data-time="02:44.70">你们就在</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
