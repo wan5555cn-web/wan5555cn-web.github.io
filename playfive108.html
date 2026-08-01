@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《秒定生死 共筑未来》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/秒定生死 共筑未来.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cms9tocwp000a4455db54i0ws/20260801/cms9tp69o001gfzo1czbajogf/6tkckbpy3GFpFGJBjaejGQ.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:08.52">0.01秒 雷达屏血红警报闪</div>
+<div class="lyric-line" data-time="00:16.61">纽约股市和加沙的晚霞</div>
+<div class="lyric-line" data-time="00:20.43">在卫星眼里碎成同一片浪花</div>
+<div class="lyric-line" data-time="00:24.65">发射井突然静默</div>
+<div class="lyric-line" data-time="00:27.08">钢铁喉咙轻声唱</div>
+<div class="lyric-line" data-time="00:29.16">让导弹变成彩虹桥梁</div>
+<div class="lyric-line" data-time="00:33.14">人类命运共同体</div>
+<div class="lyric-line" data-time="00:34.74">是刻在弹壳里的童话</div>
+<div class="lyric-line" data-time="00:37.47">所有瞄准镜的十字线</div>
+<div class="lyric-line" data-time="00:38.96">正画着幼儿园的涂鸦</div>
+<div class="lyric-line" data-time="00:41.53">西伯利亚冻土传来电报</div>
+<div class="lyric-line" data-time="00:44.87">这里该种麦苗</div>
+<div class="lyric-line" data-time="00:46.76">不是埋洲际导弹的襁褓</div>
+<div class="lyric-line" data-time="00:49.94">当核按钮长出橄榄枝</div>
+<div class="lyric-line" data-time="00:54.05">七十亿心跳同步时</div>
+<div class="lyric-line" data-time="00:57.72">才懂最锋利的武器</div>
+<div class="lyric-line" data-time="01:01.61">是人类相拥的姿势</div>
+<div class="lyric-line" data-time="01:06.30">当核按钮长出橄榄枝</div>
+<div class="lyric-line" data-time="01:10.10">风雪也学会了克制</div>
+<div class="lyric-line" data-time="01:14.20">才懂最锋利的武器</div>
+<div class="lyric-line" data-time="01:17.39">是人类相拥的姿势</div>
+<div class="lyric-line" data-time="01:20.40">(相拥的姿势)</div>
+<div class="lyric-line" data-time="01:22.95">让边界退后半步</div>
+<div class="lyric-line" data-time="01:24.99">让每张地图学会呼吸</div>
+<div class="lyric-line" data-time="01:27.00">让孩子把铁轨画成河</div>
+<div class="lyric-line" data-time="01:29.19">把炮口种成春天的树枝</div>
+<div class="lyric-line" data-time="01:31.28">废墟上别再立誓言</div>
+<div class="lyric-line" data-time="01:33.19">把沉默还给黑夜</div>
+<div class="lyric-line" data-time="01:35.32">把眼泪交给河水</div>
+<div class="lyric-line" data-time="01:37.22">把明天交给每一双手</div>
+<div class="lyric-line" data-time="01:41.53">发射井突然静默</div>
+<div class="lyric-line" data-time="01:43.66">钢铁喉咙轻声唱</div>
+<div class="lyric-line" data-time="01:45.72">让导弹变成彩虹桥梁</div>
+<div class="lyric-line" data-time="01:49.65">人类命运共同体</div>
+<div class="lyric-line" data-time="01:51.40">不是口号 是黎明的脊梁</div>
+<div class="lyric-line" data-time="01:54.07">当所有枪口低下头</div>
+<div class="lyric-line" data-time="01:56.08">天空才真正发亮</div>
+<div class="lyric-line" data-time="01:58.70">当核按钮长出橄榄枝</div>
+<div class="lyric-line" data-time="02:02.37">七十亿心跳同步时</div>
+<div class="lyric-line" data-time="02:06.06">才懂最锋利的武器</div>
+<div class="lyric-line" data-time="02:09.14">是人类相拥的姿势</div>
+<div class="lyric-line" data-time="02:14.56">当核按钮长出橄榄枝</div>
+<div class="lyric-line" data-time="02:18.41">风雪也学会了克制</div>
+<div class="lyric-line" data-time="02:22.53">才懂最锋利的武器</div>
+<div class="lyric-line" data-time="02:26.45">是人类相拥的姿势</div>
+<div class="lyric-line" data-time="02:29.40">(相拥的姿势)</div>
+<div class="lyric-line" data-time="02:31.33">如果世界还在发抖</div>
+<div class="lyric-line" data-time="02:33.19">就先把手伸给彼此</div>
+<div class="lyric-line" data-time="02:35.26">让每一道伤口都听见</div>
+<div class="lyric-line" data-time="02:38.67">和平不是奢侈</div>
+<div class="lyric-line" data-time="02:41.15">当最后一颗子弹沉睡</div>
+<div class="lyric-line" data-time="02:45.26">当最后一盏灯被守住</div>
+<div class="lyric-line" data-time="02:49.43">我们终于看清</div>
+<div class="lyric-line" data-time="02:51.50">最硬的铁 也会为爱弯曲</div>
+<div class="lyric-line" data-time="02:56.30">当核按钮长出橄榄枝</div>
+<div class="lyric-line" data-time="03:00.36">七十亿心跳同步时</div>
+<div class="lyric-line" data-time="03:03.93">才懂最锋利的武器</div>
+<div class="lyric-line" data-time="03:07.09">是人类相拥的姿势</div>
+<div class="lyric-line" data-time="03:10.93">(相拥的姿势)</div>
+<div class="lyric-line" data-time="03:12.56">当核按钮长出橄榄枝</div>
+<div class="lyric-line" data-time="03:15.97">让炮火学会止息</div>
+<div class="lyric-line" data-time="03:20.43">才懂最锋利的武器</div>
+<div class="lyric-line" data-time="03:24.40">是人类相拥的姿势</div>
+<div class="lyric-line" data-time="03:28.01">(人类相拥的姿势)</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
