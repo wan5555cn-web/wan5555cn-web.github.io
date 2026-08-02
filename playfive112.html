@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《半人马座KTV》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/半人马座KTV.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsbsp2th000nedf3hh1s4y9u/20260802/cmsbsp7to003sox5d4lbareuj/1FtskgJPvK14nYBe24Zcqq.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:19.33">隔壁那颗红矮星</div>
+<div class="lyric-line" data-time="00:22.00">总爱玩捉迷藏</div>
+<div class="lyric-line" data-time="00:24.21">四点光年不算远</div>
+<div class="lyric-line" data-time="00:25.87">快递却要等半辈子长</div>
+<div class="lyric-line" data-time="00:29.02">你家行星冷不冷</div>
+<div class="lyric-line" data-time="00:31.48">有没有外星广场舞</div>
+<div class="lyric-line" data-time="00:33.76">每次耀斑爆发</div>
+<div class="lyric-line" data-time="00:35.69">像在宇宙群聊里刷屏</div>
+<div class="lyric-line" data-time="00:38.84">比邻星小老弟</div>
+<div class="lyric-line" data-time="00:41.08">三体人别装睡</div>
+<div class="lyric-line" data-time="00:43.56">你们那儿WiFi信号贵不贵</div>
+<div class="lyric-line" data-time="00:48.47">要是收到这歌词回段引力波</div>
+<div class="lyric-line" data-time="00:53.47">咱们组个跨星际乐队</div>
+<div class="lyric-line" data-time="00:58.05">半人马座KTV</div>
+<div class="lyric-line" data-time="01:02.94">半人马座KTV</div>
+<div class="lyric-line" data-time="01:07.63">地球人别慌</div>
+<div class="lyric-line" data-time="01:11.59">先来对个拍</div>
+<div class="lyric-line" data-time="01:18.41">地球人总瞎操心 怕你们来打架</div>
+<div class="lyric-line" data-time="01:23.26">其实咱连太阳系驾照都没考下</div>
+<div class="lyric-line" data-time="01:27.83">哪天你变超新星 记得提前说</div>
+<div class="lyric-line" data-time="01:32.55">我给望远镜贴膜 防闪光灯瞎眼</div>
+<div class="lyric-line" data-time="01:38.38">喂！你家行星的晚风</div>
+<div class="lyric-line" data-time="01:42.89">是不是也带着铁锈味</div>
+<div class="lyric-line" data-time="01:47.44">借我吸一口</div>
+<div class="lyric-line" data-time="01:49.86">兑进啤酒里</div>
+<div class="lyric-line" data-time="01:57.03">半人马座KTV</div>
+<div class="lyric-line" data-time="02:02.19">地球人别慌</div>
+<div class="lyric-line" data-time="02:05.46">先来对个拍</div>
+<div class="lyric-line" data-time="02:08.32">醉整个银河系</div>
+<div class="lyric-line" data-time="02:13.16">别只用火和拳头</div>
+<div class="lyric-line" data-time="02:18.06">把耳朵借给我</div>
+<div class="lyric-line" data-time="02:22.94">把夜空借给我</div>
+<div class="lyric-line" data-time="02:26.30">半人马座KTV</div>
+<div class="lyric-line" data-time="02:31.10">半人马座KTV</div>
+<div class="lyric-line" data-time="02:36.45">地球人别慌</div>
+<div class="lyric-line" data-time="02:39.52">先来对个拍</div>
+<div class="lyric-line" data-time="02:46.04">半人马座KTV</div>
+<div class="lyric-line" data-time="02:52.04">醉整个银河系</div>
+<div class="lyric-line" data-time="02:55.12">咱们一起唱起来</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
