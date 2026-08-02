@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《指纹里的神迹》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/指纹里的神迹.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsbb9ch2000611pr467zhley/20260802/cmsbb9yo8002do80ors8iapjc/74SdVBVQuE9aYNU9fEL9Q8.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:10.48">天刚亮 街角早餐摊的炉火红</div>
+<div class="lyric-line" data-time="00:15.89">第一缕光 刚好照在煎锅里</div>
+<div class="lyric-line" data-time="00:19.71">你随手一翻</div>
+<div class="lyric-line" data-time="00:21.22">整个清晨 都有了金黄的弧度</div>
+<div class="lyric-line" data-time="00:26.38">地铁口的晨光 像浅浅的咖啡渍</div>
+<div class="lyric-line" data-time="00:32.10">保洁阿姨的身影 映在大理石地上</div>
+<div class="lyric-line" data-time="00:37.46">她轻轻一拖</div>
+<div class="lyric-line" data-time="00:39.82">整个城市 都多了面照见天空的镜子</div>
+<div class="lyric-line" data-time="00:43.82">你总说日子像复印机</div>
+<div class="lyric-line" data-time="00:46.06">重复着相同的锯齿</div>
+<div class="lyric-line" data-time="00:48.47">可我在早餐摊的雾气里</div>
+<div class="lyric-line" data-time="00:53.26">看见你把平凡 擦成了奇迹</div>
+<div class="lyric-line" data-time="00:58.88">原来神迹不用找神签字</div>
+<div class="lyric-line" data-time="01:01.89">它住在你指纹的沟壑里</div>
+<div class="lyric-line" data-time="01:04.74">你说这不算什么</div>
+<div class="lyric-line" data-time="01:06.96">可我听见整座城在回应你</div>
+<div class="lyric-line" data-time="01:09.71">原来神迹不用找神签字</div>
+<div class="lyric-line" data-time="01:12.67">它住在你指纹的沟壑里</div>
+<div class="lyric-line" data-time="01:15.39">当你说这不算什么</div>
+<div class="lyric-line" data-time="01:17.75">连星光都向你敬礼</div>
+<div class="lyric-line" data-time="01:30.42">你把旧手套又套回掌心</div>
+<div class="lyric-line" data-time="01:33.82">灰尘落下时 你眼里没停</div>
+<div class="lyric-line" data-time="01:36.50">一勺一勺</div>
+<div class="lyric-line" data-time="01:37.98">把热气端给赶路的人群</div>
+<div class="lyric-line" data-time="01:42.08">有人低头 有人匆匆</div>
+<div class="lyric-line" data-time="01:44.88">有人只拿走一句谢谢</div>
+<div class="lyric-line" data-time="01:47.84">可你站在原地</div>
+<div class="lyric-line" data-time="01:49.81">像把天亮 一次次递给世界</div>
+<div class="lyric-line" data-time="01:53.85">你总说这不算什么</div>
+<div class="lyric-line" data-time="01:56.52">不过是顺手 是本能</div>
+<div class="lyric-line" data-time="01:58.85">可我在你沉默的指缝里</div>
+<div class="lyric-line" data-time="02:02.69">听见了最响的坚持</div>
+<div class="lyric-line" data-time="02:06.50">原来神迹不用找神签字</div>
+<div class="lyric-line" data-time="02:09.30">它住在你指纹的沟壑里</div>
+<div class="lyric-line" data-time="02:12.05">你说这不算什么</div>
+<div class="lyric-line" data-time="02:14.33">可我听见整座城在回应你</div>
+<div class="lyric-line" data-time="02:17.23">原来神迹不用找神签字</div>
+<div class="lyric-line" data-time="02:20.05">它住在你指纹的沟壑里</div>
+<div class="lyric-line" data-time="02:22.78">当你说这不算什么</div>
+<div class="lyric-line" data-time="02:25.14">连星光都向你敬礼</div>
+<div class="lyric-line" data-time="02:28.29">若世界总爱把答案写得太大</div>
+<div class="lyric-line" data-time="02:33.11">你就用一双手 慢慢回答</div>
+<div class="lyric-line" data-time="02:38.38">把冷掉的早晨重新点亮</div>
+<div class="lyric-line" data-time="02:43.66">把无声的日常 活成回响</div>
+<div class="lyric-line" data-time="02:49.14">原来神迹不用找神签字</div>
+<div class="lyric-line" data-time="02:52.43">它住在你指纹的沟壑里</div>
+<div class="lyric-line" data-time="02:55.17">你说这不算什么</div>
+<div class="lyric-line" data-time="02:57.64">可我已经看见你</div>
+<div class="lyric-line" data-time="03:00.40">原来神迹不用找神签字</div>
+<div class="lyric-line" data-time="03:03.21">它住在你指纹的沟壑里</div>
+<div class="lyric-line" data-time="03:05.94">当你说这不算什么</div>
+<div class="lyric-line" data-time="03:08.26">连星光都向你敬礼</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
