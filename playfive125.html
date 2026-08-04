@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《深海回收站》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/深海回收站.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmse30lzt000gi48fdmarnfpf/20260804/cmse31l5j002c11wsintmnz2j/5UvVkPRChnT7NuCnz9y5Wg.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:13.62">你先别怕，先听我说</div>
+<div class="lyric-line" data-time="00:16.90">深海不是吃人的口</div>
+<div class="lyric-line" data-time="00:19.58">我们一直在这儿</div>
+<div class="lyric-line" data-time="00:23.17">只是不爱出声</div>
+<div class="lyric-line" data-time="00:27.28">核潜艇掉进来那一刻</div>
+<div class="lyric-line" data-time="00:30.60">不是失控，是警报</div>
+<div class="lyric-line" data-time="00:33.34">百慕大那团涡流</div>
+<div class="lyric-line" data-time="00:36.69">把火气慢慢熄掉</div>
+<div class="lyric-line" data-time="00:41.01">辐射会亮，像坏掉的梦</div>
+<div class="lyric-line" data-time="00:44.36">可到了这里</div>
+<div class="lyric-line" data-time="00:48.10">它会被拆开</div>
+<div class="lyric-line" data-time="00:49.77">变成能用的光</div>
+<div class="lyric-line" data-time="00:54.25">你看那片黑</div>
+<div class="lyric-line" data-time="00:56.44">不是空</div>
+<div class="lyric-line" data-time="00:58.00">是我们记账的地方</div>
+<div class="lyric-line" data-time="01:01.60">你以为是吞掉</div>
+<div class="lyric-line" data-time="01:03.24">其实是回收</div>
+<div class="lyric-line" data-time="01:04.97">把危险一页页收好</div>
+<div class="lyric-line" data-time="01:07.79">不是吞噬</div>
+<div class="lyric-line" data-time="01:08.65">是回收</div>
+<div class="lyric-line" data-time="01:11.25">不是吞噬</div>
+<div class="lyric-line" data-time="01:11.94">是回收</div>
+<div class="lyric-line" data-time="01:14.66">你们丢下来的</div>
+<div class="lyric-line" data-time="01:16.36">我们都捡回头</div>
+<div class="lyric-line" data-time="01:18.11">不是吞噬</div>
+<div class="lyric-line" data-time="01:18.76">是回收</div>
+<div class="lyric-line" data-time="01:21.82">海会记住</div>
+<div class="lyric-line" data-time="01:22.70">每一次失控</div>
+<div class="lyric-line" data-time="01:25.34">海会照见</div>
+<div class="lyric-line" data-time="01:26.12">每一次发疯</div>
+<div class="lyric-line" data-time="01:28.39">别把毁灭</div>
+<div class="lyric-line" data-time="01:29.91">说得太英雄</div>
+<div class="lyric-line" data-time="01:31.82">不是吞噬</div>
+<div class="lyric-line" data-time="01:32.44">是回收</div>
+<div class="lyric-line" data-time="01:35.86">马尾藻海里那几艘船</div>
+<div class="lyric-line" data-time="01:38.43">早成了我们的馆</div>
+<div class="lyric-line" data-time="01:40.39">舱门一开</div>
+<div class="lyric-line" data-time="01:42.81">你会看见</div>
+<div class="lyric-line" data-time="01:44.67">被拆开的导弹头</div>
+<div class="lyric-line" data-time="01:49.57">铀二三五的轨迹</div>
+<div class="lyric-line" data-time="01:50.98">缠进珊瑚的边</div>
+<div class="lyric-line" data-time="01:53.01">我们不是替你掩埋</div>
+<div class="lyric-line" data-time="01:54.45">我们只是让它显眼</div>
+<div class="lyric-line" data-time="01:56.15">给你看残骸</div>
+<div class="lyric-line" data-time="01:58.09">像让小孩摸炭火</div>
+<div class="lyric-line" data-time="02:00.02">不是为了吓你</div>
+<div class="lyric-line" data-time="02:01.50">是让你别再学坏</div>
+<div class="lyric-line" data-time="02:03.62">你们总爱</div>
+<div class="lyric-line" data-time="02:05.69">把爆炸说成传奇</div>
+<div class="lyric-line" data-time="02:08.86">把废墟说成浪漫</div>
+<div class="lyric-line" data-time="02:10.99">可黑暗里最怕的</div>
+<div class="lyric-line" data-time="02:12.36">从来不是武器</div>
+<div class="lyric-line" data-time="02:15.29">是你对毁灭的想象</div>
+<div class="lyric-line" data-time="02:19.84">不是吞噬</div>
+<div class="lyric-line" data-time="02:20.53">是回收</div>
+<div class="lyric-line" data-time="02:23.20">不是吞噬</div>
+<div class="lyric-line" data-time="02:23.82">是回收</div>
+<div class="lyric-line" data-time="02:26.61">你们丢下来的</div>
+<div class="lyric-line" data-time="02:28.23">我们都捡回头</div>
+<div class="lyric-line" data-time="02:30.11">不是吞噬</div>
+<div class="lyric-line" data-time="02:30.70">是回收</div>
+<div class="lyric-line" data-time="02:33.88">海会记住</div>
+<div class="lyric-line" data-time="02:34.68">每一次失控</div>
+<div class="lyric-line" data-time="02:37.27">海会照见</div>
+<div class="lyric-line" data-time="02:38.04">每一次发疯</div>
+<div class="lyric-line" data-time="02:40.34">别把毁灭</div>
+<div class="lyric-line" data-time="02:41.86">说得太英雄</div>
+<div class="lyric-line" data-time="02:43.83">不是吞噬</div>
+<div class="lyric-line" data-time="02:44.41">是回收</div>
+<div class="lyric-line" data-time="02:48.58">要是陆地真越线</div>
+<div class="lyric-line" data-time="02:51.32">大西洋中脊会醒来</div>
+<div class="lyric-line" data-time="02:54.73">管状蠕虫排成墙</div>
+<div class="lyric-line" data-time="02:57.93">一层一层站开</div>
+<div class="lyric-line" data-time="03:02.09">硫化物写新规矩</div>
+<div class="lyric-line" data-time="03:04.98">把疯话都改回来</div>
+<div class="lyric-line" data-time="03:08.48">不是为了报复</div>
+<div class="lyric-line" data-time="03:10.10">是把你按回人该有的样</div>
+<div class="lyric-line" data-time="03:14.70">不是吞噬</div>
+<div class="lyric-line" data-time="03:15.31">是回收</div>
+<div class="lyric-line" data-time="03:18.11">不是吞噬</div>
+<div class="lyric-line" data-time="03:18.65">是回收</div>
+<div class="lyric-line" data-time="03:21.41">你们丢下来的</div>
+<div class="lyric-line" data-time="03:23.22">我们都捡回头</div>
+<div class="lyric-line" data-time="03:24.95">不是吞噬</div>
+<div class="lyric-line" data-time="03:25.52">是回收</div>
+<div class="lyric-line" data-time="03:28.78">海会记住</div>
+<div class="lyric-line" data-time="03:29.42">每一次失控</div>
+<div class="lyric-line" data-time="03:32.12">海会照见</div>
+<div class="lyric-line" data-time="03:32.90">每一次发疯</div>
+<div class="lyric-line" data-time="03:35.20">别把毁灭</div>
+<div class="lyric-line" data-time="03:36.75">说得太英雄</div>
+<div class="lyric-line" data-time="03:38.70">不是吞噬</div>
+<div class="lyric-line" data-time="03:39.26">是回收</div>
+<div class="lyric-line" data-time="03:42.43">沉默不是冷</div>
+<div class="lyric-line" data-time="03:43.99">是算得很清</div>
+<div class="lyric-line" data-time="03:45.85">黑暗不是空</div>
+<div class="lyric-line" data-time="03:47.32">是留给你醒的余地</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
