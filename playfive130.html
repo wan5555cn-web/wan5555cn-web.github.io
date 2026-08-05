@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《深扎的树根》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/深扎的树根.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsfnfswp0000kltq6a3y5alq/20260805/cmsfng142001qk6ll3j6mxwpo/6EQhmkh7qxzfEhI6eec84l.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:10.58">攥着最后那点积蓄</div>
+<div class="lyric-line" data-time="00:13.19">扎进这方天地</div>
+<div class="lyric-line" data-time="00:15.27">都讲这地太硬</div>
+<div class="lyric-line" data-time="00:19.92">难长出半分惊喜</div>
+<div class="lyric-line" data-time="00:22.01">我懒得辩解</div>
+<div class="lyric-line" data-time="00:24.69">就蹲下身去</div>
+<div class="lyric-line" data-time="00:26.52">用掌心</div>
+<div class="lyric-line" data-time="00:27.25">摸摸这泥土的脾气</div>
+<div class="lyric-line" data-time="00:30.20">他们笑我死脑筋</div>
+<div class="lyric-line" data-time="00:31.63">不懂啥叫变通</div>
+<div class="lyric-line" data-time="00:32.81">闷头硬干</div>
+<div class="lyric-line" data-time="00:33.74">活像个没想法的工蜂</div>
+<div class="lyric-line" data-time="00:35.36">可他们没听见</div>
+<div class="lyric-line" data-time="00:36.40">脚下传来的动静</div>
+<div class="lyric-line" data-time="00:37.79">那是我</div>
+<div class="lyric-line" data-time="00:38.57">给这世界最安静的回应</div>
+<div class="lyric-line" data-time="00:41.04">我就把根往下扎</div>
+<div class="lyric-line" data-time="00:42.70">扎进那黑暗里</div>
+<div class="lyric-line" data-time="00:46.05">尝尝岩石缝里</div>
+<div class="lyric-line" data-time="00:47.60">水的滋味多清晰</div>
+<div class="lyric-line" data-time="00:51.07">我就把芽往上顶</div>
+<div class="lyric-line" data-time="00:52.64">朝着光亮处行</div>
+<div class="lyric-line" data-time="00:55.63">哪怕只剩一丝希望</div>
+<div class="lyric-line" data-time="00:58.00">也要开出花的任性</div>
+<div class="lyric-line" data-time="01:01.23">把根往下扎</div>
+<div class="lyric-line" data-time="01:03.82">把根往下扎</div>
+<div class="lyric-line" data-time="01:06.07">黑里也能开花</div>
+<div class="lyric-line" data-time="01:11.32">把芽往上顶</div>
+<div class="lyric-line" data-time="01:13.83">把芽往上顶</div>
+<div class="lyric-line" data-time="01:16.21">疼也不肯低下</div>
+<div class="lyric-line" data-time="01:20.29">把苦涩酿成甜</div>
+<div class="lyric-line" data-time="01:22.74">把阻碍化养分</div>
+<div class="lyric-line" data-time="01:25.26">我站稳了</div>
+<div class="lyric-line" data-time="01:27.07">就不怕风来刮</div>
+<div class="lyric-line" data-time="01:30.52">风刮断枝桠</div>
+<div class="lyric-line" data-time="01:31.99">就当是修剪曾经</div>
+<div class="lyric-line" data-time="01:35.44">阳光太滚烫</div>
+<div class="lyric-line" data-time="01:36.99">刚好晒干一身的伤情</div>
+<div class="lyric-line" data-time="01:40.40">我不急着赢</div>
+<div class="lyric-line" data-time="01:41.52">先学会安静生长</div>
+<div class="lyric-line" data-time="01:43.08">把每次跌倒</div>
+<div class="lyric-line" data-time="01:43.89">都埋成明天的土壤</div>
+<div class="lyric-line" data-time="01:46.10">等果实沉甸甸垂落</div>
+<div class="lyric-line" data-time="01:47.67">风里晃啊晃</div>
+<div class="lyric-line" data-time="01:50.56">人们会指着说</div>
+<div class="lyric-line" data-time="01:52.22">看那树 美得像幅画</div>
+<div class="lyric-line" data-time="01:53.60">可他们不懂</div>
+<div class="lyric-line" data-time="01:55.52">最美的藏在地下</div>
+<div class="lyric-line" data-time="01:57.98">那交错的根系</div>
+<div class="lyric-line" data-time="01:59.70">才是我给世界最硬的回答</div>
+<div class="lyric-line" data-time="02:02.07">原来成长</div>
+<div class="lyric-line" data-time="02:03.05">就是先弯下腰</div>
+<div class="lyric-line" data-time="02:04.57">再稳稳地</div>
+<div class="lyric-line" data-time="02:05.56">挺直脊梁</div>
+<div class="lyric-line" data-time="02:06.90">一次次咬住疼</div>
+<div class="lyric-line" data-time="02:07.69">一次次不投降</div>
+<div class="lyric-line" data-time="02:09.50">我把沉默</div>
+<div class="lyric-line" data-time="02:10.34">都长成了力量</div>
+<div class="lyric-line" data-time="02:12.18">把根往下扎</div>
+<div class="lyric-line" data-time="02:14.58">把根往下扎</div>
+<div class="lyric-line" data-time="02:16.83">黑里也能开花</div>
+<div class="lyric-line" data-time="02:22.04">把芽往上顶</div>
+<div class="lyric-line" data-time="02:24.62">把芽往上顶</div>
+<div class="lyric-line" data-time="02:26.88">疼也不肯低下</div>
+<div class="lyric-line" data-time="02:31.08">把苦涩酿成甜</div>
+<div class="lyric-line" data-time="02:33.38">把阻碍化养分</div>
+<div class="lyric-line" data-time="02:36.03">我站稳了</div>
+<div class="lyric-line" data-time="02:37.86">就不怕风来刮</div>
+<div class="lyric-line" data-time="02:41.16">最硬的回答</div>
+<div class="lyric-line" data-time="02:43.10">不是喊得多响</div>
+<div class="lyric-line" data-time="02:46.02">是地下那一寸寸</div>
+<div class="lyric-line" data-time="02:48.28">不肯退让的生长</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
