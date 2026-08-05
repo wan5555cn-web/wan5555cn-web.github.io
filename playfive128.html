@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《有你在真好》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/有你在真好.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsfgewbe000o3194vb7exkr4/20260805/cmsfgf0mz004vf06y2jhxrqjl/25feIdKawZxTIcciykdZCL.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:11.55">钥匙在锁里轻轻一转</div>
+<div class="lyric-line" data-time="00:16.13">屋里的暖先把我接住</div>
+<div class="lyric-line" data-time="00:22.25">厨房飘来葱姜的香</div>
+<div class="lyric-line" data-time="00:27.62">你围着围裙慢慢忙</div>
+<div class="lyric-line" data-time="00:33.70">我问今天累不累</div>
+<div class="lyric-line" data-time="00:38.95">你笑着递来洗好的筷</div>
+<div class="lyric-line" data-time="00:45.24">说外头风大别慌</div>
+<div class="lyric-line" data-time="00:50.30">把门一关就到家</div>
+<div class="lyric-line" data-time="00:55.75">这一刻世界都慢下来</div>
+<div class="lyric-line" data-time="01:00.26">连呼吸都变得安稳</div>
+<div class="lyric-line" data-time="01:07.14">你站在烟火里</div>
+<div class="lyric-line" data-time="01:09.34">把平凡熬成真</div>
+<div class="lyric-line" data-time="01:12.79">有你在 真好</div>
+<div class="lyric-line" data-time="01:15.50">有你在 真好</div>
+<div class="lyric-line" data-time="01:18.39">我心里有了靠</div>
+<div class="lyric-line" data-time="01:21.12">再远也不怕</div>
+<div class="lyric-line" data-time="01:23.94">有你在 真好</div>
+<div class="lyric-line" data-time="01:26.78">有你在 真好</div>
+<div class="lyric-line" data-time="01:29.74">一屋子的人生</div>
+<div class="lyric-line" data-time="01:32.23">都暖了呀</div>
+<div class="lyric-line" data-time="01:43.77">你不说太多漂亮话</div>
+<div class="lyric-line" data-time="01:49.72">却把日子照顾得妥当</div>
+<div class="lyric-line" data-time="01:55.18">碗筷摆好 热汤端上</div>
+<div class="lyric-line" data-time="02:00.72">连沉默都很像拥抱</div>
+<div class="lyric-line" data-time="02:06.75">我看你低头的模样</div>
+<div class="lyric-line" data-time="02:12.29">像把疲惫都放在门外</div>
+<div class="lyric-line" data-time="02:18.26">你说别怕慢一点</div>
+<div class="lyric-line" data-time="02:23.38">我们一起往前走</div>
+<div class="lyric-line" data-time="02:28.96">这一刻世界都慢下来</div>
+<div class="lyric-line" data-time="02:33.45">连呼吸都变得安稳</div>
+<div class="lyric-line" data-time="02:40.43">你站在烟火里</div>
+<div class="lyric-line" data-time="02:42.74">把平凡熬成真</div>
+<div class="lyric-line" data-time="02:45.98">有你在 真好</div>
+<div class="lyric-line" data-time="02:48.74">有你在 真好</div>
+<div class="lyric-line" data-time="02:51.54">我心里有了靠</div>
+<div class="lyric-line" data-time="02:54.30">再远也不怕</div>
+<div class="lyric-line" data-time="02:57.17">有你在 真好</div>
+<div class="lyric-line" data-time="02:59.89">有你在 真好</div>
+<div class="lyric-line" data-time="03:02.86">一屋子的人生</div>
+<div class="lyric-line" data-time="03:05.40">都暖了呀</div>
+<div class="lyric-line" data-time="03:08.12">你是我家的圆心</div>
+<div class="lyric-line" data-time="03:10.81">是最稳的那根针</div>
+<div class="lyric-line" data-time="03:13.37">我可以放心去闯</div>
+<div class="lyric-line" data-time="03:15.48">因为身后有你</div>
+<div class="lyric-line" data-time="03:19.00">辛苦了 我的爱人</div>
+<div class="lyric-line" data-time="03:21.79">把风雨都替我挡</div>
+<div class="lyric-line" data-time="03:24.71">等我回到这扇门</div>
+<div class="lyric-line" data-time="03:26.87">还是你在等我</div>
+<div class="lyric-line" data-time="03:39.63">有你在 真好</div>
+<div class="lyric-line" data-time="03:42.27">有你在 真好</div>
+<div class="lyric-line" data-time="03:45.14">我心里有了靠</div>
+<div class="lyric-line" data-time="03:47.97">再远也不怕</div>
+<div class="lyric-line" data-time="03:50.94">有你在 真好</div>
+<div class="lyric-line" data-time="03:53.56">有你在 真好</div>
+<div class="lyric-line" data-time="03:56.53">一屋子的人生</div>
+<div class="lyric-line" data-time="03:58.89">都暖了呀</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
