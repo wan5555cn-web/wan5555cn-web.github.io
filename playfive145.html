@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《你先别否定》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/你先别否定.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsna0f3d00135j8xkn9cv5ix/20260810/cmsna0m0w001m8au3oj0ziv11/9RLbfFc0B6TjvOp79466I.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:09.08">你一听我开口</div>
+<div class="lyric-line" data-time="00:11.44">眉头先锁住</div>
+<div class="lyric-line" data-time="00:13.80">我还没说完</div>
+<div class="lyric-line" data-time="00:16.22">你就先判输</div>
+<div class="lyric-line" data-time="00:18.58">我说东边好走</div>
+<div class="lyric-line" data-time="00:21.03">你偏往西拐</div>
+<div class="lyric-line" data-time="00:23.53">像不是在聊天</div>
+<div class="lyric-line" data-time="00:25.04">像是在比谁更快</div>
+<div class="lyric-line" data-time="00:28.24">你不问我想法</div>
+<div class="lyric-line" data-time="00:30.55">先给我结论</div>
+<div class="lyric-line" data-time="00:32.89">我刚把话摆平</div>
+<div class="lyric-line" data-time="00:35.37">你就把门关上</div>
+<div class="lyric-line" data-time="00:37.79">你要的不是答案</div>
+<div class="lyric-line" data-time="00:40.15">是把我压下去</div>
+<div class="lyric-line" data-time="00:42.72">你赢了这一下</div>
+<div class="lyric-line" data-time="00:44.33">却输了这场局</div>
+<div class="lyric-line" data-time="00:47.44">你先别否定</div>
+<div class="lyric-line" data-time="00:49.83">先听我说完</div>
+<div class="lyric-line" data-time="00:52.20">你先别否定</div>
+<div class="lyric-line" data-time="00:54.69">别急着判案</div>
+<div class="lyric-line" data-time="00:56.93">不是我怕输</div>
+<div class="lyric-line" data-time="00:59.39">是你总先挡</div>
+<div class="lyric-line" data-time="01:01.78">你先别否定</div>
+<div class="lyric-line" data-time="01:04.16">给句真心话</div>
+<div class="lyric-line" data-time="01:06.69">(先听我说完)</div>
+<div class="lyric-line" data-time="01:11.80">(别急着判案)</div>
+<div class="lyric-line" data-time="01:16.34">你说这样不行</div>
+<div class="lyric-line" data-time="01:18.58">那样也不对</div>
+<div class="lyric-line" data-time="01:21.02">我递来一杯水</div>
+<div class="lyric-line" data-time="01:23.52">你看成了挑衅</div>
+<div class="lyric-line" data-time="01:25.84">有时候我沉默</div>
+<div class="lyric-line" data-time="01:28.30">不是我认怂</div>
+<div class="lyric-line" data-time="01:30.93">是怕一张嘴</div>
+<div class="lyric-line" data-time="01:32.80">又撞上你的风</div>
+<div class="lyric-line" data-time="01:35.84">你把“反对”</div>
+<div class="lyric-line" data-time="01:38.23">当成了安全感</div>
+<div class="lyric-line" data-time="01:40.43">把“否定我”</div>
+<div class="lyric-line" data-time="01:42.73">当成你的算盘</div>
+<div class="lyric-line" data-time="01:45.07">你不问我累不累</div>
+<div class="lyric-line" data-time="01:47.53">只问我站哪边</div>
+<div class="lyric-line" data-time="01:49.81">我还没把心掏出来</div>
+<div class="lyric-line" data-time="01:52.41">你就先划界线</div>
+<div class="lyric-line" data-time="01:54.71">你要的不是理解</div>
+<div class="lyric-line" data-time="01:57.03">是立场归队</div>
+<div class="lyric-line" data-time="01:59.60">可家不是战场</div>
+<div class="lyric-line" data-time="02:01.39">别把爱当作对垒</div>
+<div class="lyric-line" data-time="02:04.23">你先别否定</div>
+<div class="lyric-line" data-time="02:06.69">先听我说完</div>
+<div class="lyric-line" data-time="02:08.97">你先别否定</div>
+<div class="lyric-line" data-time="02:11.41">别急着判案</div>
+<div class="lyric-line" data-time="02:13.79">不是我怕输</div>
+<div class="lyric-line" data-time="02:16.23">是你总先挡</div>
+<div class="lyric-line" data-time="02:18.62">你先别否定</div>
+<div class="lyric-line" data-time="02:21.07">给句真心话</div>
+<div class="lyric-line" data-time="02:23.49">(先听我说完)</div>
+<div class="lyric-line" data-time="02:25.96">如果你想稳住自己</div>
+<div class="lyric-line" data-time="02:28.01">不用靠我来认输</div>
+<div class="lyric-line" data-time="02:30.64">如果你想证明位置</div>
+<div class="lyric-line" data-time="02:32.64">也别拿我当证据</div>
+<div class="lyric-line" data-time="02:34.98">我不是你的敌人</div>
+<div class="lyric-line" data-time="02:37.28">也不是你的陪审</div>
+<div class="lyric-line" data-time="02:39.98">我只是想和你</div>
+<div class="lyric-line" data-time="02:41.52">好好讲一回人</div>
+<div class="lyric-line" data-time="02:42.93">你先别否定</div>
+<div class="lyric-line" data-time="02:45.08">先听我说完</div>
+<div class="lyric-line" data-time="02:47.41">你先别否定</div>
+<div class="lyric-line" data-time="02:49.86">别急着判案</div>
+<div class="lyric-line" data-time="02:52.21">我不是来争赢</div>
+<div class="lyric-line" data-time="02:54.71">我是想回家</div>
+<div class="lyric-line" data-time="02:57.16">你先别否定</div>
+<div class="lyric-line" data-time="02:59.50">抱我一下吧</div>
+<div class="lyric-line" data-time="03:01.86">(先听我说完)</div>
+<div class="lyric-line" data-time="03:06.29">(抱我一下吧)</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
