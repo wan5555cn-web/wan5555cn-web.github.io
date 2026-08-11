@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《小楼剃头匠》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/小楼剃头匠.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsob5jff000c7un38km4qwy2/20260811/cmsob5tyu001k10nz635msdwq/1y7byNf98Jfya8LIvyn2cu.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:06.49">小楼的剃头匠</div>
+<div class="lyric-line" data-time="00:08.08">手劲稳如旧</div>
+<div class="lyric-line" data-time="00:10.32">镜子擦得亮</div>
+<div class="lyric-line" data-time="00:11.47">照着窄巷的春秋</div>
+<div class="lyric-line" data-time="00:13.27">大屏幕在楼上</div>
+<div class="lyric-line" data-time="00:14.85">光影多锦绣</div>
+<div class="lyric-line" data-time="00:19.14">他说那上面的故事</div>
+<div class="lyric-line" data-time="00:21.10">跟咱就没啥关系</div>
+<div class="lyric-line" data-time="00:24.18">半毛钱都没有</div>
+<div class="lyric-line" data-time="00:27.42">他们用金剪刀</div>
+<div class="lyric-line" data-time="00:28.85">裁天上的云朵</div>
+<div class="lyric-line" data-time="00:31.56">颁奖的礼炮一响</div>
+<div class="lyric-line" data-time="00:35.53">惊动了整个银河</div>
+<div class="lyric-line" data-time="00:38.75">我们在这底下</div>
+<div class="lyric-line" data-time="00:40.74">用土办法找乐</div>
+<div class="lyric-line" data-time="00:43.96">小剪刀剪不断</div>
+<div class="lyric-line" data-time="00:45.82">大楼投下的阴影轮廓</div>
+<div class="lyric-line" data-time="00:51.68">小楼的剃头匠</div>
+<div class="lyric-line" data-time="00:53.82">守着这条巷</div>
+<div class="lyric-line" data-time="00:58.17">小楼的剃头匠</div>
+<div class="lyric-line" data-time="01:00.20">把日子往前晃</div>
+<div class="lyric-line" data-time="01:04.40">老师傅</div>
+<div class="lyric-line" data-time="01:07.57">老师傅</div>
+<div class="lyric-line" data-time="01:10.79">把日子往前晃</div>
+<div class="lyric-line" data-time="01:16.37">大妈出门前</div>
+<div class="lyric-line" data-time="01:17.78">要把头发烫得卷</div>
+<div class="lyric-line" data-time="01:19.53">老板谈生意</div>
+<div class="lyric-line" data-time="01:20.59">发型得抹上发胶才算体面</div>
+<div class="lyric-line" data-time="01:23.39">只有他守着</div>
+<div class="lyric-line" data-time="01:24.28">这把生锈的转椅</div>
+<div class="lyric-line" data-time="01:26.48">等着那声“老师傅”</div>
+<div class="lyric-line" data-time="01:28.17">把日子往前捻</div>
+<div class="lyric-line" data-time="01:29.70">话筒递过来了</div>
+<div class="lyric-line" data-time="01:30.59">响起的却是别人的歌</div>
+<div class="lyric-line" data-time="01:32.79">榜单换了一波</div>
+<div class="lyric-line" data-time="01:33.87">没一首是咱们的苦与乐</div>
+<div class="lyric-line" data-time="01:35.80">他们定义的热闹</div>
+<div class="lyric-line" data-time="01:37.50">是红毯上的折袖</div>
+<div class="lyric-line" data-time="01:39.44">我们关起门来</div>
+<div class="lyric-line" data-time="01:40.47">在这八平米里</div>
+<div class="lyric-line" data-time="01:41.63">把梦想稍微纵容</div>
+<div class="lyric-line" data-time="01:45.16">把沉默慢慢修短</div>
+<div class="lyric-line" data-time="01:48.78">一把推子来回走</div>
+<div class="lyric-line" data-time="01:51.65">像把人心梳得平展</div>
+<div class="lyric-line" data-time="01:56.58">小楼的剃头匠</div>
+<div class="lyric-line" data-time="01:58.64">守着这条巷</div>
+<div class="lyric-line" data-time="02:03.06">小楼的剃头匠</div>
+<div class="lyric-line" data-time="02:05.11">把日子往前晃</div>
+<div class="lyric-line" data-time="02:09.22">老师傅</div>
+<div class="lyric-line" data-time="02:12.42">老师傅</div>
+<div class="lyric-line" data-time="02:15.67">把日子往前晃</div>
+<div class="lyric-line" data-time="02:20.95">等夜色压低窗沿</div>
+<div class="lyric-line" data-time="02:23.16">他还亮着那盏灯</div>
+<div class="lyric-line" data-time="02:27.45">不为谁的头条</div>
+<div class="lyric-line" data-time="02:29.50">只为明天有个准绳</div>
+<div class="lyric-line" data-time="02:33.92">一根白发落下来</div>
+<div class="lyric-line" data-time="02:37.06">像一段旧时光</div>
+<div class="lyric-line" data-time="02:40.31">他轻轻拢一拢</div>
+<div class="lyric-line" data-time="02:43.66">又把人间理顺当</div>
+<div class="lyric-line" data-time="02:50.41">小楼的剃头匠</div>
+<div class="lyric-line" data-time="02:52.18">守着这条巷</div>
+<div class="lyric-line" data-time="02:56.47">小楼的剃头匠</div>
+<div class="lyric-line" data-time="02:58.60">把日子往前晃</div>
+<div class="lyric-line" data-time="03:02.60">老师傅</div>
+<div class="lyric-line" data-time="03:05.90">老师傅</div>
+<div class="lyric-line" data-time="03:08.90">把日子往前晃</div>
+<div class="lyric-line" data-time="03:12.78">小楼的剃头匠</div>
+<div class="lyric-line" data-time="03:15.05">照亮这条巷</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
