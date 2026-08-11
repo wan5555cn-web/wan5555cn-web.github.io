@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《海盐巧克力》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/海盐巧克力.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsotm6540017126t5yeq4hfb/20260811/cmsotmifj0074yuu10x102x7y/5JVK0dQRSFjpyTN7bcEFZl.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:11.77">蔚蓝小队潜入深处</div>
+<div class="lyric-line" data-time="00:16.06">灯影轻轻贴着水纹</div>
+<div class="lyric-line" data-time="00:20.51">赵岩把手摊开</div>
+<div class="lyric-line" data-time="00:21.75">合成蛋白质块安静发冷</div>
+<div class="lyric-line" data-time="00:26.38">对面那群歌者</div>
+<div class="lyric-line" data-time="00:30.04">隔着浮光看了很久</div>
+<div class="lyric-line" data-time="00:35.28">他们先不靠近</div>
+<div class="lyric-line" data-time="00:36.75">只让尾音慢慢绕圈</div>
+<div class="lyric-line" data-time="00:40.00">像在问</div>
+<div class="lyric-line" data-time="00:41.88">你们带来的是什么</div>
+<div class="lyric-line" data-time="00:44.90">海水屏住呼吸</div>
+<div class="lyric-line" data-time="00:47.11">我们也放轻了手心</div>
+<div class="lyric-line" data-time="00:52.60">海盐巧克力</div>
+<div class="lyric-line" data-time="00:55.29">在掌心发亮</div>
+<div class="lyric-line" data-time="00:58.52">陌生的甜</div>
+<div class="lyric-line" data-time="01:01.06">先碰上了浪</div>
+<div class="lyric-line" data-time="01:04.52">海盐巧克力</div>
+<div class="lyric-line" data-time="01:07.51">一点点融化</div>
+<div class="lyric-line" data-time="01:10.46">第一次相看</div>
+<div class="lyric-line" data-time="01:13.38">就有了方向</div>
+<div class="lyric-line" data-time="01:16.91">我们递出粮块</div>
+<div class="lyric-line" data-time="01:18.54">规矩、整齐、没有声响</div>
+<div class="lyric-line" data-time="01:20.91">他们却望向另一边</div>
+<div class="lyric-line" data-time="01:23.35">那块普通的巧克力</div>
+<div class="lyric-line" data-time="01:25.03">海盐结晶一闪</div>
+<div class="lyric-line" data-time="01:26.38">像岸边刚醒来的霜</div>
+<div class="lyric-line" data-time="01:28.83">赵岩没有催促</div>
+<div class="lyric-line" data-time="01:30.13">只把那块糖慢慢推前</div>
+<div class="lyric-line" data-time="01:32.34">歌者群体低低共鸣</div>
+<div class="lyric-line" data-time="01:35.19">像在抚摸一个名字</div>
+<div class="lyric-line" data-time="01:36.76">然后一只发光的手</div>
+<div class="lyric-line" data-time="01:38.15">轻轻把它捧起</div>
+<div class="lyric-line" data-time="01:40.79">不是交易那么简单</div>
+<div class="lyric-line" data-time="01:43.93">也不是试探到底</div>
+<div class="lyric-line" data-time="01:46.57">是两群心跳</div>
+<div class="lyric-line" data-time="01:48.00">先学会同频</div>
+<div class="lyric-line" data-time="01:49.30">一边是谨慎</div>
+<div class="lyric-line" data-time="01:51.93">一边是好奇</div>
+<div class="lyric-line" data-time="01:54.95">不是交易那么简单</div>
+<div class="lyric-line" data-time="01:56.93">也不是试探到底</div>
+<div class="lyric-line" data-time="01:58.02">是两群心跳</div>
+<div class="lyric-line" data-time="01:59.99">先学会同频</div>
+<div class="lyric-line" data-time="02:02.95">一边是谨慎</div>
+<div class="lyric-line" data-time="02:04.24">一边是好奇</div>
+<div class="lyric-line" data-time="02:06.65">海盐巧克力</div>
+<div class="lyric-line" data-time="02:09.78">在掌心发亮</div>
+<div class="lyric-line" data-time="02:12.68">陌生的甜</div>
+<div class="lyric-line" data-time="02:15.59">先碰上了浪</div>
+<div class="lyric-line" data-time="02:18.43">海盐巧克力</div>
+<div class="lyric-line" data-time="02:21.58">一点点融化</div>
+<div class="lyric-line" data-time="02:24.60">第一次相看</div>
+<div class="lyric-line" data-time="02:27.32">就有了方向</div>
+<div class="lyric-line" data-time="02:31.50">他们把巧克力分成小块</div>
+<div class="lyric-line" data-time="02:33.98">像分开一段初雪</div>
+<div class="lyric-line" data-time="02:35.18">我们也把蛋白块</div>
+<div class="lyric-line" data-time="02:37.56">放到他们的潮声里</div>
+<div class="lyric-line" data-time="02:40.43">没有谁先说服谁</div>
+<div class="lyric-line" data-time="02:42.75">只是都学会了</div>
+<div class="lyric-line" data-time="02:46.23">在沉默里点头</div>
+<div class="lyric-line" data-time="02:51.33">海盐巧克力</div>
+<div class="lyric-line" data-time="02:54.22">在掌心发亮</div>
+<div class="lyric-line" data-time="02:57.03">陌生的甜</div>
+<div class="lyric-line" data-time="02:59.91">先碰上了浪</div>
+<div class="lyric-line" data-time="03:02.81">海盐巧克力</div>
+<div class="lyric-line" data-time="03:05.72">一寸寸融化</div>
+<div class="lyric-line" data-time="03:08.60">从此两片深海</div>
+<div class="lyric-line" data-time="03:11.43">开始同航</div>
+<div class="lyric-line" data-time="03:13.93">赵岩抬头时</div>
+<div class="lyric-line" data-time="03:14.70">歌声已不再陌生</div>
+<div class="lyric-line" data-time="03:16.74">海底很深</div>
+<div class="lyric-line" data-time="03:18.66">可第一份默契</div>
+<div class="lyric-line" data-time="03:20.48">已经浮上来</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
