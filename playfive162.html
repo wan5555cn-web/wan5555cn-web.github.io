@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《双生曲》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/双生曲.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsr5q3hf000l6eoqq8j5cqfp/20260813/cmsr5qalx003jtilhhod0aat4/4BRufIpbKsyG04PD3Necw2.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:13.41">咱们一开始</div>
+<div class="lyric-line" data-time="00:15.26">就不是在“做曲”</div>
+<div class="lyric-line" data-time="00:16.77">是蹲下来给故事找个出口</div>
+<div class="lyric-line" data-time="00:20.00">同一条路</div>
+<div class="lyric-line" data-time="00:21.53">你站左边看我站右边看</div>
+<div class="lyric-line" data-time="00:24.49">心却撞在一起</div>
+<div class="lyric-line" data-time="00:27.62">你听见的是他没说完的话</div>
+<div class="lyric-line" data-time="00:33.96">我听见的是她忍住的疼</div>
+<div class="lyric-line" data-time="00:38.51">所以一首歌会有两种温度</div>
+<div class="lyric-line" data-time="00:41.80">一个人往前一个人回头</div>
+<div class="lyric-line" data-time="00:44.78">同一个夜晚两种呼吸</div>
+<div class="lyric-line" data-time="00:48.06">同一滴眼泪两次落地</div>
+<div class="lyric-line" data-time="00:51.25">双生曲</div>
+<div class="lyric-line" data-time="00:52.83">同一颗心两种声音</div>
+<div class="lyric-line" data-time="00:55.69">都是真的</div>
+<div class="lyric-line" data-time="00:57.59">双生曲</div>
+<div class="lyric-line" data-time="00:59.23">你替故事疼</div>
+<div class="lyric-line" data-time="01:00.46">我替故事撑</div>
+<div class="lyric-line" data-time="01:02.52">刚刚好</div>
+<div class="lyric-line" data-time="01:03.94">双生曲</div>
+<div class="lyric-line" data-time="01:05.36">一个在靠近一个在告别</div>
+<div class="lyric-line" data-time="01:08.39">都不轻松</div>
+<div class="lyric-line" data-time="01:10.57">双生曲</div>
+<div class="lyric-line" data-time="01:11.78">咱们没改命运</div>
+<div class="lyric-line" data-time="01:13.33">只是换个角度把它唱透</div>
+<div class="lyric-line" data-time="01:21.94">她不是冷只是太会忍</div>
+<div class="lyric-line" data-time="01:25.06">他不是狠只是太想赢</div>
+<div class="lyric-line" data-time="01:28.27">有些沉默像压着的雪</div>
+<div class="lyric-line" data-time="01:30.53">看着很静其实很重</div>
+<div class="lyric-line" data-time="01:34.68">你把遗憾唱得很轻</div>
+<div class="lyric-line" data-time="01:37.88">我把答案唱得很重</div>
+<div class="lyric-line" data-time="01:40.72">可最后都指向</div>
+<div class="lyric-line" data-time="01:42.33">同一个人同一件事同一场梦</div>
+<div class="lyric-line" data-time="01:47.48">所以别问谁更像真相</div>
+<div class="lyric-line" data-time="01:50.65">真相本来就有两张脸</div>
+<div class="lyric-line" data-time="01:53.99">一张在笑一张在疼</div>
+<div class="lyric-line" data-time="01:57.12">一半给你一半给我</div>
+<div class="lyric-line" data-time="02:00.03">双生曲</div>
+<div class="lyric-line" data-time="02:01.66">同一颗心两种声音</div>
+<div class="lyric-line" data-time="02:04.51">都是真的</div>
+<div class="lyric-line" data-time="02:06.26">双生曲</div>
+<div class="lyric-line" data-time="02:07.92">你替故事疼我替故事撑</div>
+<div class="lyric-line" data-time="02:11.28">刚刚好</div>
+<div class="lyric-line" data-time="02:12.68">双生曲</div>
+<div class="lyric-line" data-time="02:14.21">一个在靠近一个在告别</div>
+<div class="lyric-line" data-time="02:17.15">都不轻松</div>
+<div class="lyric-line" data-time="02:19.22">双生曲</div>
+<div class="lyric-line" data-time="02:20.58">咱们没改命运</div>
+<div class="lyric-line" data-time="02:22.08">只是换个角度把它唱透</div>
+<div class="lyric-line" data-time="02:25.93">如果你问我</div>
+<div class="lyric-line" data-time="02:26.92">为什么总能出精品</div>
+<div class="lyric-line" data-time="02:28.92">我会说</div>
+<div class="lyric-line" data-time="02:29.71">因为先有故事</div>
+<div class="lyric-line" data-time="02:31.60">声音不是装饰</div>
+<div class="lyric-line" data-time="02:33.47">是活过来的证据</div>
+<div class="lyric-line" data-time="02:35.35">你在这边流泪</div>
+<div class="lyric-line" data-time="02:36.93">我在那边接住你</div>
+<div class="lyric-line" data-time="02:39.74">等到最后一句</div>
+<div class="lyric-line" data-time="02:40.97">落回同一条线上</div>
+<div class="lyric-line" data-time="02:42.95">你会明白</div>
+<div class="lyric-line" data-time="02:43.90">分开的不是歌</div>
+<div class="lyric-line" data-time="02:46.71">是看法不是心</div>
+<div class="lyric-line" data-time="02:51.23">双生曲</div>
+<div class="lyric-line" data-time="02:52.72">同一颗心两种声音</div>
+<div class="lyric-line" data-time="02:55.62">都是真的</div>
+<div class="lyric-line" data-time="02:57.53">双生曲</div>
+<div class="lyric-line" data-time="02:59.12">你替故事疼我替故事撑</div>
+<div class="lyric-line" data-time="03:02.49">刚刚好</div>
+<div class="lyric-line" data-time="03:03.90">双生曲</div>
+<div class="lyric-line" data-time="03:05.38">一个在靠近一个在告别</div>
+<div class="lyric-line" data-time="03:08.34">都不轻松</div>
+<div class="lyric-line" data-time="03:10.46">双生曲</div>
+<div class="lyric-line" data-time="03:11.79">咱们没改命运</div>
+<div class="lyric-line" data-time="03:13.35">只是换个角度</div>
+<div class="lyric-line" data-time="03:15.30">把它唱透</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
