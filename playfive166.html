@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《九块九猫粮》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/九块九猫粮.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsriyjx6000q3c12s304rxvy/20260813/cmsrj2jf80001r8q4p7z5dezu/5ltg1Tf6c01dGF6rHnF7kq.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:11.10">陈默睁开眼</div>
+<div class="lyric-line" data-time="00:12.18">天还没亮透</div>
+<div class="lyric-line" data-time="00:13.68">躺在洪荒边</div>
+<div class="lyric-line" data-time="00:14.81">手里捏着那半袋</div>
+<div class="lyric-line" data-time="00:17.39">九块九猫粮</div>
+<div class="lyric-line" data-time="00:20.02">肚子先开口</div>
+<div class="lyric-line" data-time="00:22.45">咕咕叫得响</div>
+<div class="lyric-line" data-time="00:24.96">他叹一口气</div>
+<div class="lyric-line" data-time="00:26.43">撒进灵泉里</div>
+<div class="lyric-line" data-time="00:27.70">管他呢先喂鱼</div>
+<div class="lyric-line" data-time="00:30.06">水面一抖</div>
+<div class="lyric-line" data-time="00:32.63">黑影翻涌来</div>
+<div class="lyric-line" data-time="00:35.32">混沌张嘴</div>
+<div class="lyric-line" data-time="00:36.56">只尝了一口</div>
+<div class="lyric-line" data-time="00:38.01">眼泪就掉下来</div>
+<div class="lyric-line" data-time="00:40.68">他说前辈</div>
+<div class="lyric-line" data-time="00:42.61">救我出心魔</div>
+<div class="lyric-line" data-time="00:45.47">道心要碎了</div>
+<div class="lyric-line" data-time="00:47.29">这口命怎么</div>
+<div class="lyric-line" data-time="00:48.69">会这么香</div>
+<div class="lyric-line" data-time="00:50.61">九块九猫粮</div>
+<div class="lyric-line" data-time="00:53.04">喂出了天光</div>
+<div class="lyric-line" data-time="00:55.64">九块九猫粮</div>
+<div class="lyric-line" data-time="00:58.07">把众生喂慌</div>
+<div class="lyric-line" data-time="01:00.70">谁说我倒霉</div>
+<div class="lyric-line" data-time="01:02.98">我偏要发光</div>
+<div class="lyric-line" data-time="01:05.97">九块九猫粮</div>
+<div class="lyric-line" data-time="01:08.28">开出新道场</div>
+<div class="lyric-line" data-time="01:11.84">他洗袜子的</div>
+<div class="lyric-line" data-time="01:12.64">肥皂水还热</div>
+<div class="lyric-line" data-time="01:14.11">道祖端起来</div>
+<div class="lyric-line" data-time="01:14.95">抿了一口就愣</div>
+<div class="lyric-line" data-time="01:16.27">原地坐成佛</div>
+<div class="lyric-line" data-time="01:18.74">女帝一把抢</div>
+<div class="lyric-line" data-time="01:21.04">那只臭袜子</div>
+<div class="lyric-line" data-time="01:22.73">供在金案上</div>
+<div class="lyric-line" data-time="01:23.75">还说这是至宝</div>
+<div class="lyric-line" data-time="01:25.11">镇住万世火</div>
+<div class="lyric-line" data-time="01:27.56">他踢翻折叠椅</div>
+<div class="lyric-line" data-time="01:29.10">咔嚓一声响</div>
+<div class="lyric-line" data-time="01:30.20">断腿滚到旁边</div>
+<div class="lyric-line" data-time="01:31.82">道祖扑上来</div>
+<div class="lyric-line" data-time="01:32.78">抱着不撒手</div>
+<div class="lyric-line" data-time="01:34.07">说这是</div>
+<div class="lyric-line" data-time="01:34.89">无中生有</div>
+<div class="lyric-line" data-time="01:36.49">说这是</div>
+<div class="lyric-line" data-time="01:37.29">起死回生</div>
+<div class="lyric-line" data-time="01:39.07">他越听越懵</div>
+<div class="lyric-line" data-time="01:39.98">只想缩回帐篷</div>
+<div class="lyric-line" data-time="01:41.52">别再给我吹</div>
+<div class="lyric-line" data-time="01:44.23">九块九猫粮</div>
+<div class="lyric-line" data-time="01:46.62">喂出了天光</div>
+<div class="lyric-line" data-time="01:49.21">九块九猫粮</div>
+<div class="lyric-line" data-time="01:51.69">把众生喂慌</div>
+<div class="lyric-line" data-time="01:54.29">谁说我倒霉</div>
+<div class="lyric-line" data-time="01:56.52">我偏要发光</div>
+<div class="lyric-line" data-time="01:59.46">九块九猫粮</div>
+<div class="lyric-line" data-time="02:01.92">开出新道场</div>
+<div class="lyric-line" data-time="02:04.58">帐篷外跪满人</div>
+<div class="lyric-line" data-time="02:05.82">把呼噜当梵音</div>
+<div class="lyric-line" data-time="02:07.04">把破椅子残腿</div>
+<div class="lyric-line" data-time="02:08.22">都捧成了经文</div>
+<div class="lyric-line" data-time="02:09.84">他低头看手机</div>
+<div class="lyric-line" data-time="02:10.90">橘猫在眯眼</div>
+<div class="lyric-line" data-time="02:11.92">那张小脸一闪</div>
+<div class="lyric-line" data-time="02:13.14">他的心就软了</div>
+<div class="lyric-line" data-time="02:14.72">回家怎么交差</div>
+<div class="lyric-line" data-time="02:15.98">这题太难</div>
+<div class="lyric-line" data-time="02:17.44">可这一路荒唐</div>
+<div class="lyric-line" data-time="02:18.64">又像命在发难</div>
+<div class="lyric-line" data-time="02:19.96">他笑着叹口气</div>
+<div class="lyric-line" data-time="02:21.25">眼眶有点烫</div>
+<div class="lyric-line" data-time="02:22.39">先别管成仙</div>
+<div class="lyric-line" data-time="02:23.37">先管那只胖</div>
+<div class="lyric-line" data-time="02:25.38">九块九猫粮</div>
+<div class="lyric-line" data-time="02:27.44">喂出了天光</div>
+<div class="lyric-line" data-time="02:29.96">九块九猫粮</div>
+<div class="lyric-line" data-time="02:32.52">把众生喂慌</div>
+<div class="lyric-line" data-time="02:35.10">谁说我倒霉</div>
+<div class="lyric-line" data-time="02:37.23">我偏要发光</div>
+<div class="lyric-line" data-time="02:40.32">九块九猫粮</div>
+<div class="lyric-line" data-time="02:42.72">开出新道场</div>
+<div class="lyric-line" data-time="02:45.52">九块九猫粮</div>
+<div class="lyric-line" data-time="02:46.96">我也能扛</div>
+<div class="lyric-line" data-time="02:48.04">九块九猫粮</div>
+<div class="lyric-line" data-time="02:49.33">一路成章</div>
+<div class="lyric-line" data-time="02:50.37">等我回家门前</div>
+<div class="lyric-line" data-time="02:51.52">再把旧梦讲</div>
+<div class="lyric-line" data-time="02:53.03">九块九猫粮</div>
+<div class="lyric-line" data-time="02:55.39">照亮我回乡</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
