@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《海底三太阳》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/海底三太阳.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsquw7po0003145dsr32kpum/20260813/cmsquyzmj007l12niddwh9jva/754SyqJTbLqtOLeZmJtfPE.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:12.11">停火协议刻在生锈的螺栓上啦</div>
+<div class="lyric-line" data-time="00:16.11">我拆开弹匣改装成氧气阀</div>
+<div class="lyric-line" data-time="00:24.18">机甲和鱼群共用同一张航海图</div>
+<div class="lyric-line" data-time="00:30.46">触须缠住炮管就当握手吧</div>
+<div class="lyric-line" data-time="00:36.26">别管珊瑚虫在翻译什么暗号</div>
+<div class="lyric-line" data-time="00:42.49">把敌对程序泡成海藻酒糟</div>
+<div class="lyric-line" data-time="00:49.59">当电鳗游过三方电缆交汇处</div>
+<div class="lyric-line" data-time="00:52.60">亮起的不是火花是萤火虫信号</div>
+<div class="lyric-line" data-time="00:55.63">踩着钢索跳舞 摇摇晃晃的平衡术</div>
+<div class="lyric-line" data-time="00:58.57">左手按住机甲 右手安抚变异族</div>
+<div class="lyric-line" data-time="01:01.65">舌尖还压着未引爆的第三句话</div>
+<div class="lyric-line" data-time="01:07.03">暂时这样吧 让潮汐当裁判长</div>
+<div class="lyric-line" data-time="01:13.19">看呐！三个太阳在海底轮流值班</div>
+<div class="lyric-line" data-time="01:19.56">机械的银 变异的蓝 人类的红</div>
+<div class="lyric-line" data-time="01:26.21">混成鸡尾酒 灌醉所有探测器</div>
+<div class="lyric-line" data-time="01:31.64">趁现在把新规则刻在鲸鱼脊椎上</div>
+<div class="lyric-line" data-time="01:36.87">没有赢家的棋局才能继续下</div>
+<div class="lyric-line" data-time="01:41.49">我们就是 正在编织的那张破渔网</div>
+<div class="lyric-line" data-time="01:46.52">(正在编织那张破渔网)</div>
+<div class="lyric-line" data-time="01:51.50">今天的警报被海草重新命名</div>
+<div class="lyric-line" data-time="01:54.32">沉船肋骨里长出会投票的贝壳</div>
+<div class="lyric-line" data-time="01:57.36">我把旧地图折成一只纸鲨鱼</div>
+<div class="lyric-line" data-time="02:00.84">让它替我们咬断边界的线头</div>
+<div class="lyric-line" data-time="02:03.71">你看那群巡逻灯漂得多慢</div>
+<div class="lyric-line" data-time="02:08.54">像忘记自己曾经属于天空</div>
+<div class="lyric-line" data-time="02:15.06">看呐！三个太阳在海底轮流值班</div>
+<div class="lyric-line" data-time="02:20.85">每一次升起都把恐惧晒成盐霜</div>
+<div class="lyric-line" data-time="02:27.26">我听见铁壳里有浪在回声</div>
+<div class="lyric-line" data-time="02:30.64">听见鳞片上有名字在发光</div>
+<div class="lyric-line" data-time="02:33.73">别急着判决 别急着清场</div>
+<div class="lyric-line" data-time="02:36.81">先让这一口呼吸 站稳在潮汐上</div>
+<div class="lyric-line" data-time="02:42.43">看呐！三个太阳在海底轮流值班</div>
+<div class="lyric-line" data-time="02:48.73">每一次升起都把恐惧晒成盐霜</div>
+<div class="lyric-line" data-time="02:55.31">我听见铁壳里有浪在回声</div>
+<div class="lyric-line" data-time="02:59.14">听见鳞片上有名字在发光</div>
+<div class="lyric-line" data-time="03:02.55">别急着判决 别急着清场</div>
+<div class="lyric-line" data-time="03:06.07">先让这一口呼吸 站稳在潮汐上</div>
+<div class="lyric-line" data-time="03:13.21">看呐！三个太阳在海底轮流值班</div>
+<div class="lyric-line" data-time="03:19.21">机械的银 变异的蓝 人类的红</div>
+<div class="lyric-line" data-time="03:25.73">混成鸡尾酒 灌醉所有探测器</div>
+<div class="lyric-line" data-time="03:31.73">趁现在把新规则刻在鲸鱼脊椎上</div>
+<div class="lyric-line" data-time="03:36.87">没有赢家的棋局才能继续下</div>
+<div class="lyric-line" data-time="03:41.51">我们就是 正在编织的那张破渔网</div>
+<div class="lyric-line" data-time="03:46.97">(正在编织那张破渔网)</div>
+<div class="lyric-line" data-time="03:56.96">如果明天还要开火</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
