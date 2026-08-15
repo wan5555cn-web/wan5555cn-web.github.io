@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《等它慢慢干》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/等它慢慢干.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsuje97y000sm35uhykptykx/20260815/cmsujl5je0075bzqhdco0azvi/3kQ8od50Fm1ODGacdFsyew.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:13.06">我蹲在墙角捡起一块碎瓷</div>
+<div class="lyric-line" data-time="00:17.09">裂缝像闪电从中间劈开</div>
+<div class="lyric-line" data-time="00:24.89">有人劝我扔了</div>
+<div class="lyric-line" data-time="00:26.41">说修不好了</div>
+<div class="lyric-line" data-time="00:28.84">可我偏要试试</div>
+<div class="lyric-line" data-time="00:30.63">能不能缝回来</div>
+<div class="lyric-line" data-time="00:35.54">胶水涂上去</div>
+<div class="lyric-line" data-time="00:37.50">得等它慢慢干</div>
+<div class="lyric-line" data-time="00:41.29">手不能抖心不能急</div>
+<div class="lyric-line" data-time="00:47.31">就像你说的</div>
+<div class="lyric-line" data-time="00:49.27">让子弹飞一会儿</div>
+<div class="lyric-line" data-time="00:52.57">有些裂痕急不得</div>
+<div class="lyric-line" data-time="00:59.51">确实</div>
+<div class="lyric-line" data-time="01:00.22">有些东西碎了</div>
+<div class="lyric-line" data-time="01:02.49">不是粘上就行</div>
+<div class="lyric-line" data-time="01:05.22">得等时间把缝隙填满</div>
+<div class="lyric-line" data-time="01:11.03">等它慢慢干</div>
+<div class="lyric-line" data-time="01:13.69">等它慢慢干</div>
+<div class="lyric-line" data-time="01:16.57">碎了也能站稳</div>
+<div class="lyric-line" data-time="01:19.71">让子弹飞一会儿</div>
+<div class="lyric-line" data-time="01:22.47">让子弹飞一会儿</div>
+<div class="lyric-line" data-time="01:25.57">慢一点才会深</div>
+<div class="lyric-line" data-time="01:28.71">裂了别慌</div>
+<div class="lyric-line" data-time="01:30.12">先让它呼吸</div>
+<div class="lyric-line" data-time="01:32.07">等它自己长回去</div>
+<div class="lyric-line" data-time="01:35.14">你急着捏紧的时候</div>
+<div class="lyric-line" data-time="01:36.49">反而把碎片</div>
+<div class="lyric-line" data-time="01:37.84">又压碎了几片</div>
+<div class="lyric-line" data-time="01:41.13">别拿蛮力</div>
+<div class="lyric-line" data-time="01:42.06">考验胶水</div>
+<div class="lyric-line" data-time="01:43.88">第二天</div>
+<div class="lyric-line" data-time="01:45.76">裂缝又张开了嘴</div>
+<div class="lyric-line" data-time="01:47.90">像在嘲笑我的急躁</div>
+<div class="lyric-line" data-time="01:49.43">像在提醒我</div>
+<div class="lyric-line" data-time="01:50.95">别把救回来的东西</div>
+<div class="lyric-line" data-time="01:52.28">再推下去</div>
+<div class="lyric-line" data-time="01:53.97">后来才懂</div>
+<div class="lyric-line" data-time="01:55.44">慢胶才走得深</div>
+<div class="lyric-line" data-time="01:58.81">一层一层</div>
+<div class="lyric-line" data-time="02:00.61">渗进最细的纹</div>
+<div class="lyric-line" data-time="02:04.19">让子弹多飞一会儿</div>
+<div class="lyric-line" data-time="02:06.33">飞够了</div>
+<div class="lyric-line" data-time="02:07.83">它自己会落地生根</div>
+<div class="lyric-line" data-time="02:10.19">确实</div>
+<div class="lyric-line" data-time="02:11.05">让缝隙自己呼吸</div>
+<div class="lyric-line" data-time="02:13.45">让时间自己缝合</div>
+<div class="lyric-line" data-time="02:16.20">等它慢慢干</div>
+<div class="lyric-line" data-time="02:18.99">等它慢慢干</div>
+<div class="lyric-line" data-time="02:21.75">碎了也能站稳</div>
+<div class="lyric-line" data-time="02:24.84">让子弹飞一会儿</div>
+<div class="lyric-line" data-time="02:27.78">让子弹飞一会儿</div>
+<div class="lyric-line" data-time="02:30.81">慢一点才会深</div>
+<div class="lyric-line" data-time="02:33.91">裂了别慌</div>
+<div class="lyric-line" data-time="02:35.27">先让它呼吸</div>
+<div class="lyric-line" data-time="02:36.78">等它自己长回去</div>
+<div class="lyric-line" data-time="02:40.26">有些东西</div>
+<div class="lyric-line" data-time="02:42.11">不是修不好</div>
+<div class="lyric-line" data-time="02:43.56">是你太想马上看见结果</div>
+<div class="lyric-line" data-time="02:46.80">等风过去</div>
+<div class="lyric-line" data-time="02:48.16">等手放轻</div>
+<div class="lyric-line" data-time="02:49.66">等那道口子</div>
+<div class="lyric-line" data-time="02:50.99">学会闭合</div>
+<div class="lyric-line" data-time="02:52.77">碎了的</div>
+<div class="lyric-line" data-time="02:53.84">不一定废了</div>
+<div class="lyric-line" data-time="02:55.53">裂了的</div>
+<div class="lyric-line" data-time="02:56.67">不一定完了</div>
+<div class="lyric-line" data-time="03:00.34">等它慢慢干</div>
+<div class="lyric-line" data-time="03:03.40">等它慢慢干</div>
+<div class="lyric-line" data-time="03:06.18">我会站到天亮</div>
+<div class="lyric-line" data-time="03:09.34">让子弹飞一会儿</div>
+<div class="lyric-line" data-time="03:12.21">让子弹飞一会儿</div>
+<div class="lyric-line" data-time="03:15.20">让深处先发光</div>
+<div class="lyric-line" data-time="03:18.33">裂了别慌</div>
+<div class="lyric-line" data-time="03:19.79">先让它呼吸</div>
+<div class="lyric-line" data-time="03:21.53">等它自己长回去</div>
+<div class="lyric-line" data-time="03:24.35">等它慢慢干</div>
+<div class="lyric-line" data-time="03:27.27">等它慢慢干</div>
+<div class="lyric-line" data-time="03:30.03">碎了也能站稳</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
