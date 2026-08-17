@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《心暖花开》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/心暖花开.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmgk74jja000clblwgfl7knx5/20260817/cmswhj6vr0004r5gqxha1zi76/5nBh99jMMEePdzQrcaSb4C.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:15.68">做一个温暖如春的人</div>
+<div class="lyric-line" data-time="00:19.35">把真诚放进每次相逢</div>
+<div class="lyric-line" data-time="00:22.83">不必喧哗 不必证明</div>
+<div class="lyric-line" data-time="00:26.50">一抹微笑 就能化开冷风</div>
+<div class="lyric-line" data-time="00:37.22">把善意轻轻递给别人</div>
+<div class="lyric-line" data-time="00:40.74">也把疲惫慢慢还给夜空</div>
+<div class="lyric-line" data-time="00:44.22">若世界偶尔有些生硬</div>
+<div class="lyric-line" data-time="00:46.89">就用柔软 把它抱进掌心</div>
+<div class="lyric-line" data-time="00:51.67">春雨落下的时候</div>
+<div class="lyric-line" data-time="00:54.82">连石缝都在发芽</div>
+<div class="lyric-line" data-time="00:58.78">你若愿意慢一点</div>
+<div class="lyric-line" data-time="01:01.91">光就会替你说话</div>
+<div class="lyric-line" data-time="01:06.25">心若温暖 处处皆是春光</div>
+<div class="lyric-line" data-time="01:10.19">一点柔和 照亮远方</div>
+<div class="lyric-line" data-time="01:13.45">心若从容 岁岁皆是好时节</div>
+<div class="lyric-line" data-time="01:16.91">风再大 也不慌张</div>
+<div class="lyric-line" data-time="01:20.50">心若温暖 处处皆是春光</div>
+<div class="lyric-line" data-time="01:24.54">原谅风霜 接纳无常</div>
+<div class="lyric-line" data-time="01:27.88">你轻轻一笑 世界就明亮</div>
+<div class="lyric-line" data-time="01:32.14">你就是春天 在人间发烫</div>
+<div class="lyric-line" data-time="01:43.41">给自己留一寸安静</div>
+<div class="lyric-line" data-time="01:47.01">别把难过藏成倔强</div>
+<div class="lyric-line" data-time="01:50.66">偶尔跌倒 偶尔迷茫</div>
+<div class="lyric-line" data-time="01:54.29">也要记得抬头望一望</div>
+<div class="lyric-line" data-time="01:57.77">不完美也是生活模样</div>
+<div class="lyric-line" data-time="02:01.24">不如意也能长出方向</div>
+<div class="lyric-line" data-time="02:04.92">你走过的每一道弯</div>
+<div class="lyric-line" data-time="02:07.53">终会开成 最好的答案</div>
+<div class="lyric-line" data-time="02:12.12">山风经过的时候</div>
+<div class="lyric-line" data-time="02:15.11">草木都学会坚强</div>
+<div class="lyric-line" data-time="02:19.22">你若愿意真一点</div>
+<div class="lyric-line" data-time="02:22.29">爱就会替你生长</div>
+<div class="lyric-line" data-time="02:25.20">心若温暖 处处皆是春光</div>
+<div class="lyric-line" data-time="02:29.04">一点柔和 照亮远方</div>
+<div class="lyric-line" data-time="02:32.27">心若从容 岁岁皆是好时节</div>
+<div class="lyric-line" data-time="02:35.77">风再大 也不慌张</div>
+<div class="lyric-line" data-time="02:39.40">心若温暖 处处皆是春光</div>
+<div class="lyric-line" data-time="02:43.36">原谅风霜 接纳无常</div>
+<div class="lyric-line" data-time="02:46.95">你轻轻一笑 世界就明亮</div>
+<div class="lyric-line" data-time="02:50.96">你就是春天 在人间发烫</div>
+<div class="lyric-line" data-time="03:08.54">把委屈放进云里</div>
+<div class="lyric-line" data-time="03:10.97">让它慢慢散去</div>
+<div class="lyric-line" data-time="03:12.48">把遗憾交给时间</div>
+<div class="lyric-line" data-time="03:13.99">让它开出新绿</div>
+<div class="lyric-line" data-time="03:16.47">若你问我什么最珍贵</div>
+<div class="lyric-line" data-time="03:19.50">是那份不改的温柔</div>
+<div class="lyric-line" data-time="03:22.77">在每一次伸手之间</div>
+<div class="lyric-line" data-time="03:26.33">把彼此 轻轻拥抱</div>
+<div class="lyric-line" data-time="03:31.29">心若温暖 处处皆是春光</div>
+<div class="lyric-line" data-time="03:35.31">一点柔和 照亮远方</div>
+<div class="lyric-line" data-time="03:38.57">心若从容 岁岁皆是好时节</div>
+<div class="lyric-line" data-time="03:41.95">风再大 也不慌张</div>
+<div class="lyric-line" data-time="03:45.56">心若温暖 处处皆是春光</div>
+<div class="lyric-line" data-time="03:49.58">原谅风霜 接纳无常</div>
+<div class="lyric-line" data-time="03:53.13">你轻轻一笑 世界就明亮</div>
+<div class="lyric-line" data-time="03:57.24">你就是春天 在人间发烫</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
