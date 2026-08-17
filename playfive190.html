@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《无中心宇宙》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/无中心宇宙.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/无中心宇宙.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:12.60">太阳在转</div>
+<div class="lyric-line" data-time="00:15.71">银河在转</div>
+<div class="lyric-line" data-time="00:19.01">黑洞沉默</div>
+<div class="lyric-line" data-time="00:22.28">吞下夜晚</div>
+<div class="lyric-line" data-time="00:25.67">你问我中心在哪</div>
+<div class="lyric-line" data-time="00:29.01">我看见星尘在散</div>
+<div class="lyric-line" data-time="00:32.41">不是一扇门</div>
+<div class="lyric-line" data-time="00:35.12">不是一座王冠</div>
+<div class="lyric-line" data-time="00:39.13">从一开始</div>
+<div class="lyric-line" data-time="00:41.43">空间就在扩张</div>
+<div class="lyric-line" data-time="00:46.22">每个方向</div>
+<div class="lyric-line" data-time="00:48.13">都在推开远方</div>
+<div class="lyric-line" data-time="00:52.95">你站在这里</div>
+<div class="lyric-line" data-time="00:55.03">我站在那边</div>
+<div class="lyric-line" data-time="00:59.71">彼此远离</div>
+<div class="lyric-line" data-time="01:01.89">却同在一片天</div>
+<div class="lyric-line" data-time="01:06.50">宇宙没有中心</div>
+<div class="lyric-line" data-time="01:09.78">宇宙在生长</div>
+<div class="lyric-line" data-time="01:13.34">宇宙没有中心</div>
+<div class="lyric-line" data-time="01:16.13">万物都在往外闯</div>
+<div class="lyric-line" data-time="01:19.94">宇宙没有中心</div>
+<div class="lyric-line" data-time="01:22.21">只有回声在回荡</div>
+<div class="lyric-line" data-time="01:26.68">宇宙没有中心</div>
+<div class="lyric-line" data-time="01:28.99">我们都在路上</div>
+<div class="lyric-line" data-time="01:36.33">十三十八亿年</div>
+<div class="lyric-line" data-time="01:39.53">像一口长呼吸</div>
+<div class="lyric-line" data-time="01:42.98">从极热极密</div>
+<div class="lyric-line" data-time="01:46.18">到今天的安静</div>
+<div class="lyric-line" data-time="01:49.74">星系像火种</div>
+<div class="lyric-line" data-time="01:52.92">被风吹向边境</div>
+<div class="lyric-line" data-time="01:56.31">没有谁站在顶端</div>
+<div class="lyric-line" data-time="01:59.05">也没有谁是原点</div>
+<div class="lyric-line" data-time="02:03.65">每一道光</div>
+<div class="lyric-line" data-time="02:05.92">都背着旧时光</div>
+<div class="lyric-line" data-time="02:10.18">每一次看见</div>
+<div class="lyric-line" data-time="02:12.13">都是更早的模样</div>
+<div class="lyric-line" data-time="02:17.12">你抬头的瞬间</div>
+<div class="lyric-line" data-time="02:19.19">也在被看见</div>
+<div class="lyric-line" data-time="02:23.56">没有谁例外</div>
+<div class="lyric-line" data-time="02:25.78">没有谁不改变</div>
+<div class="lyric-line" data-time="02:30.40">宇宙没有中心</div>
+<div class="lyric-line" data-time="02:33.74">宇宙在生长</div>
+<div class="lyric-line" data-time="02:37.04">宇宙没有中心</div>
+<div class="lyric-line" data-time="02:40.18">万物都在往外闯</div>
+<div class="lyric-line" data-time="02:43.78">宇宙没有中心</div>
+<div class="lyric-line" data-time="02:46.08">只有回声在回荡</div>
+<div class="lyric-line" data-time="02:50.49">宇宙没有中心</div>
+<div class="lyric-line" data-time="02:53.01">我们都在路上</div>
+<div class="lyric-line" data-time="02:57.61">如果一定要找</div>
+<div class="lyric-line" data-time="02:59.49">那就找起点</div>
+<div class="lyric-line" data-time="03:00.94">不是一个坐标</div>
+<div class="lyric-line" data-time="03:02.68">是一次巨变</div>
+<div class="lyric-line" data-time="03:04.35">不是某个王座</div>
+<div class="lyric-line" data-time="03:06.05">不是某个边缘</div>
+<div class="lyric-line" data-time="03:07.80">是时间和空间</div>
+<div class="lyric-line" data-time="03:09.48">一同睁开了眼</div>
+<div class="lyric-line" data-time="03:12.31">宇宙没有中心</div>
+<div class="lyric-line" data-time="03:15.69">宇宙在生长</div>
+<div class="lyric-line" data-time="03:19.14">宇宙没有中心</div>
+<div class="lyric-line" data-time="03:22.20">万物都在往外闯</div>
+<div class="lyric-line" data-time="03:25.73">宇宙没有中心</div>
+<div class="lyric-line" data-time="03:28.17">可答案已发光</div>
+<div class="lyric-line" data-time="03:32.51">宇宙没有中心</div>
+<div class="lyric-line" data-time="03:34.87">我们都是方向</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
