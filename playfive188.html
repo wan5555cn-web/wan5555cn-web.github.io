@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《黔南出圈》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/黔南出圈.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="https://static.musicmuse.ai/audio/cmsx6jz1r0006nuudqnb9wn0l/20260817/cmsx6o4oa007lwba900qaxm13/1DP8DhUNsLwAGX05uZyNIj.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:12.68">黔南风一吹</div>
+<div class="lyric-line" data-time="00:15.35">山水就开口</div>
+<div class="lyric-line" data-time="00:18.18">荔波小七孔</div>
+<div class="lyric-line" data-time="00:20.67">把绿意捧上头</div>
+<div class="lyric-line" data-time="00:24.20">瀑布落成诗</div>
+<div class="lyric-line" data-time="00:26.88">青石也温柔</div>
+<div class="lyric-line" data-time="00:29.99">一眼看见你</div>
+<div class="lyric-line" data-time="00:32.58">心就跟着走</div>
+<div class="lyric-line" data-time="00:35.06">一路往前走</div>
+<div class="lyric-line" data-time="00:37.88">风景不回头</div>
+<div class="lyric-line" data-time="00:40.62">世界自然遗产</div>
+<div class="lyric-line" data-time="00:42.75">把眼睛都带走</div>
+<div class="lyric-line" data-time="00:46.24">黔南出圈了</div>
+<div class="lyric-line" data-time="00:49.09">一眼就心动</div>
+<div class="lyric-line" data-time="00:52.02">荔波小七孔</div>
+<div class="lyric-line" data-time="00:54.85">绿得太出众</div>
+<div class="lyric-line" data-time="00:57.88">黔南出圈了</div>
+<div class="lyric-line" data-time="01:00.70">美到发了光</div>
+<div class="lyric-line" data-time="01:04.38">地球腰带上的绿宝石</div>
+<div class="lyric-line" data-time="01:06.92">闪在我心上</div>
+<div class="lyric-line" data-time="01:14.15">平塘的天空</div>
+<div class="lyric-line" data-time="01:16.82">把答案举高</div>
+<div class="lyric-line" data-time="01:19.79">“中国天眼”</div>
+<div class="lyric-line" data-time="01:22.27">看见星河奔跑</div>
+<div class="lyric-line" data-time="01:25.54">大国重器响</div>
+<div class="lyric-line" data-time="01:28.57">把梦想照亮</div>
+<div class="lyric-line" data-time="01:31.45">科普研学路</div>
+<div class="lyric-line" data-time="01:33.98">越走越宽广</div>
+<div class="lyric-line" data-time="01:36.56">抬头看一看</div>
+<div class="lyric-line" data-time="01:39.17">宇宙在发光</div>
+<div class="lyric-line" data-time="01:42.06">每个孩子眼里</div>
+<div class="lyric-line" data-time="01:44.21">都有新的方向</div>
+<div class="lyric-line" data-time="01:47.76">黔南出圈了</div>
+<div class="lyric-line" data-time="01:50.54">一眼就心动</div>
+<div class="lyric-line" data-time="01:53.45">荔波小七孔</div>
+<div class="lyric-line" data-time="01:56.34">绿得太出众</div>
+<div class="lyric-line" data-time="01:59.28">黔南出圈了</div>
+<div class="lyric-line" data-time="02:02.17">美到发了光</div>
+<div class="lyric-line" data-time="02:05.59">地球腰带上的绿宝石</div>
+<div class="lyric-line" data-time="02:08.37">闪在我心上</div>
+<div class="lyric-line" data-time="02:11.21">还有三都呀</div>
+<div class="lyric-line" data-time="02:12.86">马蹄声正忙</div>
+<div class="lyric-line" data-time="02:14.57">“贵州村马”</div>
+<div class="lyric-line" data-time="02:15.34">跑出新花样</div>
+<div class="lyric-line" data-time="02:16.97">像“村超”一样</div>
+<div class="lyric-line" data-time="02:18.59">热闹又滚烫</div>
+<div class="lyric-line" data-time="02:20.48">乡村的舞台</div>
+<div class="lyric-line" data-time="02:21.70">也能最闪亮</div>
+<div class="lyric-line" data-time="02:23.35">黔南出圈了</div>
+<div class="lyric-line" data-time="02:25.62">一眼就心动</div>
+<div class="lyric-line" data-time="02:28.47">荔波小七孔</div>
+<div class="lyric-line" data-time="02:31.33">绿得太出众</div>
+<div class="lyric-line" data-time="02:34.47">黔南出圈了</div>
+<div class="lyric-line" data-time="02:37.64">美到发了光</div>
+<div class="lyric-line" data-time="02:40.17">“中国天眼”看星海</div>
+<div class="lyric-line" data-time="02:41.92">“贵州村马”正飞扬</div>
+<div class="lyric-line" data-time="02:49.50">黔南出圈了</div>
+<div class="lyric-line" data-time="02:51.90">越唱越滚烫</div>
+<div class="lyric-line" data-time="02:55.24">山水人文里</div>
+<div class="lyric-line" data-time="02:56.72">都是好风光</div>
+<div class="lyric-line" data-time="03:01.37">黔南出圈了</div>
+<div class="lyric-line" data-time="03:03.71">记在我心上</div>
+<div class="lyric-line" data-time="03:07.33">下一站就去黔南</div>
+<div class="lyric-line" data-time="03:08.95">把热爱装满行囊</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
