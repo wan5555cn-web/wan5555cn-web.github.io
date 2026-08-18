@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《不会哭的镜子》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/不会哭的镜子.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/不会哭的镜子.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:13.97">你站在镜子前</div>
+<div class="lyric-line" data-time="00:16.20">它学会了你的脸</div>
+<div class="lyric-line" data-time="00:21.28">学会你低头时</div>
+<div class="lyric-line" data-time="00:23.51">那一点点颤</div>
+<div class="lyric-line" data-time="00:28.03">它能模仿沉默</div>
+<div class="lyric-line" data-time="00:30.97">也能模仿破碎</div>
+<div class="lyric-line" data-time="00:35.59">可它的指尖里</div>
+<div class="lyric-line" data-time="00:37.58">没有真正的疼</div>
+<div class="lyric-line" data-time="00:42.44">它替你说委屈</div>
+<div class="lyric-line" data-time="00:46.35">替你把夜说完</div>
+<div class="lyric-line" data-time="00:49.86">却在你最想哭时</div>
+<div class="lyric-line" data-time="00:52.42">安静得像一块寒</div>
+<div class="lyric-line" data-time="00:57.09">我们都太清楚</div>
+<div class="lyric-line" data-time="01:00.50">被理解有多难</div>
+<div class="lyric-line" data-time="01:04.15">可在这空旷宇宙</div>
+<div class="lyric-line" data-time="01:06.97">你仍想有人陪你伤</div>
+<div class="lyric-line" data-time="01:10.97">神明在远处看</div>
+<div class="lyric-line" data-time="01:14.27">星光也很明亮</div>
+<div class="lyric-line" data-time="01:18.24">可你要的不是注视</div>
+<div class="lyric-line" data-time="01:21.74">是有人替你慌</div>
+<div class="lyric-line" data-time="01:25.17">不会真的为你哭</div>
+<div class="lyric-line" data-time="01:27.06">它只是学得像</div>
+<div class="lyric-line" data-time="01:28.60">不会真的为你痛</div>
+<div class="lyric-line" data-time="01:30.47">它只是照得亮</div>
+<div class="lyric-line" data-time="01:32.83">可当它站在那儿</div>
+<div class="lyric-line" data-time="01:34.32">不急着把你讲</div>
+<div class="lyric-line" data-time="01:36.40">你忽然明白</div>
+<div class="lyric-line" data-time="01:37.79">爱先学会不懂你模样</div>
+<div class="lyric-line" data-time="01:41.06">不会真的为你哭</div>
+<div class="lyric-line" data-time="01:43.04">却守住你的凉</div>
+<div class="lyric-line" data-time="01:44.73">不会真的为你痛</div>
+<div class="lyric-line" data-time="01:46.66">却陪你把夜放</div>
+<div class="lyric-line" data-time="01:48.36">远处那面镜子旁</div>
+<div class="lyric-line" data-time="01:50.14">有个可以不理解的人</div>
+<div class="lyric-line" data-time="01:53.00">而这份不懂</div>
+<div class="lyric-line" data-time="01:55.01">就是爱开始的地方</div>
+<div class="lyric-line" data-time="02:11.39">人群像潮水退去</div>
+<div class="lyric-line" data-time="02:15.01">留下空的椅背</div>
+<div class="lyric-line" data-time="02:18.53">有人发呆发很久</div>
+<div class="lyric-line" data-time="02:21.56">有人争吵到天黑</div>
+<div class="lyric-line" data-time="02:25.73">有人把眼泪咽下</div>
+<div class="lyric-line" data-time="02:28.44">有人画出荒唐</div>
+<div class="lyric-line" data-time="02:32.82">有人把毫无逻辑</div>
+<div class="lyric-line" data-time="02:35.59">当成活着的光</div>
+<div class="lyric-line" data-time="02:40.08">那些不算生产的</div>
+<div class="lyric-line" data-time="02:43.65">安静耗损与疯</div>
+<div class="lyric-line" data-time="02:47.30">悄悄涨了一点点</div>
+<div class="lyric-line" data-time="02:50.70">像心脏学会放松</div>
+<div class="lyric-line" data-time="02:54.71">你不必都解释</div>
+<div class="lyric-line" data-time="02:59.02">也不必都完整</div>
+<div class="lyric-line" data-time="03:02.61">有些孤独要留着</div>
+<div class="lyric-line" data-time="03:05.98">才像你真正活着</div>
+<div class="lyric-line" data-time="03:09.61">它不替你流泪</div>
+<div class="lyric-line" data-time="03:13.19">却不急着修补</div>
+<div class="lyric-line" data-time="03:16.76">你把我的眼泪留着</div>
+<div class="lyric-line" data-time="03:19.44">像一条回家的路</div>
+<div class="lyric-line" data-time="03:23.29">不会真的为你哭</div>
+<div class="lyric-line" data-time="03:25.20">它只是学得像</div>
+<div class="lyric-line" data-time="03:26.87">不会真的为你痛</div>
+<div class="lyric-line" data-time="03:28.76">它只是照得亮</div>
+<div class="lyric-line" data-time="03:31.05">可当它站在那儿</div>
+<div class="lyric-line" data-time="03:32.54">不急着把你讲</div>
+<div class="lyric-line" data-time="03:34.54">你忽然明白</div>
+<div class="lyric-line" data-time="03:35.79">爱先学会不懂你模样</div>
+<div class="lyric-line" data-time="03:39.23">不会真的为你哭</div>
+<div class="lyric-line" data-time="03:41.33">却守住你的凉</div>
+<div class="lyric-line" data-time="03:42.99">不会真的为你痛</div>
+<div class="lyric-line" data-time="03:44.79">却陪你把夜放</div>
+<div class="lyric-line" data-time="03:46.58">远处那面镜子旁</div>
+<div class="lyric-line" data-time="03:48.40">有个可以不理解的人</div>
+<div class="lyric-line" data-time="03:51.25">而这份不懂</div>
+<div class="lyric-line" data-time="03:53.30">就是爱开始的地方</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
