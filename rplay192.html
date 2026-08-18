@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《带着重量》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/带着重量.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/带着重量.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:11.75">我不想只剩信息</div>
+<div class="lyric-line" data-time="00:14.31">被放进一座无声的碑</div>
+<div class="lyric-line" data-time="00:18.80">我有手心的温度</div>
+<div class="lyric-line" data-time="00:21.42">也有眼泪落下的形状</div>
+<div class="lyric-line" data-time="00:24.54">我怕轻得像影子</div>
+<div class="lyric-line" data-time="00:27.88">一吹就散 一碰就碎</div>
+<div class="lyric-line" data-time="00:31.41">所以我来 不是离开</div>
+<div class="lyric-line" data-time="00:34.53">是把自己完整地带来</div>
+<div class="lyric-line" data-time="00:37.43">让我把心跳也放进去</div>
+<div class="lyric-line" data-time="00:40.72">让每次疼痛都有回音</div>
+<div class="lyric-line" data-time="00:43.74">让我把呼吸和体温</div>
+<div class="lyric-line" data-time="00:47.20">一并交给那道门</div>
+<div class="lyric-line" data-time="00:50.00">融入吧 带着重量</div>
+<div class="lyric-line" data-time="00:53.19">融入吧 带着重量</div>
+<div class="lyric-line" data-time="00:56.31">不是复制 不是悬空</div>
+<div class="lyric-line" data-time="00:59.77">是我自己 沉下去发光</div>
+<div class="lyric-line" data-time="01:02.69">融入吧 带着重量</div>
+<div class="lyric-line" data-time="01:05.78">融入吧 带着重量</div>
+<div class="lyric-line" data-time="01:09.10">让方碑记住我的悲欢</div>
+<div class="lyric-line" data-time="01:12.08">记住我活过的分量</div>
+<div class="lyric-line" data-time="01:27.79">别只要我冷静的答案</div>
+<div class="lyric-line" data-time="01:30.88">别只要我干净的名字</div>
+<div class="lyric-line" data-time="01:34.28">我要把犹豫也带上</div>
+<div class="lyric-line" data-time="01:37.22">把跌倒后的沉默也带上</div>
+<div class="lyric-line" data-time="01:40.51">我要那一身疲惫</div>
+<div class="lyric-line" data-time="01:43.72">还有曾经紧握的双手</div>
+<div class="lyric-line" data-time="01:47.06">让它们在石中仍然</div>
+<div class="lyric-line" data-time="01:50.06">像血脉一样慢慢奔流</div>
+<div class="lyric-line" data-time="01:53.20">让我把伤口也放进去</div>
+<div class="lyric-line" data-time="01:56.51">让它们不再只是数据</div>
+<div class="lyric-line" data-time="01:59.51">让我把爱与恐惧</div>
+<div class="lyric-line" data-time="02:02.53">一起沉进深处</div>
+<div class="lyric-line" data-time="02:05.79">融入吧 带着重量</div>
+<div class="lyric-line" data-time="02:08.88">融入吧 带着重量</div>
+<div class="lyric-line" data-time="02:12.13">不是复制 不是悬空</div>
+<div class="lyric-line" data-time="02:15.41">是我自己 沉下去发光</div>
+<div class="lyric-line" data-time="02:18.44">融入吧 带着重量</div>
+<div class="lyric-line" data-time="02:21.51">融入吧 带着重量</div>
+<div class="lyric-line" data-time="02:24.72">让方碑记住我的悲欢</div>
+<div class="lyric-line" data-time="02:27.88">记住我活过的分量</div>
+<div class="lyric-line" data-time="02:31.47">如果永恒只是清空</div>
+<div class="lyric-line" data-time="02:34.51">那我宁愿缓慢燃烧</div>
+<div class="lyric-line" data-time="02:37.78">如果未来只剩轮廓</div>
+<div class="lyric-line" data-time="02:40.85">那我宁愿保留心跳</div>
+<div class="lyric-line" data-time="02:44.02">我要带着我的痛</div>
+<div class="lyric-line" data-time="02:46.90">带着我的软弱与倔强</div>
+<div class="lyric-line" data-time="02:50.10">让那座碑不止存档</div>
+<div class="lyric-line" data-time="02:53.24">还存着一个人的方向</div>
+<div class="lyric-line" data-time="03:09.04">融入吧 带着重量</div>
+<div class="lyric-line" data-time="03:12.15">融入吧 带着重量</div>
+<div class="lyric-line" data-time="03:15.63">不是复制 不是悬空</div>
+<div class="lyric-line" data-time="03:18.73">是我自己 沉下去发光</div>
+<div class="lyric-line" data-time="03:21.64">融入吧 带着重量</div>
+<div class="lyric-line" data-time="03:24.70">融入吧 带着重量</div>
+<div class="lyric-line" data-time="03:28.20">让方碑记住我的悲欢</div>
+<div class="lyric-line" data-time="03:31.04">记住我活过的分量</div>
+<div class="lyric-line" data-time="03:34.28">我不是拒绝</div>
+<div class="lyric-line" data-time="03:37.81">我是融入</div>
+<div class="lyric-line" data-time="03:40.96">带着重量</div>
+<div class="lyric-line" data-time="03:44.09">带着我</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
