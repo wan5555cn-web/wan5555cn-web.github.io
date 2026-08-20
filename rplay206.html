@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《第十一站》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/第十一站.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/第十一站.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse 音乐]</div>
+<div class="lyric-line" data-time="00:18.65">你看这深夜的第十一站</div>
+<div class="lyric-line" data-time="00:21.62">下车的人都很匆忙</div>
+<div class="lyric-line" data-time="00:24.55">我也想快点穿过这阵凉</div>
+<div class="lyric-line" data-time="00:27.62">回到那个有热汤的房</div>
+<div class="lyric-line" data-time="00:30.74">可心里那团火还在烧</div>
+<div class="lyric-line" data-time="00:33.10">怎么也扑不灭 怎么也放不掉</div>
+<div class="lyric-line" data-time="00:36.89">像旧伤口被风一吹</div>
+<div class="lyric-line" data-time="00:40.03">就又疼得我说不出话</div>
+<div class="lyric-line" data-time="00:43.20">也许路途真的漫长</div>
+<div class="lyric-line" data-time="00:46.07">也许跌倒会弄脏衣裳</div>
+<div class="lyric-line" data-time="00:49.16">可我还在往前走</div>
+<div class="lyric-line" data-time="00:51.97">把眼泪咽进胸膛</div>
+<div class="lyric-line" data-time="00:55.31">第十一站 别让我停下</div>
+<div class="lyric-line" data-time="00:58.30">第十一站 我还想回家</div>
+<div class="lyric-line" data-time="01:01.42">只要还有一束星光</div>
+<div class="lyric-line" data-time="01:04.71">就别把我交给黑夜吧</div>
+<div class="lyric-line" data-time="01:07.59">第十一站 别让我停下</div>
+<div class="lyric-line" data-time="01:10.67">第十一站 我还想回家</div>
+<div class="lyric-line" data-time="01:13.88">它会落在我们肩上</div>
+<div class="lyric-line" data-time="01:16.96">把这一路的伤照亮</div>
+<div class="lyric-line" data-time="01:26.21">我把沉默塞进了衣领</div>
+<div class="lyric-line" data-time="01:29.10">把疲惫藏进了掌心</div>
+<div class="lyric-line" data-time="01:32.11">路边的风一遍遍提醒</div>
+<div class="lyric-line" data-time="01:35.14">没人能替我走完这程</div>
+<div class="lyric-line" data-time="01:38.34">可我听见远处有回声</div>
+<div class="lyric-line" data-time="01:41.31">像有人在替我撑着梦</div>
+<div class="lyric-line" data-time="01:44.54">哪怕脚步已经发沉</div>
+<div class="lyric-line" data-time="01:47.46">我也要把自己抱紧</div>
+<div class="lyric-line" data-time="01:50.88">也许路途真的漫长</div>
+<div class="lyric-line" data-time="01:53.80">也许跌倒会弄脏衣裳</div>
+<div class="lyric-line" data-time="01:56.83">可我还在往前走</div>
+<div class="lyric-line" data-time="01:59.85">把眼泪咽进胸膛</div>
+<div class="lyric-line" data-time="02:03.02">第十一站 别让我停下</div>
+<div class="lyric-line" data-time="02:05.98">第十一站 我还想回家</div>
+<div class="lyric-line" data-time="02:09.05">只要还有一束星光</div>
+<div class="lyric-line" data-time="02:12.21">就别把我交给黑夜吧</div>
+<div class="lyric-line" data-time="02:15.20">第十一站 别让我停下</div>
+<div class="lyric-line" data-time="02:18.52">第十一站 我还想回家</div>
+<div class="lyric-line" data-time="02:21.49">它会落在我们肩上</div>
+<div class="lyric-line" data-time="02:24.55">把这一路的伤照亮</div>
+<div class="lyric-line" data-time="02:27.72">要是明天还会刮风</div>
+<div class="lyric-line" data-time="02:30.71">就让我先学会原谅</div>
+<div class="lyric-line" data-time="02:33.77">原谅那段走散的时光</div>
+<div class="lyric-line" data-time="02:36.76">原谅我曾经的慌张</div>
+<div class="lyric-line" data-time="02:39.60">我不是不怕</div>
+<div class="lyric-line" data-time="02:41.65">只是还没认输啊</div>
+<div class="lyric-line" data-time="02:46.05">等天边再亮一点</div>
+<div class="lyric-line" data-time="02:48.17">我就能把你认回家</div>
+<div class="lyric-line" data-time="02:52.27">第十一站 别让我停下</div>
+<div class="lyric-line" data-time="02:55.26">第十一站 我还想回家</div>
+<div class="lyric-line" data-time="02:58.31">只要还有一束星光</div>
+<div class="lyric-line" data-time="03:01.62">就别把我交给黑夜吧</div>
+<div class="lyric-line" data-time="03:04.32">第十一站 别让我停下</div>
+<div class="lyric-line" data-time="03:07.53">第十一站 我还想回家</div>
+<div class="lyric-line" data-time="03:10.68">它会落在我们肩上</div>
+<div class="lyric-line" data-time="03:13.58">把这一路的伤照亮</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
