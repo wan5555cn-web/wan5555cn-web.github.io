@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《极端重要》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/极端重要.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/极端重要.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse 音乐]</div>
+<div class="lyric-line" data-time="00:13.16">早在二零一三年八月十九日</div>
+<div class="lyric-line" data-time="00:17.16">那一场会 我记得清楚</div>
+<div class="lyric-line" data-time="00:19.79">总书记一句一句</div>
+<div class="lyric-line" data-time="00:21.87">落在我心里 像石头入湖</div>
+<div class="lyric-line" data-time="00:25.99">全国宣传思想工作会议上</div>
+<div class="lyric-line" data-time="00:29.70">话不多 却分量很足</div>
+<div class="lyric-line" data-time="00:32.21">他说得那么坚定</div>
+<div class="lyric-line" data-time="00:34.15">我也跟着沉住了呼吸</div>
+<div class="lyric-line" data-time="00:38.06">当时我就在想</div>
+<div class="lyric-line" data-time="00:41.86">这不是寻常的叮嘱</div>
+<div class="lyric-line" data-time="00:45.12">是风向 是坐标</div>
+<div class="lyric-line" data-time="00:48.25">是万千人心里的归处</div>
+<div class="lyric-line" data-time="00:50.99">意识形态工作</div>
+<div class="lyric-line" data-time="00:53.37">是极端重要的工作</div>
+<div class="lyric-line" data-time="00:57.20">这句话 重又重</div>
+<div class="lyric-line" data-time="01:00.33">像钟声 敲在胸口</div>
+<div class="lyric-line" data-time="01:03.77">意识形态工作</div>
+<div class="lyric-line" data-time="01:06.17">是极端重要的工作</div>
+<div class="lyric-line" data-time="01:09.90">守住这道光</div>
+<div class="lyric-line" data-time="01:12.27">人心才不迷路</div>
+<div class="lyric-line" data-time="01:17.27">当大多数世人</div>
+<div class="lyric-line" data-time="01:18.47">还在实体态奔忙</div>
+<div class="lyric-line" data-time="01:20.29">我们已经抬起头</div>
+<div class="lyric-line" data-time="01:21.85">看见更深处的方向</div>
+<div class="lyric-line" data-time="01:23.77">不是空谈的高处</div>
+<div class="lyric-line" data-time="01:25.17">不是飘着走的云端</div>
+<div class="lyric-line" data-time="01:26.92">是把每一句话</div>
+<div class="lyric-line" data-time="01:28.36">都说进时代的土壤</div>
+<div class="lyric-line" data-time="01:30.47">有人忙着追赶</div>
+<div class="lyric-line" data-time="01:31.63">也有人静静守望</div>
+<div class="lyric-line" data-time="01:33.18">守住思想的堤岸</div>
+<div class="lyric-line" data-time="01:34.58">才有河流奔向远方</div>
+<div class="lyric-line" data-time="01:36.30">我明白那一刻</div>
+<div class="lyric-line" data-time="01:37.82">不是一句口号而已</div>
+<div class="lyric-line" data-time="01:41.87">是把根扎稳</div>
+<div class="lyric-line" data-time="01:45.06">让日子有力气</div>
+<div class="lyric-line" data-time="01:48.46">意识形态工作</div>
+<div class="lyric-line" data-time="01:50.69">是极端重要的工作</div>
+<div class="lyric-line" data-time="01:54.71">这句话 重又重</div>
+<div class="lyric-line" data-time="01:57.80">像钟声 敲在胸口</div>
+<div class="lyric-line" data-time="02:01.37">意识形态工作</div>
+<div class="lyric-line" data-time="02:03.74">是极端重要的工作</div>
+<div class="lyric-line" data-time="02:07.47">守住这道光</div>
+<div class="lyric-line" data-time="02:09.96">人心才不迷路</div>
+<div class="lyric-line" data-time="02:14.14">后来我越想越明白</div>
+<div class="lyric-line" data-time="02:17.32">越是走得快 越要站得稳</div>
+<div class="lyric-line" data-time="02:21.23">越是路很长</div>
+<div class="lyric-line" data-time="02:24.46">越要知道为什么出发</div>
+<div class="lyric-line" data-time="02:27.61">不是追热闹</div>
+<div class="lyric-line" data-time="02:30.12">不是只看一时喧哗</div>
+<div class="lyric-line" data-time="02:33.17">是把方向看清</div>
+<div class="lyric-line" data-time="02:34.75">把信念种进每个早晨里</div>
+<div class="lyric-line" data-time="02:39.58">意识形态工作</div>
+<div class="lyric-line" data-time="02:42.16">是极端重要的工作</div>
+<div class="lyric-line" data-time="02:45.96">这句话 重又重</div>
+<div class="lyric-line" data-time="02:49.17">像钟声 敲在胸口</div>
+<div class="lyric-line" data-time="02:52.52">意识形态工作</div>
+<div class="lyric-line" data-time="02:54.85">是极端重要的工作</div>
+<div class="lyric-line" data-time="02:58.66">守住这道光</div>
+<div class="lyric-line" data-time="03:01.05">人心才不迷路</div>
+<div class="lyric-line" data-time="03:05.28">意识形态工作</div>
+<div class="lyric-line" data-time="03:07.79">是极端重要的工作</div>
+<div class="lyric-line" data-time="03:11.70">与时俱进的脚步</div>
+<div class="lyric-line" data-time="03:14.88">走得更坚定 更清楚</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
