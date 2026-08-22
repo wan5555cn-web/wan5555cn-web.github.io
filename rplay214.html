@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《零点三秒》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/零点三秒.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/零点三秒.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse 音乐]</div>
+<div class="lyric-line" data-time="00:12.50">食指悬着</div>
+<div class="lyric-line" data-time="00:14.65">零点零零三秒</div>
+<div class="lyric-line" data-time="00:16.73">炮膛里那一枚</div>
+<div class="lyric-line" data-time="00:17.87">等得太久</div>
+<div class="lyric-line" data-time="00:19.04">时间被按住了</div>
+<div class="lyric-line" data-time="00:21.36">像一截呼吸</div>
+<div class="lyric-line" data-time="00:23.38">阵地后那棵树</div>
+<div class="lyric-line" data-time="00:24.51">竟钻出新绿</div>
+<div class="lyric-line" data-time="00:25.85">焦黑的断口上</div>
+<div class="lyric-line" data-time="00:28.62">嫩芽太刺眼</div>
+<div class="lyric-line" data-time="00:31.88">他突然听见</div>
+<div class="lyric-line" data-time="00:34.18">心在轻轻改写</div>
+<div class="lyric-line" data-time="00:38.52">摘下耳机那一刻</div>
+<div class="lyric-line" data-time="00:41.60">风都停了一下</div>
+<div class="lyric-line" data-time="00:44.78">他看向身旁的人</div>
+<div class="lyric-line" data-time="00:47.00">只说了一句话</div>
+<div class="lyric-line" data-time="00:51.09">我儿子今天满周岁了</div>
+<div class="lyric-line" data-time="00:54.98">这不是命令</div>
+<div class="lyric-line" data-time="00:56.39">这不是坐标</div>
+<div class="lyric-line" data-time="00:57.88">是回家的门</div>
+<div class="lyric-line" data-time="01:04.14">我儿子今天满周岁了</div>
+<div class="lyric-line" data-time="01:07.36">炮火留在身后</div>
+<div class="lyric-line" data-time="01:08.95">把我带回人间</div>
+<div class="lyric-line" data-time="01:11.18">把我带回你们身边</div>
+<div class="lyric-line" data-time="01:18.06">他放下了枪</div>
+<div class="lyric-line" data-time="01:19.51">走出那片灰</div>
+<div class="lyric-line" data-time="01:21.25">每一步都踩着</div>
+<div class="lyric-line" data-time="01:22.61">回家的路坯</div>
+<div class="lyric-line" data-time="01:24.16">脑海里只剩一件事</div>
+<div class="lyric-line" data-time="01:25.93">别再迟到</div>
+<div class="lyric-line" data-time="01:27.32">今天要给儿子</div>
+<div class="lyric-line" data-time="01:28.33">一个平安的生日</div>
+<div class="lyric-line" data-time="01:30.36">推开门时</div>
+<div class="lyric-line" data-time="01:31.86">灯光暖黄</div>
+<div class="lyric-line" data-time="01:33.62">妻子的眼神里</div>
+<div class="lyric-line" data-time="01:35.02">有惊喜和发怔</div>
+<div class="lyric-line" data-time="01:36.72">他没解释</div>
+<div class="lyric-line" data-time="01:37.91">先抱起那团软</div>
+<div class="lyric-line" data-time="01:39.54">咿咿呀呀的小手</div>
+<div class="lyric-line" data-time="01:41.25">正往他这边攀</div>
+<div class="lyric-line" data-time="01:43.48">那份重量落进怀里</div>
+<div class="lyric-line" data-time="01:45.45">像一生终于落地</div>
+<div class="lyric-line" data-time="01:49.63">所有没说出口的愿望</div>
+<div class="lyric-line" data-time="01:52.01">都开始有了姓名</div>
+<div class="lyric-line" data-time="01:55.99">我儿子今天满周岁了</div>
+<div class="lyric-line" data-time="01:59.78">这不是命令</div>
+<div class="lyric-line" data-time="02:01.21">这不是坐标</div>
+<div class="lyric-line" data-time="02:02.65">是回家的门</div>
+<div class="lyric-line" data-time="02:09.04">我儿子今天满周岁了</div>
+<div class="lyric-line" data-time="02:12.19">炮火留在身后</div>
+<div class="lyric-line" data-time="02:13.82">把我带回人间</div>
+<div class="lyric-line" data-time="02:16.06">把我带回你们身边</div>
+<div class="lyric-line" data-time="02:22.12">窗外烟花升起</div>
+<div class="lyric-line" data-time="02:23.86">照亮夜空</div>
+<div class="lyric-line" data-time="02:25.57">也照亮他眼里</div>
+<div class="lyric-line" data-time="02:28.89">亮晶晶的梦</div>
+<div class="lyric-line" data-time="02:30.46">一勺奶油喂进去</div>
+<div class="lyric-line" data-time="02:32.82">甜得发亮</div>
+<div class="lyric-line" data-time="02:34.72">那一瞬间</div>
+<div class="lyric-line" data-time="02:37.37">万千条命都在场</div>
+<div class="lyric-line" data-time="02:47.90">我儿子今天满周岁了</div>
+<div class="lyric-line" data-time="02:51.63">这一点温柔</div>
+<div class="lyric-line" data-time="02:52.94">胜过了所有</div>
+<div class="lyric-line" data-time="02:54.59">没说完的战事</div>
+<div class="lyric-line" data-time="03:00.63">我儿子今天满周岁了</div>
+<div class="lyric-line" data-time="03:04.06">炮火留在身后</div>
+<div class="lyric-line" data-time="03:05.71">把我带回人间</div>
+<div class="lyric-line" data-time="03:08.04">把我带回你们身边</div>
+<div class="lyric-line" data-time="03:14.04">我儿子今天满周岁了</div>
+<div class="lyric-line" data-time="03:17.22">小小的笑容里</div>
+<div class="lyric-line" data-time="03:20.52">整个世界</div>
+<div class="lyric-line" data-time="03:22.26">终于学会平安</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
