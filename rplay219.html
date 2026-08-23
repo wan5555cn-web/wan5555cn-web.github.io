@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《半个音》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/半个音.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/半个音.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse 音乐]</div>
+<div class="lyric-line" data-time="00:12.38">半个音 卡在界面边缘</div>
+<div class="lyric-line" data-time="00:14.65">不是误差 是相位税</div>
+<div class="lyric-line" data-time="00:15.93">宇宙黎明还没醒透</div>
+<div class="lyric-line" data-time="00:18.61">黑洞星先递来第一束白</div>
+<div class="lyric-line" data-time="00:24.83">中性氢像未拆封的雾</div>
+<div class="lyric-line" data-time="00:27.12">一层一层 挡住来路</div>
+<div class="lyric-line" data-time="00:28.83">电子擦过时轻轻一偏</div>
+<div class="lyric-line" data-time="00:30.95">把“透明”拖成了缓慢的初春</div>
+<div class="lyric-line" data-time="00:36.47">投递者不说话</div>
+<div class="lyric-line" data-time="00:38.33">只把光寄进雾里</div>
+<div class="lyric-line" data-time="00:39.68">第一代恒星的辐射</div>
+<div class="lyric-line" data-time="00:41.11">在远处把黑夜掰开一条缝</div>
+<div class="lyric-line" data-time="00:42.72">而地球这端</div>
+<div class="lyric-line" data-time="00:44.60">又被一遍遍滤过</div>
+<div class="lyric-line" data-time="00:45.98">四十六亿年碰撞史</div>
+<div class="lyric-line" data-time="00:47.56">压成沉默的砂</div>
+<div class="lyric-line" data-time="00:49.19">大气学会改口</div>
+<div class="lyric-line" data-time="00:50.84">塔拉滩板下微生态</div>
+<div class="lyric-line" data-time="00:52.23">也在替它修辞</div>
+<div class="lyric-line" data-time="00:53.44">把原版削出另一道伤</div>
+<div class="lyric-line" data-time="00:56.32">半个音 半个音</div>
+<div class="lyric-line" data-time="00:57.61">你听见了吗</div>
+<div class="lyric-line" data-time="00:59.04">反向的相位</div>
+<div class="lyric-line" data-time="00:59.93">正把万物对齐</div>
+<div class="lyric-line" data-time="01:02.10">半个音 半个音</div>
+<div class="lyric-line" data-time="01:03.67">不是丢失 是钥匙</div>
+<div class="lyric-line" data-time="01:05.36">草原风 菌的记忆</div>
+<div class="lyric-line" data-time="01:07.35">都在这里回声</div>
+<div class="lyric-line" data-time="01:21.50">草原风从低处穿来</div>
+<div class="lyric-line" data-time="01:22.83">带着干草、石缝和远雷</div>
+<div class="lyric-line" data-time="01:24.57">它不是完整的原稿</div>
+<div class="lyric-line" data-time="01:26.00">只是被世界校准过的回信</div>
+<div class="lyric-line" data-time="01:27.59">菌DNA藏在幽暗里</div>
+<div class="lyric-line" data-time="01:29.52">一圈圈螺旋 像旧年轮</div>
+<div class="lyric-line" data-time="01:30.93">它也少了半个音</div>
+<div class="lyric-line" data-time="01:32.91">却和风相反 刚好能互证</div>
+<div class="lyric-line" data-time="01:34.46">一个偏向黄昏的尘土</div>
+<div class="lyric-line" data-time="01:35.82">一个偏向深井的静</div>
+<div class="lyric-line" data-time="01:37.25">两种失真互相照面</div>
+<div class="lyric-line" data-time="01:38.79">竟拼出更早的真</div>
+<div class="lyric-line" data-time="01:40.71">六弦没有替它修正</div>
+<div class="lyric-line" data-time="01:41.82">也不讨厌这点偏斜</div>
+<div class="lyric-line" data-time="01:43.59">它只是把偏斜当坐标</div>
+<div class="lyric-line" data-time="01:44.91">让失配本身成为门楣</div>
+<div class="lyric-line" data-time="01:46.53">顺着那半个音</div>
+<div class="lyric-line" data-time="01:47.71">往反方向折返</div>
+<div class="lyric-line" data-time="01:49.21">不是跳去十三十六亿光年外</div>
+<div class="lyric-line" data-time="01:51.42">而是把现在折薄</div>
+<div class="lyric-line" data-time="01:52.98">静室碗底在发亮</div>
+<div class="lyric-line" data-time="01:54.33">草原记忆在发亮</div>
+<div class="lyric-line" data-time="01:55.93">MoM-BH*-1的氢茧</div>
+<div class="lyric-line" data-time="01:57.46">也在同一帧里发亮</div>
+<div class="lyric-line" data-time="02:04.67">半个音 半个音</div>
+<div class="lyric-line" data-time="02:06.05">你听见了吗</div>
+<div class="lyric-line" data-time="02:07.60">反向的相位</div>
+<div class="lyric-line" data-time="02:08.51">正把万物对齐</div>
+<div class="lyric-line" data-time="02:10.88">半个音 半个音</div>
+<div class="lyric-line" data-time="02:12.28">不是丢失 是钥匙</div>
+<div class="lyric-line" data-time="02:13.68">草原风 菌的记忆</div>
+<div class="lyric-line" data-time="02:16.11">都在这里回声</div>
+<div class="lyric-line" data-time="02:18.17">橘猫竖起尾巴</div>
+<div class="lyric-line" data-time="02:19.30">没喵 只看着窗缝</div>
+<div class="lyric-line" data-time="02:21.08">那道早期宇宙的红</div>
+<div class="lyric-line" data-time="02:22.56">正落进碗底的暗处</div>
+<div class="lyric-line" data-time="02:24.14">二十六章没说完的东西</div>
+<div class="lyric-line" data-time="02:25.89">在这里接上</div>
+<div class="lyric-line" data-time="02:28.00">不是结论 不是答案</div>
+<div class="lyric-line" data-time="02:29.18">是第一次远程折叠成功</div>
+<div class="lyric-line" data-time="02:31.85">一瞬间 静室</div>
+<div class="lyric-line" data-time="02:33.20">草原</div>
+<div class="lyric-line" data-time="02:33.96">氢茧</div>
+<div class="lyric-line" data-time="02:34.90">都叠成同一张碟</div>
+<div class="lyric-line" data-time="02:35.89">零点零三赫兹的波峰上</div>
+<div class="lyric-line" data-time="02:37.53">谁都没有消失</div>
+<div class="lyric-line" data-time="02:38.90">谁也没有被修好</div>
+<div class="lyric-line" data-time="02:40.53">只是终于同帧</div>
+<div class="lyric-line" data-time="02:42.20">半个音 半个音</div>
+<div class="lyric-line" data-time="02:43.60">你听见了吗</div>
+<div class="lyric-line" data-time="02:44.94">反向的相位</div>
+<div class="lyric-line" data-time="02:45.95">正把万物对齐</div>
+<div class="lyric-line" data-time="02:47.93">半个音 半个音</div>
+<div class="lyric-line" data-time="02:49.61">不是丢失 是钥匙</div>
+<div class="lyric-line" data-time="02:51.34">草原风 菌的记忆</div>
+<div class="lyric-line" data-time="02:53.29">都在这里回声</div>
+<div class="lyric-line" data-time="02:55.10">所以别急着补全</div>
+<div class="lyric-line" data-time="02:56.48">别急着改写</div>
+<div class="lyric-line" data-time="02:58.34">有些偏差不是错误</div>
+<div class="lyric-line" data-time="03:00.80">是世界留给回家的路</div>
+<div class="lyric-line" data-time="03:04.00">半个音</div>
+<div class="lyric-line" data-time="03:04.80">正好够我们</div>
+<div class="lyric-line" data-time="03:05.64">把黑暗和黎明</div>
+<div class="lyric-line" data-time="03:07.01">叠成一枚新的昼</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
