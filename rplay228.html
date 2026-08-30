@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《命心》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/命心.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="/mp3/命心.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Tunee 音乐]</div>
+<div class="lyric-line" data-time="00:14.70">胸膛里这块石头</div>
+<div class="lyric-line" data-time="00:17.59">到底捂着谁留的火</div>
+<div class="lyric-line" data-time="00:21.45">风一吹它就醒</div>
+<div class="lyric-line" data-time="00:22.87">像个没长大的疯子</div>
+<div class="lyric-line" data-time="00:24.62">想冲出门去</div>
+<div class="lyric-line" data-time="00:27.89">骨头被烫得发疼</div>
+<div class="lyric-line" data-time="00:31.06">我也没打算认输</div>
+<div class="lyric-line" data-time="00:34.95">他们说安分一点不好吗</div>
+<div class="lyric-line" data-time="00:37.51">日子本来就是拿来耗的</div>
+<div class="lyric-line" data-time="00:42.03">可我夜里闭上眼睛</div>
+<div class="lyric-line" data-time="00:43.69">全是一整片烧红的荒原</div>
+<div class="lyric-line" data-time="00:49.51">我拿这条命去供着这颗心</div>
+<div class="lyric-line" data-time="00:52.70">不为赢给谁看</div>
+<div class="lyric-line" data-time="00:55.09">(就这一次)</div>
+<div class="lyric-line" data-time="00:56.62">只怕到头来连灰都不剩</div>
+<div class="lyric-line" data-time="00:59.71">还要假装自己从未痛过</div>
+<div class="lyric-line" data-time="01:03.68">这把火生来就要烧</div>
+<div class="lyric-line" data-time="01:06.99">哪怕把我化成灰烬</div>
+<div class="lyric-line" data-time="01:09.16">(化成灰烬)</div>
+<div class="lyric-line" data-time="01:10.78">我也要撞出一条路</div>
+<div class="lyric-line" data-time="01:12.95">去看看天亮前那一刻的光</div>
+<div class="lyric-line" data-time="01:18.28">手掌上的茧磨了又破</div>
+<div class="lyric-line" data-time="01:20.89">没人在乎你摔得有多难看</div>
+<div class="lyric-line" data-time="01:24.01">可那点火星偏偏不灭</div>
+<div class="lyric-line" data-time="01:26.80">非要在最冷的夜里亮着</div>
+<div class="lyric-line" data-time="01:29.53">嘲笑我所有的退路</div>
+<div class="lyric-line" data-time="01:31.41">别问我值不值得</div>
+<div class="lyric-line" data-time="01:33.63">答案早就刻在跳动的心口</div>
+<div class="lyric-line" data-time="01:38.36">既然生来带了一腔孤勇</div>
+<div class="lyric-line" data-time="01:41.14">就别怪我走得太决绝</div>
+<div class="lyric-line" data-time="01:46.00">我拿这条命去供着这颗心</div>
+<div class="lyric-line" data-time="01:49.05">不为赢给谁看</div>
+<div class="lyric-line" data-time="01:51.54">(就这一次)</div>
+<div class="lyric-line" data-time="01:52.96">只怕到头来连灰都不剩</div>
+<div class="lyric-line" data-time="01:56.14">还要假装自己从未痛过</div>
+<div class="lyric-line" data-time="02:00.14">这把火生来就要烧</div>
+<div class="lyric-line" data-time="02:03.38">哪怕把我化成灰烬</div>
+<div class="lyric-line" data-time="02:06.09">(化成灰烬)</div>
+<div class="lyric-line" data-time="02:07.12">我也要撞出一条路</div>
+<div class="lyric-line" data-time="02:29.41">我问过它很多次</div>
+<div class="lyric-line" data-time="02:31.94">为什么非要这样折腾自己</div>
+<div class="lyric-line" data-time="02:35.85">它在最深处跳了一下</div>
+<div class="lyric-line" data-time="02:38.63">什么话也没说</div>
+<div class="lyric-line" data-time="02:56.86">去看看天亮前那一刻的光</div>
+<div class="lyric-line" data-time="02:58.30">我拿这条命去供着这颗心</div>
+<div class="lyric-line" data-time="02:59.99">烧到最后一口气</div>
+<div class="lyric-line" data-time="03:01.56">(决不回头)</div>
+<div class="lyric-line" data-time="03:03.26">如果这就是我活着的理由</div>
+<div class="lyric-line" data-time="03:06.73">那就把夜空彻底撕开</div>
+<div class="lyric-line" data-time="03:10.75">让所有沉默的暗礁都看清</div>
+<div class="lyric-line" data-time="03:17.85">这里曾经有过一把不熄的火</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.3) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
