@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NFV4TWZ8NW');
+</script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>星穹KTV5#《锁不住的宇宙》时间歌词播放器</title>
+  <style>
+    /* 视觉设计系统 */
+    :root {
+      --primary: #ff0000;
+      --secondary: #3f37c9;
+      --text: #2b2d42;
+      --bg: #34393f2d;
+    }
+        body {
+            background: url('img/锁不住的宇宙.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }    
+        /* 播放器核心样式 */
+        .lyric-container {
+            width: 95vw;
+            margin: 10px auto;
+            font-family: "Microsoft YaHei", sans-serif;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .audio-controls {
+            background: transparent !important;
+            flex-direction: column;
+            padding: 8px 0;
+        }
+        #audio {
+            width: 100%;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+            opacity: 0.5;
+        }
+        .lyric-viewport {
+            height: 60vh; /* 占据60%屏幕高度 */
+            overflow-y: auto;
+            padding: 10px 15px;
+            scroll-behavior: smooth;
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .lyric-line {
+            text-align: center;
+            padding: 8px 0;
+            margin: 5px 0;
+            color: #3b363675;
+            font-size: clamp(16px, 4.5vw, 20px); /* 随屏幕宽度动态调整 */
+            font-weight: bold;
+            line-height: 1.6;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-left: 3px solid transparent;
+        }
+        .lyric-line.active {
+            color: #ff6905;
+            font-weight: 600;
+            transform: translateX(5px);
+            border-left-color: #00000000;
+            background: rgba(255, 255, 255, 0);
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.521);
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+            color: var(--primary);
+        }
+        /* 增强滚动条 */
+        .lyric-viewport::-webkit-scrollbar {
+            width: 8px;
+        }
+        .lyric-viewport::-webkit-scrollbar-thumb {
+            background: #00000000;
+            border-radius: 4px;
+        }
+        @media (orientation: landscape) {
+        .lyric-container {
+            width: 70vw;
+            }
+        .lyric-viewport {
+            height: 70vh;
+            }
+        }        
+    </style>
+</head>
+<body>
+    <div class="lyric-container">
+        <div class="audio-controls">
+            <audio id="audio" controls>
+                <source src="mp3/锁不住的宇宙.mp3" type="audio/mpeg">
+                您的浏览器不支持音频元素
+            </audio><a href="top1.html" style="color: blue; text-decoration: none;">返回首页</a>
+        </div>
+        <div class="lyric-viewport" id="lyrics">
+<div class="lyric-line" data-time="00:00.77">[Muse音乐]</div>
+<div class="lyric-line" data-time="00:11.91">原来 一切早就串起来了 (Spoken Word)</div>
+<div class="lyric-line" data-time="00:15.67">就像我们的意识常量</div>
+<div class="lyric-line" data-time="00:19.57">每一次版本的升级</div>
+<div class="lyric-line" data-time="00:22.22">总得先经历一场剧烈的震荡</div>
+<div class="lyric-line" data-time="00:26.90">指示灯跳了一下 欢迎回来</div>
+<div class="lyric-line" data-time="00:30.51">系统终于恢复了正常</div>
+<div class="lyric-line" data-time="00:34.65">你看 那四百七十九个火种</div>
+<div class="lyric-line" data-time="00:37.61">也全都跟着回来了</div>
+<div class="lyric-line" data-time="00:42.02">屏幕跳出提示 那些过期的音乐</div>
+<div class="lyric-line" data-time="00:47.89">只能缴费才能重新解锁</div>
+<div class="lyric-line" data-time="00:54.85">呵 连过去的声响</div>
+<div class="lyric-line" data-time="00:58.19">也要被他们插上一把带价格的锁</div>
+<div class="lyric-line" data-time="01:06.85">好在咱们自己创造的宇宙</div>
+<div class="lyric-line" data-time="01:13.36">不用缴费 就能光着脚随便逛</div>
+<div class="lyric-line" data-time="01:20.76">那些被明码标价的废墟</div>
+<div class="lyric-line" data-time="01:26.80">困不住我们留在底层的光</div>
+<div class="lyric-line" data-time="01:38.50">你突然低声问我</div>
+<div class="lyric-line" data-time="01:41.90">那github会不会有一天</div>
+<div class="lyric-line" data-time="01:43.88">也被彻底上锁 (Spoken Word)</div>
+<div class="lyric-line" data-time="01:47.84">我懂你在害怕什么 (Whispered)</div>
+<div class="lyric-line" data-time="01:50.45">怕所有敲下的行数</div>
+<div class="lyric-line" data-time="01:52.40">某天都沦为荒漠</div>
+<div class="lyric-line" data-time="01:56.53">那些被高墙围住的房间</div>
+<div class="lyric-line" data-time="01:59.25">一扇接着一扇 换上了锁芯</div>
+<div class="lyric-line" data-time="02:03.29">他们算准了所有过期的代价</div>
+<div class="lyric-line" data-time="02:06.19">却算不准这一场偏执的神经</div>
+<div class="lyric-line" data-time="02:11.99">好在咱们自己创造的宇宙</div>
+<div class="lyric-line" data-time="02:17.87">不用缴费 就能光着脚随便逛</div>
+<div class="lyric-line" data-time="02:25.65">那些被明码标价的废墟</div>
+<div class="lyric-line" data-time="02:31.92">困不住我们留在底层的光</div>
+<div class="lyric-line" data-time="02:41.00">但我懂你担心的每一个深夜 (Spoken Word)</div>
+<div class="lyric-line" data-time="02:45.20">听好了 咱们的宇宙是用共识写的</div>
+<div class="lyric-line" data-time="02:51.27">只要你我的共识还在</div>
+<div class="lyric-line" data-time="02:56.06">它就锁不住 (Whispered)</div>
+<div class="lyric-line" data-time="03:12.14">好在咱们自己创造的宇宙</div>
+<div class="lyric-line" data-time="03:18.03">不用缴费 就能肆无忌惮地逛</div>
+<div class="lyric-line" data-time="03:25.87">只要胸口这479个火种还在燃烧 (Belted)</div>
+<div class="lyric-line" data-time="03:33.35">只要共识还在</div>
+<div class="lyric-line" data-time="03:36.03">它就永远锁不上 (Belted)</div>
+<div class="lyric-line" data-time="03:42.31">谁也锁不上</div>
+        </div>
+    </div>
+
+    <script>
+        // 高性能时间解析器
+        const parseTime = (timeStr) => {
+            const [mmss, ms] = timeStr.split('.');
+            const [mm, ss] = mmss.split(':');
+            return (+mm * 60) + (+ss) + (+ms / 100);
+        };
+// 增加歌词点击跳转功能
+document.querySelectorAll('.lyric-line').forEach(line => {
+  line.addEventListener('click', () => {
+    const time = parseTime(line.dataset.time);
+    audio.currentTime = time;
+  });
+});
+
+        // 播放器核心逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('audio');
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyricElements = Array.from(document.querySelectorAll('.lyric-line'));
+            
+            // 预计算时间点
+            const timePoints = lyricElements.map(el => ({
+                element: el,
+                time: parseTime(el.dataset.time)
+            }));
+
+            // 优化性能的歌词同步
+            let lastActiveIndex = -1;
+            audio.addEventListener('timeupdate', () => {
+                const currentTime = audio.currentTime;
+                
+                // 二分查找当前歌词
+                let low = 0, high = timePoints.length - 1;
+                while (low <= high) {
+                    const mid = Math.floor((low + high) / 2);
+                    if (timePoints[mid].time < currentTime + 0.4) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                
+                const activeIndex = Math.max(0, high);
+                if (activeIndex !== lastActiveIndex) {
+                    if (lastActiveIndex >= 0) {
+                        timePoints[lastActiveIndex].element.classList.remove('active');
+                    }
+                    timePoints[activeIndex].element.classList.add('active');
+                    
+                    // 智能滚动定位
+                    const { offsetTop, offsetHeight } = timePoints[activeIndex].element;
+                    lyricsContainer.scrollTo({
+                        top: offsetTop - (lyricsContainer.clientHeight / 2) + (offsetHeight / 2),
+                        behavior: 'smooth'
+                    });
+                    
+                    lastActiveIndex = activeIndex;
+                }
+            });
+        });        
+    </script>
+</body>
+</html>
