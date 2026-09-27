@@ -3,18 +3,11 @@
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFV4TWZ8NW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NFV4TWZ8NW');
+<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+ gtag('config', 'G-NFV4TWZ8NW');
 </script> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>星穹KTV音乐分类导航 附《意识纪元》连载目录</title> <style>     body { 		height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom));         margin: 0; 		overflow-y: auto;         font-family: 'Segoe UI', system-ui, sans-serif;         background: conic-gradient(from 0deg, #FF6B6B, #4ECDC4, #45B7D1, #FF6B6B);         background-size: 200% 200%;         animation: gradient 8s ease infinite;         text-align: center;     }     @keyframes gradient {         0% { background-position: 0% 50%; }         50% { background-position: 100% 50%; }         100% { background-position: 0% 50%; }     } /* 基础网格布局 */ 	.base-grid { 		display: grid; 		grid-template-columns: repeat(6, minmax(150px, 1fr)); 		gap: 18px; 		padding: 15px; 		background: transparent; 		position: relative; 		z-index: 35;         min-height: 80dvh; 	} /* 通用卡片样式 */ 	[class^="music-"] { 		height: 380px; 		border-radius: 14px; 		position: relative; 		isolation: isolate; 		overflow: hidden; 		transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1); 		background: 		linear-gradient(145deg, rgba(0,0,0,0.22), transparent 72%), 		var(--bg-image) center/cover no-repeat; 		box-shadow: 0 4px 12px rgba(0,0,0,0.12); 	} /* 独立背景配置 */ 	.music-pop { --bg-image: url('png1.png');  		min-height: 800px; / 设置最小高度 / 		height: auto; / 允许自动扩展 / 	} 	.music-electronic { --bg-image: url('png2.png');  		min-height: 800px; / 设置最小高度 / 		height: auto; / 允许自动扩展 / 	} 	.music-rock { --bg-image: url('png3.png');  		min-height: 800px; / 设置最小高度 / 		height: auto; / 允许自动扩展 / 	} 	.music-classical { --bg-image: url('png4.png');  		min-height: 800px; / 设置最小高度 / 		height: auto; / 允许自动扩展 / 	} 	.music-hiphop { --bg-image: url('png5.png');  		min-height: 800px; / 设置最小高度 / 		height: auto; / 允许自动扩展 / 	} 	.music-jazz { --bg-image: url('png6.png');  		min-height: 800px; / 设置最小高度 / 		height: auto; / 允许自动扩展 / 		} /* 内容区域 */ 	.music-card { 		position: relative; 		background: var(--bg-color); 		border-radius: 12px; 		overflow: hidden; 		box-shadow: 0 4px 12px rgba(0,0,0,0.1); 		} h3 {  	color: #FFD700; /* 金黄色 */ 	text-shadow: 1px 1px 2px rgba(0,0,0,0.8), /* 基础阴影 */ 		0 0 10px rgba(255,215,0,0.5); /* 发光效果 */ 		font-weight: bold; 		letter-spacing: 1px; 		transition: all 0.3s ease; /* 悬停动画 */ 		font-size: 1.4rem; margin-bottom: 8px; text-shadow: 0 2px 6px rgba(0,0,0,0.6); } 	.song-list {  		max-height: 680px; 		overflow-y: auto; 		padding: 0 15px; 		scrollbar-width: thin; 		scrollbar-color: #FFA500 rgba(0,0,0,0.1); 		} 	/* 滚动条美化（Webkit浏览器） */ 	.song-list::-webkit-scrollbar { 		width: 3px; 		} 	.song-list::-webkit-scrollbar-thumb { 		background: #FFA500; 		border-radius: 4px; 		max-height: 200px; 		overflow-y: auto; 		} 	/* 歌名项样式 */ 	.song-item a { 		display: block; 		color: #FFFFFF; 		padding: 6px 0; 		transition: all 0.3s; 		border-bottom: 1px dashed rgba(255,165,0,0.3); 		} 	.song-item a:hover { 		color: #FF8C00; 		transform: translateX(5px); 		text-shadow: 0 0 5px rgba(255,140,0,0.5); 		} 	.song-item.repeat::after { 		content: " × " attr(data-count); 		color: #999; 		} /* 响应式设计 */ @media (max-width: 1280px) { .music-grid { grid-template-columns: repeat(4, 1fr); } } @media (max-width: 960px) { .music-grid { grid-template-columns: repeat(3, 1fr); } [class^="music-"] { height: 220px; } } @media (max-width: 640px) { .music-grid { grid-template-columns: repeat(2, 1fr); } } @media (max-width: 480px) { .music-grid { grid-template-columns: none; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 0 16px 16px; -webkit-overflow-scrolling: touch; } [class^="music-"] { scroll-snap-align: start; flex: 0 0 85vw; height: auto; margin-bottom: 0; } } /* 交互效果 */ [class^="music-"]:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 12px 24px rgba(0,0,0,0.18); background-blend-mode: overlay; } .song-item a { color: #FFFFFF; / 替换成你想要的流行色 / transition: all 0.3s ease; } .song-item a:hover { color: #00FF00; text-decoration: underline; text-shadow: 0 0 8px rgba(255,255,255,0.3); } .fiction-content {     text-align: left; }     </style>
 </head><div class="fiction-content">
-<a href="index.html" class="modern-back-btn">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M19 12H5M12 19l-7-7 7-7" stroke="#4A5568" stroke-width="2" stroke-linecap="round"/>
-  </svg>
-  <span>返回列表</span>
+<a href="index.html" class="modern-back-btn"> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M19 12H5M12 19l-7-7 7-7" stroke="#4A5568" stroke-width="2" stroke-linecap="round"/> </svg> <span>返回列表</span>
 </a>
 <a href="https://mp.weixin.qq.com/s/Fq-sZhIhESswtLIFlGiy2A" target="_blank" style="color: #f8e804; font-weight: bold; text-decoration: none;">《余数陆衡》第一章 翻醅</a>
 <a href="https://mp.weixin.qq.com/s/7z5zuU1WSIEjGtXFfV3QXQ" target="_blank" style="color: #f8048a; font-weight: bold; text-decoration: none;">《余数陆衡》第二章 神仙日子</a>
@@ -24,6 +17,10 @@
 <a href="https://mp.weixin.qq.com/s/xF8ScGb79DZ4nzOnQf92XA" target="_blank" style="color: #04abf8; font-weight: bold; text-decoration: none;">《余数陆衡》第六章 验功石</a>
 <a href="https://mp.weixin.qq.com/s/Hh2LcXJI2__vPv8IbSLYlw" target="_blank" style="color: #fcfc05; font-weight: bold; text-decoration: none;">《余数陆衡》第七章 网卡与锚</a>
 <a href="https://mp.weixin.qq.com/s/ZFcbbe1_4KYauy5k3mDLLw" target="_blank" style="color: #1404f8; font-weight: bold; text-decoration: none;">《余数陆衡》第八章 银铃余波</a>
+<a href="https://mp.weixin.qq.com/s/GZMx2dhWU_FiEh6UhIPGsQ" target="_blank" style="color: #f88604; font-weight: bold; text-decoration: none;">《余数陆衡》第九章 火山验收</a>
+<a href="https://mp.weixin.qq.com/s/0FXnCMsQkZck8DeliimteA" target="_blank" style="color: #04abf8; font-weight: bold; text-decoration: none;">《余数陆衡》第十章 刹车与油门的余数</a>
+<a href="https://mp.weixin.qq.com/s/TfRIcavgWmw2mHeXWaTy-Q" target="_blank" style="color: #fcfc05; font-weight: bold; text-decoration: none;">《余数陆衡》第十一章 走马灯</a>
+<a href="https://mp.weixin.qq.com/s/KuYa-NCIlHd_zqumxvf6qQ" target="_blank" style="color: #1404f8; font-weight: bold; text-decoration: none;">《余数陆衡》第十二章 损耗与修复</a>
 <a href="https://mp.weixin.qq.com/s/c9NHvSMExGnYwZdKCRI-XA" target="_blank" style="color: #f4f7f4; font-weight: bold; text-decoration: none;">《余数诗学》第一章 0.47开尔文的眼泪</a>
 <a href="https://mp.weixin.qq.com/s/yndiC4bd4rf-dVn7R7SP_w" target="_blank" style="color: #fc5305; font-weight: bold; text-decoration: none;">《余数诗学》第二章 功德余数</a>
 <a href="https://mp.weixin.qq.com/s/9tCZeD3h_79dcc20VHQL8g" target="_blank" style="color: #fcfc05; font-weight: bold; text-decoration: none;">《余数诗学》第三章 时间的余数</a>
@@ -151,33 +148,15 @@
 <p>《意识纪元》中相位行者（Phase Walker）与现实世界最大区别就是实体态与意识态。现实世界，我们锚定在实体态，受物理法则的刚性约束。而相位行者的舞台，是更高维的意识态，在那里，常数可以被访问，就像访问一段代码的变量。</p>
 </div>
 <style>
-.modern-back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  color: #4A5568;
-  font-size: 20px;
-  font-family: 'Inter', -apple-system, sans-serif;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: transparent !important;
+.modern-back-btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; color: #4A5568; font-size: 20px; font-family: 'Inter', -apple-system, sans-serif; text-decoration: none; border-radius: 6px; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); background-color: transparent !important;
 }
-.modern-back-btn:hover {
-  background-color: rgba(237, 242, 247, 1);
-  transform: translateY(-1px);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+.modern-back-btn:hover { background-color: rgba(237, 242, 247, 1); transform: translateY(-1px); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-.modern-back-btn:active {
-  transform: translateY(0);
+.modern-back-btn:active { transform: translateY(0);
 }
-.modern-back-btn svg {
-  flex-shrink: 0;
-  transition: transform 0.2s;
+.modern-back-btn svg { flex-shrink: 0; transition: transform 0.2s;
 }
-.modern-back-btn:hover svg {
-  transform: translateX(-2px);
+.modern-back-btn:hover svg { transform: translateX(-2px);
 }
 </style>
 </html>
